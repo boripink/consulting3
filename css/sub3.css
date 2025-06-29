@@ -53,12 +53,10 @@ input:-webkit-autofill {background-color: #fff !important;
   transition: background-color 5000s ease-in-out 0s;}
 
 
-
-
 /* 통합검색 - 결과 */
 .total_results .mobile_filter {display: flex; align-items: center;}
 .total_results .mobile_filter span {font-size: 20px; font-weight: 600; }
-.total_results .mobile_filter .ico-filter {display: inline-block; width: 26px; height: 26px; margin-left: 6px; background: url(../images2/ico_filter.svg) no-repeat; background-size: contain;}
+.total_results .mobile_filter .ico-filter {display: inline-block; width: 26px; height: 26px; margin-left: 6px; background: url(../images/svg/ico_filter.svg) no-repeat; background-size: contain;}
 .total_results mark {background: none; color: #236cdb; font-weight: 700;}
 .total_results h4 > strong {color: #236cdb; }
 .total_results h4 > strong.keyword {padding-right: 28px; margin-right: 20px; position: relative;}
@@ -69,40 +67,54 @@ input:-webkit-autofill {background-color: #fff !important;
 .total_results .search_link:hover {text-decoration: underline;}
 .search_link .search_path {font-size: 22px; font-weight: 600; padding-bottom: 20px; }
 .search_link .path_item:not(:last-child) {position: relative; margin-right: 30px;}
-.search_link .path_item:not(:last-child)::before {content: ''; display: inline-block; width: 24px; height:24px; position: absolute; right: -30px; top: 2px; background: url(../images2/ico_angle.svg) no-repeat center / contain; transform: rotate(-90deg);}
+.search_link .path_item:not(:last-child)::before {content: ''; display: inline-block; width: 24px; height:24px; position: absolute; right: -30px; top: 2px; background: url(../images/svg/ico_angle.svg) no-repeat center / contain; transform: rotate(-90deg);}
 .search_link .search_desc {line-height: 1.6;}
 .search_link .search_desc mark {color: #ed1c24;}
 
 
 /* 회의록 관리 - 검색 */
-.search_form {display: flex; flex-wrap: wrap; gap: 10px 20px; justify-content: space-between;}
-.search_form > fieldset {flex: 0 0 calc(50% - 20px); }
-.search_form > div {flex: 1 1 100%; display:flex; justify-content: center;}
+.search-container.table_type {display: flex; gap: 24px; padding: 24px;}
+.search_form {display: flex; flex-wrap: wrap; gap: 10px 30px; justify-content: space-between;}
+.search_form .fieldset_group {display: flex; align-items: center; height: 40px; }
+.search_form .label {margin-right: 12px; min-width: 62px; font-size: 18px; font-weight: 500;}
+.search_btn_wrap {display: flex; align-items: end;} 
+.minutes_list .search_form fieldset {flex:1 1 calc(50% - 30px)}
 
-.search_form > fieldset.searchKeyword {flex: 1 1 100%;}
-.search_form > fieldset > div {display: flex; align-items: center; height: 40px;}
-.search_form .label {margin-right: 12px; min-width: 68px;}
-.search_form .search-btn {margin-top: 10px;}
+
+/* .search_form { display: flex; flex-wrap: wrap; gap: 16px; }
+.search_form fieldset { flex: 1 1 calc(50% - 8px); min-width: 280px; border: none; padding: 0; margin: 0; }
+.search_form fieldset:last-of-type { flex: 1 1 100%; }
+.fieldset_group { display: flex; align-items: center; gap: 12px; }
+.fieldset_group .label { width: 100px; flex-shrink: 0; }
+.fieldset_group input[type="text"], .fieldset_group select { flex: 1 1 auto; min-width: 0; padding: 6px 8px; }
+.datepicker_group { flex-wrap: wrap; }
+.datepicker_group .datepicker_inp { display: flex; align-items: center; gap: 4px; }
+.radio_group { display: flex; align-items: center; gap: 16px; }
+.radio_group .label { width: 100px; flex-shrink: 0; }
+.radio_item { display: flex; align-items: center; gap: 4px; }
+@media (max-width: 768px) { .search_form fieldset { flex: 1 1 100%; } } */
 
 
 /* 날짜검색 */
-.tilde {display: inline-block; margin: 0 8px;}
+.tilde {display: inline-flex; align-items: center; width: 20px;justify-content: center;}
 .datepicker_group, .datepicker_inp {display: flex; align-items: center; position: relative;}
 .datepicker_inp > input[type="text"] {width:180px;}
-.btn_calendar {position:absolute; right:12px; top:50%; margin-top:-12px; width:24px; height:24px; background:url("../images2/ico_calendar.svg") 0 0 no-repeat; vertical-align:middle;text-indent:-999em}
+.btn_calendar {position:absolute; right:12px; top:50%; margin-top:-12px; width:24px; height:24px; background:url("../images/svg/ico_calendar.svg") 0 0 no-repeat; vertical-align:middle;text-indent:-999em}
 
 
 /* datepicker */
 .btn_timer,
-.ui-timer-trigger{position:absolute; right:12px; top:50%; margin-top:-12px; width:24px; height:24px;background:url("../images2/ico40_timer.svg") 0 0 no-repeat; background-size: contain; vertical-align:middle; text-indent:-999em;}
+.ui-timer-trigger{position:absolute; right:12px; top:50%; margin-top:-12px; width:24px; height:24px;background:url("../images/svg/ico40_timer.svg") 0 0 no-repeat; background-size: contain; vertical-align:middle; text-indent:-999em;}
 .box_datepicker input[disabled='disabled']:hover, .box_datepicker input[disabled]:hover,
 .box_datepicker input[disabled='disabled']:hover + button, .box_datepicker input[disabled]:hover + button {cursor:default}
 .box_datepicker input[disabled='disabled'] + .btn_calendar {opacity:.4}
-
 .box_datepicker .date_line {align-self:flex-start;margin:5px 10px;width:8px;text-align:center;line-height:28px;font-size:12px;color:var(--col_body);vertical-align:top;font-style:normal}
 
+
 /* 회의록 관리 */
-.meeting_list .open_modal {display: inline-flex; align-items: center; border: 1px solid #0f298f; border-radius: 4px; background-color: #fff; color: #0f298f; font-size: 18px; padding: 0 18px 0 38px; position: relative; height: 40px;}
+.minutes_list .open_modal span {display: inline-flex; align-items: center; gap: 8px;}
+.minutes_list .open_modal span::before {content: ''; display: inline-block; width: 24px; height: 24px; background: url(../images/svg/ico_mice_bl.svg) no-repeat center/contain;}
+
 
 /* 회의록 모달창 cursor:move; */
 .side_modal {position:fixed; top:0; left:-50%; width:50%; height:100%; background:#f4f5f6;  box-shadow:4px 0 30px rgba(0,0,0,0.15); z-index:1000; transition:left 0.4s ease; overflow: hidden; padding: 20px 40px;}
@@ -113,19 +125,21 @@ input:-webkit-autofill {background-color: #fff !important;
 .modal_btn {display: flex; align-items: center; gap: 10px;}
 .modal_btn button {font-size:20px; font-weight: 700; width: 38px; height: 48px; }
 
+
 /* 녹음기능버튼 */
 .record_controls {display:flex; gap:10px; align-items:center; margin-top:20px;}
 .record_controls > button {display:flex; align-items:center; gap:8px; padding:10px 16px; border-radius:6px; }
 .record_controls > button:disabled {cursor:not-allowed; color:#737689 !important;}
 .record_controls > button.btn_record {background: #236cdb; color: #fff}
 .record_controls > button .icon {display: inline-block; width: 24px; height: 24px; border-radius:6px; }
-.record_controls > button.btn_record .icon {background:  url(../images2/ico_mice_wh.svg) no-repeat center/contain;}
+.record_controls > button.btn_record .icon {background:  url(../images/svg/ico_mice_wh.svg) no-repeat center/contain;}
 /* .record_controls > .btn_pause  {background:#f39c12; }
 .record_controls > .btn_bookmark {background:#3498db; } */
 .record_controls > button .text {display:inline-block; font-size: 18px; font-weight: 500;}
 
+
 /* 회의록 */
-.meeting_tabs_wrap {position:relative; padding-top:60px;}
+.minutes_tabs_wrap {position:relative; padding-top:60px;}
 .floating_time {position:absolute; top:10px; left:10px; background:#fff; padding:6px 12px; border-radius:6px; box-shadow:0 2px 6px rgba(0,0,0,0.1); font-weight:bold; z-index:10;}
 .tabs_section {padding:20px;}
 .tab_header {display:flex; justify-content:flex-end; gap:8px; margin-bottom:12px;}
@@ -135,14 +149,33 @@ input:-webkit-autofill {background-color: #fff !important;
 .tab_panel {display:none;}
 .tab_panel.show {display:block;}
 
+/* 회의록 생성 */
+.attendee_list {position: relative;}
+.tb_base.tb_list.tb_attendee {border: none; background: none;}
+.tb_base.tb_list.tb_attendee th,.tb_base.tb_list.tb_attendee td {background: none; border:none; padding: 0; text-align: left; }
+.tb_base.tb_list.tb_attendee th > span {font-size: 20px; padding-left: 10px; display: inline-block;}
+.tb_base.tb_list.tb_attendee td {padding-top: 10px; padding-right: 10px;}
+.attendee_list .td_btn { height: 40px;}
+.attendee_list .btn_add_attendee {position: absolute; right: 0; top:-10px; border-color: #0f298f; background-color: #0f298f; color: #fff; height: 40px;}
+
+/* 행정사항 테이블 */
+.action_list {position: relative;}
+.tb_base.tb_list.tb_action {border: none; background: none;}
+.tb_base.tb_list.tb_action th,.tb_base.tb_list.tb_action td {background: none; border:none; padding: 0; text-align: left; }
+.tb_base.tb_list.tb_action th > span {font-size: 20px; padding-left: 10px; display: inline-block;}
+.tb_base.tb_list.tb_action td {padding-top: 10px; padding-right: 10px;}
+.action_list .td_btn { height: 40px;}
+.action_list .btn_add_action {position: absolute; right: 0; top:-10px; border-color: #0f298f; background-color: #0f298f; color: #fff; height: 40px;}
+
+@media (max-width: 768px) {
+  .attendee_row { flex-direction: column; }
+  .form_unit, .btn_wrap { width: 100%; }
+  .btn_wrap { justify-content: flex-start; margin-top: 4px; }
+}
 
 
 
-
-
-
-
-@media (max-width:1400px) {
+@media (max-width:1500px) {
     .total_search_container {padding-top: 60px;}
     .total_search_container .inner {width: 90%;}
 }
@@ -184,7 +217,7 @@ input:-webkit-autofill {background-color: #fff !important;
     width: 16px;
     height: 16px;
     margin: -8px 0 0 -8px;
-    background: url("../images2/ico16_arrow_right.svg");
+    background: url("../images/svg/ico16_arrow_right.svg");
 	transform: rotate(180deg);
 }
 .ui-datepicker-next:before {
@@ -196,7 +229,7 @@ input:-webkit-autofill {background-color: #fff !important;
     width: 16px;
     height: 16px;
     margin: -8px 0 0 -8px;
-    background: url("../images2/ico16_arrow_right.svg");
+    background: url("../images/svg/ico16_arrow_right.svg");
 }
 .ui-widget-header .ui-icon {width:32px;height:32px;border-radius:50%}
 .ui-datepicker-prev,
@@ -214,3 +247,15 @@ input:-webkit-autofill {background-color: #fff !important;
 .ui-datepicker td span, .ui-datepicker td a{text-align:center}
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active{background:transparent;border-color:var(--col_button);color:#333}
 .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{background-color:#F9FAFF;border-color:var(--col_blue);color:var(--col_blue)}
+
+/* 회의 시작 상단 바 */
+.meeting-top-bar{display:flex;align-items:center;justify-content:space-between;background:#f5f7fa;padding:24px 24px 16px 24px;border-radius:12px 12px 0 0;margin-bottom:0;}
+.meeting-title{font-size:15px;color:#888;font-weight:500;margin-bottom:2px;}
+.meeting-date{font-size:24px;font-weight:700;color:#222;letter-spacing:-1px;}
+.recorder-controls{display:flex;align-items:center;gap:12px;}
+.recorder-btn{border:none;border-radius:16px;font-weight:600;font-size:16px;padding:8px 20px;display:flex;align-items:center;gap:6px;cursor:pointer;}
+.recorder-btn.start{background:#e6f0fd;color:#236cdb;}
+.recorder-btn.pause{background:#f7d7db;color:#d23a3a;}
+.recorder-btn.resume{background:#e6f0fd;color:#236cdb;}
+.recorder-timer{display:inline-flex;align-items:center;background:#e9ecef;color:#222;border-radius:12px;padding:6px 16px;font-size:16px;font-weight:600;gap:6px;}
+@media (max-width:600px){.meeting-top-bar{flex-direction:column;align-items:flex-start;padding:16px 8px 8px 8px;border-radius:0;}.meeting-date{font-size:18px;}.recorder-controls{margin-top:10px;width:100%;justify-content:flex-end;}}

@@ -8,9 +8,9 @@
 /* input */
 input::placeholder {font-weight:400; color: #8a949e; font-size: 18px;}
 label, .label {position:relative; display:inline-block; vertical-align:middle;}
-input[type="text"], input[type="password"], input[type="number"], input[type="date"], input[type="month"], input[type="time"], input[type="email"],
-select, .datalist, textarea, input[type="radio"], input[type="checkbox"], input[type="file"] 
-{width:100%; height: 40px; font-family:'Pretendard', Sans-serif; font-size:18px; font-weight:400; color:#333; background-color:#fff; outline:none; box-sizing:border-box;border:1px solid #d9e0ef; border-radius:10px;padding:0 10px; font-feature-settings: "tnum"; font-variant-numeric: tabular-nums;}
+input[type="text"], input[type="password"], input[type="number"], input[type="date"], input[type="month"], input[type="time"], input[type="email"], input[type="radio"], input[type="checkbox"], input[type="file"],
+select, .datalist, textarea
+{width:100%; height: 40px; font-family:'Pretendard', Sans-serif; font-size:18px; font-weight:400; color:#333; background-color:#fff; outline:none; box-sizing:border-box; border:1px solid #8a949e; border-radius:8px; padding:0 12px; font-feature-settings: "tnum"; font-variant-numeric: tabular-nums;}
 input[type="number"] {padding: 0; text-align: center;}
 input[type="number"]::-webkit-inner-spin-button {appearance: none; -moz-appearance: none; -webkit-appearance: none;}
 input[type="text"].num {text-align: right;}
@@ -22,14 +22,15 @@ button:focus {outline:2px dashed #6d7882;}
 button[hidden] {display:none; }
 a:focus, label:focus {text-decoration: underline; outline:2px dashed #6d7882; }
 input#company_regist::placeholder {font-weight:500; color: #236cdb; font-size: 17px;}
-/* Chrome, Safari 등 WebKit 기반 브라우저에서 기본 clear 버튼 제거 */
-input[type="search"]::-webkit-search-cancel-button {
-	-webkit-appearance: none;
-	display: none;
-}
+
 label.check_label {display: flex; align-items: center; font-weight: 500;}
 label.check_label .chk_label {margin-right:10px;}
-
+.radio_group, .radio_item {display: flex; align-items: center; }
+.radio_item:not(:last-child) {margin-right: 40px;}
+/* Chrome, Safari 등 WebKit 기반 브라우저에서 기본 clear 버튼 제거 */
+input[type="search"]::-webkit-search-cancel-button {-webkit-appearance: none;display: none;}
+/* Firefox */
+input[type="search"]::-moz-search-cancel-button {-moz-appearance: none;display: none;}
 
 /* //수정 2025 */
 
@@ -95,7 +96,8 @@ input[type="checkbox"]:disabled, input[type="radio"]:disabled {pointer-events:no
 #job_development_yes:checked + label:after { background-image: url('job_development_yes_image.png'); }
 #job_development_no:checked + label:after { background-image: url('job_development_no_image.png'); }
 
-select {position:relative; padding:0 40px 0 20px; vertical-align:middle; border:1px solid #d9e0ef; border-radius:10px; background:url('../images/inp_wrap.png') right 0 no-repeat #fff; -webkit-appearance:none; -moz-appearance:none; appearance:none; cursor:pointer;}
+/* 셀렉트 */
+select {position:relative; padding-right: 40px; vertical-align:middle; background:url('../images/inp_wrap.png') right 0 no-repeat #fff; -webkit-appearance:none; -moz-appearance:none; appearance:none; cursor:pointer;}
 select::-ms-expand {display:none;}
 select:hover, select:focus, select:active {border-color:#6d92d3; }
 select:disabled {color:#737689; border-color:#bec2c9; background-position-y:-60px; background-color:#f9f9f9; pointer-events:none; cursor:unset;}
@@ -109,7 +111,7 @@ select option {font-weight:500;}
 .datalist input[type="text"]:disabled::-webkit-calendar-picker-indicator {visibility:visible; background-position-y:-60px;}
 .datalist input[type="text"][readonly="readonly"]::-webkit-calendar-picker-indicator {visibility:visible; background-position-y:-60px;}
 
-textarea {width:100%; min-height:100px; padding:8px; border:1px solid #ccc; border-radius:3px;}
+textarea {width:100%; min-height:100px; padding:12px; }
 textarea:hover, textarea:focus, textarea:active {border-color:#6d92d3;}
 textarea:disabled {color:#737689; border-color:#bec2c9; background:#f9f9f9; pointer-events:none; cursor:unset;}
 textarea[readonly="readonly"] {color:#737689; border-color:#c5d1e0; background:#f1f4f7; pointer-events:none; cursor:unset;}
@@ -141,6 +143,11 @@ input[type="number"]:autofill, input[type="number"]:autofill:hover, input[type="
 /* 하단버튼 */
 .bt_btn {height:60px; margin-top:50px; text-align:center; display: flex; align-items: center; justify-content: center; gap: 10px;}
 .bt_btn button, .bt_btn a {min-width:150px; padding-left: 30px; padding-right: 30px; border-radius: 8px; height: 60px;}
+
+/* 상단버튼 추가 */
+.top_btn {display: flex; align-items: center; gap: 10px; position: absolute; top:
+110px; right: 0; }
+.top_btn button {display: inline-flex; align-items: center; border: 1px solid #0f298f; border-radius: 4px; background-color: #fff; color: #0f298f; font-size: 18px; padding:0 12px; position: relative; height: 40px; min-width: 100px;}
 
 /* 아이콘버튼 */
 .btn_ln_plus {padding:5px 8px; font-weight:500; color:#568ae5; text-align:center; border:1px solid #568ae5; border-radius:3px; background:#fff;}
@@ -215,8 +222,8 @@ button.cancel {background-color: #999; color: #fff;}
 .td_btn {display: inline-flex; align-items:center; justify-content: center; border: 1px solid #236cdb; border-radius: 4px; background-color: #fff; color: #236cdb; font-size: 17px; padding: 0 12px; position: relative; min-width: 80px; height: 34px; }
 .td_btn:hover {box-shadow: 0 4px 8px rgba(0,0,0,0.1); background-color: #e9f0ff; transition: all 0.2s;}
 .td_btn:link, .td_btn:visited {color: #236cdb;} /*a 태그*/
-.td_btn.del {border-color: #555; color: #222; background-color: #d7d7d7;}
-.td_btn.del:hover {background-color: #555; color: #fff;}
+.td_btn.del {border-color: #222; color: #222; background-color: #e6e8ea;}
+.td_btn.del:hover {background-color: #464c53; color: #fff;}
 .td_btn.link {padding-right: 28px;}
 .td_btn.link::before {content: ''; display: block; width: 8px; height: 14px; position: absolute; top: 8px; background: url(../images/sub/svg-btn-go.svg) no-repeat center; right: 12px; background-size: 8px 14px;} 
 .td_btn.apply::before {content: ''; display: inline-block; width: 20px; height: 16px; background: url(../images/icon/pencil-applyicon.png) no-repeat; left: 9px; background-size: 14px; }

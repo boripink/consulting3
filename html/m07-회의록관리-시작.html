@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="0">
+	<meta http-equiv="Cache-control" content="no-cache">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="../asset/aos/aos.css">
+	<link rel="stylesheet" href="../asset/slick/slick.css">
+	<link rel="stylesheet" href="../css/layout.css">
+	<link rel="stylesheet" href="../css/sub.css">
+	<script src="../asset/jquery/jquery-3.7.1.min.js"></script>
+	<script src="../asset/aos/aos.js"></script>
+	<script src="../asset/slick/slick.js"></script>
+	<script src="../js/common.js"></script>
+
+	<!-- 추가 -->
+	<script src="../js/common2.js"></script>
+	<link rel="stylesheet" href="../css/jquery-ui.min.css">
+	<script src="../js/jquery-ui.js"></script>
+
+	<title>회의시작 | 회의록 관리 | 마이페이지 | 한국장애인고용공단 장애인고용컨설팅</title>
+
+	<style>#scrollTopBtn {display: none}</style>
+	<script>
+		window.history.replaceState({}, '', window.location.pathname);
+	</script>
+
+
+</head>
+
+<body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+	<div class="meeting-top-bar">
+		<div>
+			<div class="meeting-title">회의시작</div>
+			<div class="meeting-date">2025. 06. 19 (목) 오후 2:00</div>
+		</div>
+		<div id="recorder-controls" class="recorder-controls">
+			<!-- 녹음시작 버튼(초기) -->
+			<button id="btn-record-start" type="button" class="recorder-btn start">
+				<svg width="20" height="20" fill="none" style="vertical-align:middle;" viewBox="0 0 20 20"><path d="M10 2a2.5 2.5 0 0 1 2.5 2.5v5a2.5 2.5 0 1 1-5 0v-5A2.5 2.5 0 0 1 10 2Zm0 1.2a1.3 1.3 0 0 0-1.3 1.3v5a1.3 1.3 0 1 0 2.6 0v-5A1.3 1.3 0 0 0 10 3.2Z" fill="#236cdb"/><path d="M5.5 9.5a.6.6 0 0 1 1.2 0 3.3 3.3 0 0 0 6.6 0 .6.6 0 1 1 1.2 0 4.5 4.5 0 0 1-9 0Z" fill="#236cdb"/><path d="M10 16.5a.6.6 0 0 1-.6-.6v-2.4a.6.6 0 1 1 1.2 0v2.4a.6.6 0 0 1-.6.6Z" fill="#236cdb"/></svg>
+				녹음시작
+			</button>
+			<!-- 타이머+일시정지(녹음중) -->
+			<div id="recorder-active" style="display:none;align-items:center;gap:8px;">
+				<span class="recorder-timer">
+					<svg width="18" height="18" fill="none" style="vertical-align:middle;" viewBox="0 0 20 20"><path d="M10 2a8 8 0 1 1 0 16 8 8 0 0 1 0-16Zm0 1.2a6.8 6.8 0 1 0 0 13.6A6.8 6.8 0 0 0 10 3.2Zm0 2.3a.6.6 0 0 1 .6.6v3.9l3.1 1.8a.6.6 0 1 1-.6 1.1l-3.3-1.9A.6.6 0 0 1 9 10V6.1a.6.6 0 0 1 .6-.6Z" fill="#888"/></svg>
+					<span id="timer">00:00:00</span>
+				</span>
+				<button id="btn-record-pause" type="button" class="recorder-btn pause">
+					<svg width="18" height="18" fill="none" style="vertical-align:middle;" viewBox="0 0 20 20"><rect x="4" y="4" width="4" height="12" rx="1" fill="#d23a3a"/><rect x="12" y="4" width="4" height="12" rx="1" fill="#d23a3a"/></svg>
+					일시정지
+				</button>
+				<button id="btn-record-resume" type="button" class="recorder-btn resume" style="display:none;">
+					<svg width="18" height="18" fill="none" style="vertical-align:middle;" viewBox="0 0 20 20"><path d="M6 4l8 6-8 6V4z" fill="#236cdb"/></svg>
+					녹음재개
+				</button>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(document).ready(function () {
+			AOS.init();
+
+			// 탭 전환
+			$('.tab_btn').on('click', function(){
+				$('.tab_btn').removeClass('on').attr('aria-selected', 'false');
+				$(this).addClass('on').attr('aria-selected', 'true');
+				$('.tab_panel').removeClass('show').attr('hidden', true);
+				const target = $(this).attr('aria-controls');
+				$('#'+target).addClass('show').attr('hidden', false);
+			});
+
+			// 녹음 타이머 및 버튼 상태 관리
+			let timerInterval = null;
+			let seconds = 0;
+			function formatTime(sec) {
+				const h = String(Math.floor(sec/3600)).padStart(2,'0');
+				const m = String(Math.floor((sec%3600)/60)).padStart(2,'0');
+				const s = String(sec%60).padStart(2,'0');
+				return `${h}:${m}:${s}`;
+			}
+			function startTimer() {
+				if(timerInterval) return;
+				timerInterval = setInterval(function(){
+					seconds++;
+					$('#timer').text(formatTime(seconds));
+				}, 1000);
+			}
+			function pauseTimer() {
+				clearInterval(timerInterval);
+				timerInterval = null;
+			}
+			function resetTimer() {
+				pauseTimer();
+				seconds = 0;
+				$('#timer').text('00:00:00');
+			}
+
+			// 녹음시작 클릭
+			$('#btn-record-start').on('click', function(){
+				$(this).hide();
+				$('#recorder-active').css('display','flex');
+				$('#btn-record-pause').show();
+				$('#btn-record-resume').hide();
+				resetTimer();
+				startTimer();
+			});
+			// 일시정지 클릭
+			$('#btn-record-pause').on('click', function(){
+				pauseTimer();
+				$(this).hide();
+				$('#btn-record-resume').show();
+			});
+			// 녹음재개 클릭
+			$('#btn-record-resume').on('click', function(){
+				startTimer();
+				$(this).hide();
+				$('#btn-record-pause').show();
+			});
+		});
+	</script>
+</body>
+
+</html>
