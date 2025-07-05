@@ -1,0 +1,345 @@
+@charset "utf-8";
+
+
+
+/* 우수사례 상세 asis */
+.bestprac_point__conf__process {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+.bestprac_point__conf__process > li {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.bestprac_point__conf__process > li {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.bestprac_point__conf__process > li .process_box {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 16px; 
+}
+/* 우수사례 상세 추가 ->> */
+
+.bestprac_point__conf__process > li .process_box {width:auto; height:auto; background-color:transparent; box-shadow:none;}
+.bestprac_point__conf__process > li .process_box:before {display:none;}
+
+
+.process_box > div:last-child {
+  letter-spacing: -1px;
+}
+.bestprac_point__conf__process > li .process_ico {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid #eaecf0;
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+.bestprac_point__conf__process > li .process_ico::before {
+  content: "";
+  background-repeat: no-repeat;
+  display: block;
+  background-position: center;
+  width: 80px;
+  height: 80px;
+}
+.bestprac_point__conf__process > li::after {
+  display: block;
+  content: "";
+  background: url("../images/ico/proc_arrow.png") no-repeat;
+  width: 36px;
+  height: 80px;
+  background-position: center top 30px;
+  margin: 0 10px;
+}
+.bestprac_point__conf__process > li:last-child::after {
+  display: none;
+}
+.bestprac_point__conf__process > li ul {
+  position: relative;
+  padding-top: 10px;
+  margin-top: 10px;
+  text-align: left;
+}
+.bestprac_point__conf__process > li ul:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  right: 0;
+  width: 32px;
+  height: 2px;
+  background: #2b509b;
+}
+.bestprac_point__conf__process > li ul:after {
+  content: "";
+  position: absolute;
+  right: 50%;
+  top: 0;
+  width: 32px;
+  height: 2px;
+  background: #2491F4;
+}
+.bestprac_point__conf__process > li ul > li {
+  display: flex;
+  font-size: 14px;
+}
+.bestprac_point__conf__process > li ul > li:before {
+  content: "· ";
+  color: #1e7dd9;
+}
+
+.bestprac_benefit {
+	display:flex;
+}
+.bestprac_benefit > li {
+  flex: 1;
+}
+.bestprac_benefit > li:after {
+  content: none;
+}
+
+.bestprac_benefit.bene02 {
+}
+.bestprac_benefit.bene02 > li .process_ico.ico01::before {
+  background-image: url("../images/ico/ic_bene0201.png");
+}
+.bestprac_benefit.bene02 > li .process_ico.ico02::before {
+  background-image: url("../images/ico/ic_bene0202.png");
+}
+.bestprac_benefit.bene02 > li .process_ico.ico03::before {
+  background-image: url("../images/ico/ic_bene0203.png");
+}
+.bestprac_benefit.bene02 > li .process_ico.ico04::before {
+  background-image: url("../images/ico/ic_bene0204.png");
+}
+
+.bestprac_benefit.bene13 > li .process_ico.ico01::before {
+  background-image: url("../images/ico/ic_bene1301.png");
+}
+.bestprac_benefit.bene13 > li .process_ico.ico02::before {
+  background-image: url("../images/ico/ic_bene1302.png");
+}
+.bestprac_benefit.bene13 > li .process_ico.ico03::before {
+  background-image: url("../images/ico/ic_bene1303.png");
+}
+.bestprac_benefit.bene13 > li .process_ico.ico04::before {
+  background-image: url("../images/ico/ic_bene1304.png");
+}
+.bestprac_benefit.bene13 > li .process_ico.ico05::before {
+  background-image: url("../images/ico/ic_bene1305.png");
+}
+
+.bestprac_benefit.bene14 > li .process_ico.ico01::before {
+  background-image: url("../images/ico/ic_bene1401.png");
+}
+.bestprac_benefit.bene14 > li .process_ico.ico02::before {
+  background-image: url("../images/ico/ic_bene1402.png");
+}
+.bestprac_benefit.bene14 > li .process_ico.ico03::before {
+  background-image: url("../images/ico/ic_bene1403.png");
+}
+.bestprac_benefit.bene14 > li .process_ico.ico04::before {
+  background-image: url("../images/ico/ic_bene1404.png");
+}
+.bestprac_benefit.bene14 > li .process_ico.ico05::before {
+  background-image: url("../images/ico/ic_bene1405.png");
+}
+
+.bestprac_benefit.bene15 > li .process_ico.ico01::before {
+  background-image: url("../images/ico/ic_bene1501.png");
+}
+.bestprac_benefit.bene15 > li .process_ico.ico02::before {
+  background-image: url("../images/ico/ic_bene1502.png");
+}
+.bestprac_benefit.bene15 > li .process_ico.ico03::before {
+  background-image: url("../images/ico/ic_bene1503.png");
+}
+.bestprac_benefit.bene15 > li .process_ico.ico04::before {
+  background-image: url("../images/ico/ic_bene1504.png");
+}
+.bestprac_benefit.bene15 > li .process_ico.ico05::before {
+  background-image: url("../images/ico/ic_bene1505.png");
+}
+
+.bestprac_benefit.bene16 > li .process_ico.ico01::before {
+  background-image: url("../images/ico/ic_bene1601.png");
+}
+.bestprac_benefit.bene16 > li .process_ico.ico02::before {
+  background-image: url("../images/ico/ic_bene1602.png");
+}
+.bestprac_benefit.bene16 > li .process_ico.ico03::before {
+  background-image: url("../images/ico/ic_bene1603.png");
+}
+.bestprac_benefit.bene16 > li .process_ico.ico04::before {
+  background-image: url("../images/ico/ic_bene1604.png");
+}
+.bestprac_benefit.bene16 > li .process_ico.ico05::before {
+  background-image: url("../images/ico/ic_bene1605.png");
+}
+
+.bestprac_benefit.bene54 > li .process_ico.ico01::before {
+  background-image: url("../images/ico/ic_proc01.png");
+}
+.bestprac_benefit.bene54 > li .process_ico.ico02::before {
+  background-image: url("../images/ico/ic_proc06.png");
+}
+.bestprac_benefit.bene54 > li .process_ico.ico03::before {
+  background-image: url("../images/ico/ic_proc03.png");
+}
+
+.bna {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  font-size: 14px;
+  gap: 20px;
+}
+.bna dl dt {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 3px 5px;
+  border-radius: 5px;
+  color: #fff;
+  white-space: nowrap;
+}
+.bna dl:first-child dt {
+  background: #2b509b;
+}
+.bna dl:last-child dt {
+  background: #2491F4;
+}
+.bna p {
+  position: relative;
+  padding-bottom: 20px;
+}
+.bna p:before {
+  content: "↓";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.bna p:last-child::before {
+  content: none;
+}
+@media (max-width: 1200px) {
+  .bna {
+    flex-direction: column;
+  }
+}
+
+.btn-applyPrev {
+  display: flex;
+  height: 32px;
+  border: 2px solid #a9cde2;
+  color: #2582bb !important;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 0 10px;
+}
+
+.btn-applyPrev:before {
+  position: relative;
+  content: "";
+  background: url(../images/common/ico_small_view.png) center no-repeat;
+  width: 21px;
+  height: 13px;
+  margin-right: 5px;
+}
+
+.bestprac_point__list > li::after {
+  content: "";
+  width: 100%;
+  background-color: #e5e6e6;
+  height: 1px;
+  display: block;
+  margin: 30px 0;
+}
+.bestprac_point__list > li:last-child::after {
+  display: none;
+}
+
+.process_ico.ico01::before {
+  background: url("../images/ico/ic_proc01.png");
+}
+.process_ico.ico02::before {
+  background: url("../images/ico/ic_proc02.png");
+}
+.process_ico.ico03::before {
+  background: url("../images/ico/ic_proc03.png");
+}
+.process_ico.ico04::before {
+  background: url("../images/ico/ic_proc04.png");
+}
+.process_ico.ico05::before {
+  background: url("../images/ico/ic_proc05.png");
+}
+.process_ico.ico06::before {
+  background: url("../images/ico/ic_proc06.png");
+}
+.process_ico.ico07::before {
+  background: url("../images/ico/ic_proc07.png");
+}
+.process_ico.ico08::before {
+  background: url("../images/ico/ic_proc08.png");
+}
+.process_ico.ico09::before {
+  background: url("../images/ico/ic_proc09.png");
+}
+.process_ico.ico10::before {
+  background: url("../images/ico/ic_proc10.png");
+}
+.process_ico.ico11::before {
+  background: url("../images/ico/ic_proc11.png");
+}
+.process_ico.ico12::before {
+  background: url("../images/ico/ic_proc12.png");
+}
+.process_ico.ico13::before {
+  background: url("../images/ico/ic_proc13.png");
+}
+
+
+
+.scrollTopBtn {
+  width: 70px;
+  height: 70px;
+  background-color: #0f298f;
+  color:#fff;
+  border-radius: 50%;
+  position:fixed; bottom:80px;  right:80px; z-index:99999999; display:none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

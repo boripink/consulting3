@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="0">
+	<meta http-equiv="Cache-control" content="no-cache">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="../asset/aos/aos.css">
+	<link rel="stylesheet" href="../asset/slick/slick.css">
+	<link rel="stylesheet" href="../css/layout.css">
+	<link rel="stylesheet" href="../css/sub.css">
+	<script src="../asset/jquery/jquery-3.7.1.min.js"></script>
+	<script src="../asset/aos/aos.js"></script>
+	<script src="../asset/slick/slick.js"></script>
+	<script src="../js/common.js"></script>
+
+	<!-- 추가 -->
+	<link rel="stylesheet" href="../css/sub3.css">
+	<link rel="stylesheet" href="../css/jquery-ui.min.css">
+	<script src="../js/jquery-ui.js"></script>
+	<script src="../js/common2.js"></script>
+
+	<title>샘플목록-가이드</title>
+
+</head>
+
+<body>
+	<div class="sample_container mt80 inner">
+		<!-- 테이블 -->
+		<div class="table-container">
+			<h2 class="pop_tit2">기본정보</h2>
+			<table class="tb_base tb_list">
+				<caption></caption>
+				<colgroup>
+					<col style="width: 180px;">
+					<col style="width: auto;">
+					<col style="width: 180px;">
+					<col style="width: auto;">
+				</colgroup>				
+				<thead>
+					<tr>
+						<th scope="col"></th>
+						<th scope="col"></th>
+						<th scope="col"></th>
+						<th scope="col"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!-- 페이징 -->
+		<nav class="paging" role="navigation" aria-label="페이지 네비게이션">
+			<a href="?pageIndex=1" class="page_btn first" aria-label="처음 페이지 이동"
+				onclick="fn_egov_select_linkPage(1); return false;"></a>
+			<a href="javascript:void(0);" class="page_btn prev" aria-label="이전 페이지 이동"
+				onclick="fn_egov_select_linkPage(1); return false;"></a>
+			<ul class="page_list">
+				<li>
+					<a href="javascript:void(0);" class="page_btn active" aria-label="현재 페이지" aria-current="page">1</a>
+				</li>
+				<li>
+					<a href="?pageIndex=2" class="page_btn" aria-label="2페이지 이동" onclick="fn_egov_select_linkPage(2); return false;">2</a>
+				</li>
+			</ul>
+			<a href="javascript:void(0);" class="page_btn next" aria-label="다음 페이지 이동"
+				onclick="fn_egov_select_linkPage(1); return false;"></a>
+			<a href="?pageIndex=1" class="page_btn last" aria-label="마지막 페이지 이동"
+				onclick="fn_egov_select_linkPage(1); return false;"></a>
+		</nav>
+
+		<!-- 팝업 -->
+		<div class="layer_wrap data-id">
+			<div class="popup_content" role="dialog" aria-labelledby="popup-title" aria-describedby="popup-desc">
+				<div class="pop_head">
+					<span id="popup-title" class="popup_badge">소타이틀</span>
+					<h2 class="pop_tit"></h2>
+				</div>
+				<div class="popup_body">
+
+				</div>
+				<div class="bt_btn">
+					<button type="button" class="btn_cr_def" onclick="">버튼</button>
+				</div>
+				<button type="button" class="btn_close btn_X"><span class="sr-only">닫기</span></button>
+			</div>
+		</div>
+
+		<!-- 인포텍스트 -->
+		<div class="system_box info">
+			<p></p>
+		</div>
+
+
+
+
+
+	</div><!--  //sample_container  -->
+</body>
+
+</html>

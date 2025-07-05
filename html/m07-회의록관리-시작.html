@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="0">
+	<meta http-equiv="Cache-control" content="no-cache">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="../asset/aos/aos.css">
+	<link rel="stylesheet" href="../asset/slick/slick.css">
+	<link rel="stylesheet" href="../css/layout.css">
+	<link rel="stylesheet" href="../css/sub.css">
+	<script src="../asset/jquery/jquery-3.7.1.min.js"></script>
+	<script src="../asset/aos/aos.js"></script>
+	<script src="../asset/slick/slick.js"></script>
+	<script src="../js/common.js"></script>
+
+	<!-- 추가 -->	 
+	<link rel="stylesheet" href="../css/sub3.css">
+	<link rel="stylesheet" href="../css/jquery-ui.min.css">
+	<script src="../js/jquery-ui.js"></script>	
+	<script src="../js/common2.js"></script>
+
+	<title>회의시작 | 회의록 관리 | 마이페이지 | 한국장애인고용공단 장애인고용컨설팅</title>
+
+	<style>
+		#scrollTopBtn {display: none}
+		/* body {background-color: #eef2f7;} */
+	</style>
+	<script>
+		window.history.replaceState({}, '', window.location.pathname);
+	</script>
+
+
+</head>
+
+<body style="background-color: #eef2f7;">
+	<div class="meeting-wrap">
+		<!-- 상단 -->
+		<div class="meeting-top-bar">
+			<div>
+				<div class="meeting-title">회의시작</div>
+				<div class="meeting-date">2025. 06. 19 (목) 오후 2:00</div>
+			</div>
+			<div id="recorder-controls" class="recorder-controls">
+				<!-- 녹음시작 버튼(초기) -->
+				<button id="btn-record-start" type="button" class="recorder-btn start">
+					<span class="icon-placeholder start"></span>
+					녹음시작
+				</button>
+				<!-- 타이머+일시정지(녹음중) -->
+				<div id="recorder-active" style="display:none;align-items:center;gap:8px;">
+					<span class="recorder-btn timer">
+						<span class="icon-placeholder timer"></span>
+						<span id="timer">00:00:00</span>
+					</span>
+					<button id="btn-record-pause" type="button" class="recorder-btn pause">
+						<span class="icon-placeholder pause"></span>
+						일시정지
+					</button>
+					<button id="btn-record-resume" type="button" class="recorder-btn resume" style="display:none;">
+						<span class="icon-placeholder resume"></span>
+						녹음재개
+					</button>
+				</div>				
+			</div>			
+		</div>
+		
+		<div class="meeting-body">
+			<!-- 중간 탭 : 녹음 스크롤 영역 -->
+			<div class="meeting-recording-tab">
+				<div class="tab_wrap" role="tablist">
+					<ul class="tab_list">
+						<li class="on"><a href="#tab1" role="tab" aria-controls="tab1" aria-selected="true" title="선택됨">회의요약</a></li>
+						<li><a href="#tab2" role="tab" aria-controls="tab2" >전문</a></li>
+					</ul>
+					<div class="tab_cont">
+						<div id="tab1" class="tab-panel summary show">
+							<!-- 녹음 내용(스크롤) -->
+							<div class="recording-scroll-area">
+								<div class="attendee-row">
+									<div class="attendee-info name1">참석자 1 / 00:00:00</div>
+									<div class="attendee-speech">
+										기본적으로 말씀드린 것처럼 모니터링 페이지를 현장 컨설팅 내부페이지에서 똑같이 조회하는 것을 1차 목표로 두고 현장컨설팅과 내부 고용 업무를 하나의 담당자가 자기가 맡고 있는 기업을 총괄해서 볼 수 있는 페이지를 추가하고 싶습니다.<br>
+										마이페이지의 내용을 그대로 보더라도 모든 페이지를 총괄해서 보는 페이지가 필요합니다.
+									</div>
+								</div>
+
+								<div class="bookmark" id="bookmark1">★ 북마크 <span>1</span></div>
+
+								<div class="attendee-row">
+									<div class="attendee-info name2">참석자 2 / 00:00:00</div>
+									<div class="attendee-speech">
+										이 부분은 아이디어가 많이 필요할거 같아서 찾아보고 제안 드리도록 하겠습니다.<br>
+										3가지 사이트를 각각 정의하는 것이 필요합니다.
+									</div>
+								</div>					
+
+								<div class="bookmark" id="bookmark2">★ 북마크 <span>2</span></div>
+								
+								<div class="attendee-row">
+									<div class="attendee-info name3">참석자 3 / 00:00:00</div>
+									<div class="attendee-speech">
+										이 부분은 아이디어가 많이 필요할거 같아서 찾아보고 제안 드리도록 하겠습니다.<br>
+										3가지 사이트를 각각 정의하는 것이 필요합니다.
+									</div>
+								</div>	
+
+								<div class="bookmark end"><span>종료</span></div>
+							</div>
+						</div>
+						<div id="tab2" class="tab-panel full">
+							<!-- 전문 내용(스크롤) -->
+							<div class="recording-scroll-area">
+								<div class="attendee-row">
+									<div class="attendee-info name1">참석자 1 / 00:00:00</div>
+									<div class="attendee-speech">
+										기본적으로 말씀드린 것처럼 모니터링 페이지를 현장 컨설팅 내부페이지에서 똑같이 조회하는 것을 1차 목표로 두고 현장컨설팅과 내부 고용 업무를 하나의 담당자가 자기가 맡고 있는 기업을 총괄해서 볼 수 있는 페이지를 추가하고 싶습니다.<br>
+										마이페이지의 내용을 그대로 보더라도 모든 페이지를 총괄해서 보는 페이지가 필요합니다.
+									</div>
+								</div>
+
+								<div class="bookmark" id="bookmark1">★ 북마크 <span>1</span></div>
+
+								<div class="attendee-row">
+									<div class="attendee-info name2">참석자 2 / 00:00:00</div>
+									<div class="attendee-speech">
+										이 부분은 아이디어가 많이 필요할거 같아서 찾아보고 제안 드리도록 하겠습니다.<br>
+										3가지 사이트를 각각 정의하는 것이 필요합니다.
+									</div>
+								</div>					
+
+								<div class="bookmark" id="bookmark2">★ 북마크 <span>2</span></div>
+								
+								<div class="attendee-row">
+									<div class="attendee-info name3">참석자 3 / 00:00:00</div>
+									<div class="attendee-speech">
+										이 부분은 아이디어가 많이 필요할거 같아서 찾아보고 제안 드리도록 하겠습니다.<br>
+										3가지 사이트를 각각 정의하는 것이 필요합니다.
+									</div>
+								</div>	
+
+								<div class="bookmark end"><span>종료</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> 
+
+			<!-- 북마크 버튼/영역 (녹음 시작 시에만 표시) -->
+			<div class="bookmark-section" >
+				<button class="bookmark-btn recorder-btn">★ 북마크</button>
+				<div class="bookmark-list">
+					<a href="#bookmark1">★ 북마크 1</a>
+					<a href="#bookmark2">★ 북마크 2</a>
+					<a href="#bookmark3">★ 북마크 3</a>
+					<!-- <a href="#bookmark1">★ 북마크 1</a>
+					<a href="#bookmark2">★ 북마크 2</a>
+					<a href="#bookmark3">★ 북마크 3</a>
+					<a href="#bookmark1">★ 북마크 1</a>
+					<a href="#bookmark2">★ 북마크 2</a>
+					<a href="#bookmark3">★ 북마크 3</a> -->
+				</div>
+			</div>	
+
+			<!-- 하단 버튼 영역 -->
+			<div class="bottom-btns">
+				<button class="btn-generate-minutes">회의록 생성</button>
+				<button class="btn-cancel">취소</button>
+				<button class="btn-skip">녹음 건너뛰기</button>
+			</div>
+		</div>
+
+
+	</div>
+	<script>
+		$(document).ready(function () {
+			AOS.init();
+
+
+			// 녹음 타이머 및 버튼 상태 관리
+			let timerInterval = null;
+			let seconds = 0;
+			function formatTime(sec) {
+				const h = String(Math.floor(sec / 3600)).padStart(2, '0');
+				const m = String(Math.floor((sec % 3600) / 60)).padStart(2, '0');
+				const s = String(sec % 60).padStart(2, '0');
+				return `${h}:${m}:${s}`;
+			}
+			function startTimer() {
+				if (timerInterval) return;
+				timerInterval = setInterval(function () {
+					seconds++;
+					$('#timer').text(formatTime(seconds));
+				}, 1000);
+			}
+			function pauseTimer() {
+				clearInterval(timerInterval);
+				timerInterval = null;
+			}
+			function resetTimer() {
+				pauseTimer();
+				seconds = 0;
+				$('#timer').text('00:00:00');
+			}
+
+			// 녹음시작 클릭
+			$('#btn-record-start').on('click', function () {
+				$(this).hide();
+				$('#recorder-active').css('display', 'flex');
+				$('#btn-record-pause').show();
+				$('#btn-record-resume').hide();
+				resetTimer();
+				startTimer();
+			});
+			// 일시정지 클릭
+			$('#btn-record-pause').on('click', function () {
+				pauseTimer();
+				$(this).hide();
+				$('#btn-record-resume').show();
+			});
+			// 녹음재개 클릭
+			$('#btn-record-resume').on('click', function () {
+				startTimer();
+				$(this).hide();
+				$('#btn-record-pause').show();
+			});
+		});
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="0">
+	<meta http-equiv="Cache-control" content="no-cache">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="../asset/aos/aos.css">
+	<link rel="stylesheet" href="../asset/slick/slick.css">
+	<link rel="stylesheet" href="../css/layout.css">
+	<link rel="stylesheet" href="../css/sub.css">
+	<script src="../asset/jquery/jquery-3.7.1.min.js"></script>
+	<script src="../asset/aos/aos.js"></script>
+	<script src="../asset/slick/slick.js"></script>
+	<script src="../js/common.js"></script>
+
+	<!-- 추가 -->
+	<link rel="stylesheet" href="../css/sub3.css">
+	<link rel="stylesheet" href="../css/jquery-ui.min.css">
+	<script src="../js/jquery-ui.js"></script>
+	<script src="../js/common2.js"></script>
+
+	<title>회의록 생성 | 회의록 관리 | 마이페이지 | 한국장애인고용공단 장애인고용컨설팅</title>
+	
+</head>
+
+<body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+	<!-- 상단 skip 접근성요소 -->
+	<div id="topSkip">
+		<ul>
+			<li><a href="#lnb">본문 바로가기</a></li>
+			<li><a href="#gnb">주요메뉴 바로가기</a></li>
+		</ul>
+	</div>
+	<!-- Header -->
+	<header id="header" class="header act">
+		<div class="inner">
+			<h1 class="logo"><a href="/">한국장애인고용공단 장애인고용컨설팅</a></h1>
+			<h2 class="hidden">대메뉴</h2>
+			<ul class="gnb" id="gnb">
+				<li><a href="#">장애인 고용컨설팅</a>
+					<ul class="gnb_2dpt">
+						<li><a href="#">고용컨설팅이란?</a></li>
+						<li><a href="#">신청방법</a></li>
+					</ul>
+				</li>
+				<li><a href="#">고용 역량 진단</a>
+					<ul class="gnb_2dpt">
+						<li><a href="#">고용역량 진단이란?</a></li>
+						<li><a href="#">고용역량진단</a></li>
+					</ul>
+				</li>
+				<li><a href="#">장애인 채용사례</a>
+					<ul class="gnb_2dpt">
+						<li><a href="#">장애인 채용사례란?</a></li>
+						<li><a href="/empm/empmCaseAndStats/empmCase.do">사례 맞춤 검색</a></li>
+						<li><a href="/empm/empmCaseAndStats/empmSuccessStory.do">고용성공 스토리</a></li>
+						<li><a href="/empm/empmCaseAndStats/esgMngmtCase.do">ESG 경영의 길</a></li>
+						<li><a href="/empm/empmCaseAndStats/dtyDevCase.do">직무개발 갤러리</a></li>
+						<li><a href="/empm/empmCaseAndStats/midaEmpmCase.do">미디어 채용사례</a></li>
+					</ul>
+				</li>
+				<li><a href="/empm/empmCaseAndStats/empmStatsByLocation.do">고용현황 리포트</a>
+					<ul class="gnb_2dpt">
+						<li><a href="/empm/empmCaseAndStats/empmStatsByLocation.do">장애인 인구구조</a></li>
+						<li><a href="/empm/empmCaseAndStats/empmStatsByInstitutionType.do">기관유형별 고용현황</a></li>
+					</ul>
+				</li>
+				<li><a href="/empm/empmGuid/empmGuidSumryInfo.do">장애인 고용가이드</a>
+					<ul class="gnb_2dpt">
+						<li><a href="/empm/empmGuid/empmGuidSumryInfo.do">장애인 고용 가이드란?</a></li>
+						<li><a href="/empm/empmGuid/empmGuidSumry.do">단계별고용 GUIDE</a></li>
+						<li><a href="/empm/empmGuid/empmGuidSumry.do?clsfCd=4&amp;clsfLevel=1&amp;upClsfCd=">함께 일하기
+								GUIDE</a></li>
+						<li><a href="/empm/empmGuid/empmGuidSumry.do?clsfCd=6&amp;clsfLevel=1&amp;upClsfCd=">장애인 고용서비스
+								GUIDE</a></li>
+					</ul>
+				</li>
+				<li><a href="#"> 알림마당</a>
+					<ul class="gnb_2dpt">
+						<li><a href="#">공지사항/뉴스</a></li>
+						<li><a href="#">FAQ</a></li>
+						<li><a href="#">문의사항</a></li>
+					</ul>
+				</li>
+				<!-- mypage 로그인 전에 안보이게 처리 -->
+				<li class="mypage">
+					<a href="#">
+						<span class="link_mypage">마이페이지</span>
+					</a>
+					<ul class="gnb_2dpt">
+						<li><a href="#">고용역량 진단조회</a></li>
+						<li><a href="#">고용컨설팅 진행상황</a></li>
+						<li><a href="#">고용계획 및 실적 입력</a></li>
+						<li><a href="#">나의 문의</a></li>
+						<li><a href="#">즐겨찾기</a></li>
+						<li><a href="#">회의록 관리</a></li>
+						<li><a href="#">모니터링</a></li>
+					</ul>
+				</li>
+			</ul>
+			<div class="user_wrap autocomplete_form">
+				<div class="search_bar">
+					<label for="header_search" class="sr-only">검색어 입력</label>
+					<input type="search" id="header_search" name="" placeholder="통합검색" class="search_input" title="통합검색"
+						autocomplete="off">
+					<button type="submit" class="search_btn" aria-label="검색">
+						<img src="/images/sub/svg-btn-search.svg" alt="" aria-hidden="true">
+					</button>
+					<button type="button" class="search_del" aria-label="검색어 삭제">
+						<img src="/images/sub/svg-btn-del.svg" alt="" aria-hidden="true">
+					</button>
+				</div>
+				<div class="user_info">
+					<div class="user">
+						<button type="button" onclick="actionLogout();" class="btn_login out">로그아웃</button>
+					</div>
+				</div>
+				<!-- 연관검색어 리스트 -->
+				<ul class="autocomplete_list" role="listbox" aria-label="연관검색어"></ul>
+			</div>
+			<button type="button" class="btn_menu">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+		</div>
+		<div class="mob_wrap">
+			<div>
+				<div class="user_mob">
+					<h1 class="logo"><a href="/">한국장애인고용공단 장애인고용컨설팅</a></h1>
+					<div class="user">
+						<a href="/mbr/myPage.do" class="link_mypage">마이페이지</a>
+						<button type="button" onclick="actionLogout();" class="btn_login">로그아웃</button>
+					</div>
+				</div>
+				<div class="mob_search autocomplete_form">
+					<div class="search_bar">
+						<label for="header_search_mob" class="sr-only">검색어 입력</label>
+						<input type="search" id="header_search_mob" name="" placeholder="통합검색" class="search_input"
+							title="통합검색" autocomplete="off">
+						<button type="submit" class="search_btn" aria-label="검색">
+							<img src="/images/sub/svg-btn-search.svg" alt="" aria-hidden="true">
+						</button>
+						<button type="button" class="search_del" aria-label="검색어 삭제">
+							<img src="/images/sub/svg-btn-del.svg" alt="" aria-hidden="true">
+						</button>
+					</div>
+					<!-- 연관검색어 리스트 -->
+					<ul class="autocomplete_list" role="listbox" aria-label="연관검색어"></ul>
+				</div>
+				<div class="gnb_mob">
+					<div class="mob_menu">
+						<div class="mob_menu_list">
+							<h2>장애인 고용컨설팅</h2>
+							<ul class="mob_2dpt">
+								<li><a href="/cnsl/pwdbsEmpmCnslGuid/pwdbsEmpmCnslQstn.do">고용컨설팅이란?</a></li>
+								<li><a href="/cnsl/pwdbsEmpmCnslGuid/empmCnslAplyMthd.do">신청방법</a></li>
+							</ul>
+						</div>
+						<div class="mob_menu_list">
+							<h2>고용 역량 진단</h2>
+							<ul class="mob_2dpt">
+								<li><a href="/diag/empm/diagQstn.do">고용역량 진단이란?</a></li>
+								<li><a href="/diag/empm/diagExe.do">고용역량진단</a></li>
+
+							</ul>
+						</div>
+						<div class="mob_menu_list">
+							<h2>장애인 채용사례</h2>
+							<ul class="mob_2dpt">
+								<li><a href="/empm/empmCaseAndStats/empmCaseInfo.do">장애인 채용사례란?</a></li>
+								<li><a href="/empm/empmCaseAndStats/empmCase.do">사례 맞춤 검색</a></li>
+								<li><a href="/empm/empmCaseAndStats/empmSuccessStory.do">고용성공 스토리</a></li>
+								<li><a href="/empm/empmCaseAndStats/esgMngmtCase.do">ESG 경영의 길</a></li>
+								<li><a href="/empm/empmCaseAndStats/dtyDevCase.do">직무개발 갤러리</a></li>
+								<li><a href="/empm/empmCaseAndStats/midaEmpmCase.do">미디어 채용사례</a></li>
+							</ul>
+						</div>
+						<div class="mob_menu_list">
+							<h2>고용현황 리포트</h2>
+							<ul class="mob_2dpt">
+								<li><a href="/empm/empmCaseAndStats/empmStatsByLocation.do">장애인 인구구조</a></li>
+								<li><a href="/empm/empmCaseAndStats/empmStatsByInstitutionType.do">기관유형별 고용현황</a></li>
+							</ul>
+						</div>
+						<div class="mob_menu_list">
+							<h2>장애인 고용가이드</h2>
+							<ul class="mob_2dpt">
+								<li><a href="/empm/empmGuid/empmGuidSumryInfo.do">장애인 고용 가이드란?</a></li>
+								<li>
+									<a href="javascript:void();" class="has-sub">단계별 고용 GUIDE</a>
+									<ul class="snb_depth3">
+										<li><a
+												href="/empm/empmGuid/empmGuidSumry.do?clsfCd=1&amp;clsfLevel=1&amp;upClsfCd=">고용과정
+												체크리스트</a></li>
+										<li><a
+												href="/empm/empmGuid/empmGuidSumry.do?clsfCd=1&amp;clsfLevel=2&amp;upClsfCd=1">채용계획
+												수립</a></li>
+										<li><a
+												href="/empm/empmGuid/empmGuidSumry.do?clsfCd=2&amp;clsfLevel=1&amp;upClsfCd=">모집
+												및 채용</a></li>
+										<li>
+											<a href="javascript:void();" class="has-sub">고용관리</a>
+											<ul class="snb_depth4">
+												<li><a
+														href="/empm/empmGuid/empmGuidSumry.do?clsfCd=3&amp;clsfLevel=1&amp;upClsfCd=">근무환경
+														조성</a></li>
+												<li><a
+														href="/empm/empmGuid/empmGuidSumry.do?clsfCd=3&amp;clsfLevel=1&amp;upClsfCd=">직무배치</a>
+												</li>
+												<li><a
+														href="/empm/empmGuid/empmGuidSumry.do?clsfCd=3&amp;clsfLevel=1&amp;upClsfCd=">임금책정
+														및 성과평가</a></li>
+												<li><a
+														href="/empm/empmGuid/empmGuidSumry.do?clsfCd=3&amp;clsfLevel=1&amp;upClsfCd=">휴가
+														및 휴직관리</a></li>
+												<li><a
+														href="/empm/empmGuid/empmGuidSumry.do?clsfCd=3&amp;clsfLevel=1&amp;upClsfCd=">교육훈련</a>
+												</li>
+												<li><a
+														href="/empm/empmGuid/empmGuidSumry.do?clsfCd=3&amp;clsfLevel=1&amp;upClsfCd=">근로자
+														갈등관리</a></li>
+												<li><a
+														href="/empm/empmGuid/empmGuidSumry.do?clsfCd=3&amp;clsfLevel=1&amp;upClsfCd=">재난안전관리</a>
+												</li>
+												<li><a
+														href="/empm/empmGuid/empmGuidSumry.do?clsfCd=3&amp;clsfLevel=1&amp;upClsfCd=">해고와
+														퇴직</a></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="javascript:void();" class="has-sub">함께 일하기 GUIDE</a>
+									<ul class="snb_depth3">
+										<li><a
+												href="/empm/empmGuid/empmGuidSumry.do?clsfCd=4&amp;clsfLevel=1&amp;upClsfCd=">장애유형
+												알아보기</a></li>
+										<li><a
+												href="/empm/empmGuid/empmGuidSumry.do?clsfCd=2&amp;clsfLevel=2&amp;upClsfCd=4">장애인식
+												개선하기</a></li>
+										<li><a
+												href="/empm/empmGuid/empmGuidSumry.do?clsfCd=3&amp;clsfLevel=2&amp;upClsfCd=4">장애직원
+												배려하기</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="javascript:void();" class="has-sub">장애인 고용서비스 GUIDE</a>
+									<ul class="snb_depth3">
+										<li><a
+												href="/empm/empmGuid/empmGuidSumry.do?clsfCd=6&amp;clsfLevel=1&amp;upClsfCd=">장애인
+												고용의무제도</a></li>
+										<li><a
+												href="/empm/empmGuid/empmGuidSumry.do?clsfCd=1&amp;clsfLevel=2&amp;upClsfCd=5">장애인
+												고용지원</a></li>
+										<li><a
+												href="/empm/empmGuid/empmGuidSumry.do?clsfCd=2&amp;clsfLevel=2&amp;upClsfCd=5">금융
+												및 환경개선지원</a></li>
+										<li><a
+												href="/empm/empmGuid/empmGuidSumry.do?clsfCd=2&amp;clsfLevel=2&amp;upClsfCd=6">자회사형
+												장애인 표준사업장 설립가이드</a></li>
+										<li><a
+												href="/empm/empmGuid/empmGuidSumry.do?clsfCd=3&amp;clsfLevel=2&amp;upClsfCd=6">연계고용
+												추진가이드</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<div class="mob_menu_list">
+							<h2>알림마당</h2>
+							<ul class="mob_2dpt">
+								<li><a href="/rcsrm/bbsTmpltForm.do">공지사항/오늘의뉴스</a></li>
+								<li><a href="/rcsrm/bulkQstnAns.do">FAQ</a></li>
+								<li><a href="/rcsrm/bbsOpnionForm.do">문의사항</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!--// Header -->
+
+	<!-- container -->
+	<div class="container sub_container">
+		<div class="inner">
+			<div class="snb_wrap">
+				<h3>마이페이지</h3>
+				<ul class="snb_list">
+					<li><a href="">고용역량 진단조회</a></li>
+					<li><a href="">고용컨설팅 진행상황</a></li>
+					<li><a href="">고용계획 및 실적 입력</a></li>
+					<li><a href="">나의 문의</a></li>
+					<li><a href="">즐겨찾기</a></li>
+					<li class="on"><a href="m07-회의록 관리.html">회의록 관리</a></li>
+				</ul>
+			</div>
+			<div class="contents minutes_create" id="lnb">
+				<!-- 타이틀 영역-->
+				<div class="cont_tit_wrap">
+					<h4 class="cont_tit">회의록 관리</h4>
+					<ul class="cont_lct">
+						<li class="home">홈</li>
+						<li>마이페이지</li>
+						<li class="pnt_cr02"><b>회의록 관리</b></li>
+					</ul>
+				</div>
+				<!-- 내용 영역 -->
+				<div class="cont_wrap">
+					<!-- 테이블 -->
+					<div class="table-container">
+						<div class="fl_between">
+							<div class="table_tit_wrap">
+								<h5 class="table_tit">회의록 생성</h5>	
+								<div class="required_info"><span class="required">*</span>은 필수값입니다.</div>
+							</div>
+							<div class="btn_top_wrap mt4">
+								<button type="button" id="btn_add_attendee" class="btn_icon" >
+									<span class="icon user"></span>참석자 추가
+								</button>
+								<button type="button" id="btn_add_action" class="btn_icon pen">
+									<span class="icon pen"></span>행정사항 추가
+								</button>
+							</div>
+						</div>
+						<table class="tb_base tb_view minutes_table">
+							<colgroup>
+								<col style="width: 160px;">
+								<col style="width: auto;">
+								<col style="width: 160px;">
+								<col style="width: auto;">
+							</colgroup>
+							<caption>회의록 입력 폼 - 일시,장소,카테고리,주제,작성자,회의내용,행정사항,유관기관,첨부자료,회의공유의 내용을 제공</caption>
+							<tbody>
+								<tr>
+									<th scope="row"><span class="required" aria-label="필수정보">*</span>일시</th>
+									<td colspan="3">
+										<!-- 2025-06-10 (화) 13:00 ~ 14:00 -->
+										<div class="datepicker_group">
+											<div class="datepicker_inp">
+												<label for="todayInput" class="sr-only">날짜와 요일 입력 (예: 2025-01-01 수)</label>
+												<!-- <input type="date" id="todayInput" name="todayDt" class="todayInput date"> -->
+  												<input type="text" id="todayInput" name="todayDt" class="todayInput" placeholder="예: 2025-07-02 (수)">	
+												<button type="button" id="todayBtn" class="btn_calendar" aria-label="달력 열기"></button>
+											</div>
+											<div class="week"><span class="day_of_week" aria-live="polite"></span>요일</div>
+											<div class="form_time">
+												<label for="meetingTime" class="sr-only">회의 시간 입력 (예시 00:00 ~ 00:00)</label>
+												<input type="text" id="meetingTime" name="meetingTime" aria-label="회의 시간입력" placeholder="00:00 ~ 00:00" class="ta_c text">
+											</div>
+										</div>
+									</td>									
+								</tr>
+								<tr>
+									<th scope="row"><label for="meetingPlace">장소</label></th>
+									<td colspan="3">
+										<input type="text" id="meetingPlace" name="meetingPlace">
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<label for="meetingCategory">카테고리</label>
+									</th>
+									<td colspan="3">
+										<fieldset class="radio_group">
+										<legend>회의 구분</legend>
+
+										<label for="category1" class="custom_radio">
+											<input type="radio" id="category1" name="meetingCategory" value="외부미팅" class="sr-only" checked>
+											<span class="radio_label"></span>
+											<span>외부미팅</span>
+										</label>
+
+										<label for="category2" class="ml40 custom_radio">
+											<input type="radio" id="category2" name="meetingCategory" value="내부회의" class="sr-only">
+											<span class="radio_label"></span>
+											<span>내부회의</span>
+										</label>
+
+										<label for="category3" class="ml40 custom_radio">
+											<input type="radio" id="category3" name="meetingCategory" value="채용면접" class="sr-only">
+											<span class="radio_label"></span>
+											<span>채용면접</span>
+										</label>
+
+										<label for="category4" class="ml40 custom_radio">
+											<input type="radio" id="category4" name="meetingCategory" value="근로자상담" class="sr-only">
+											<span class="radio_label"></span>
+											<span>근로자상담</span>
+										</label>
+									</fieldset>
+
+										<!-- <select id="meetingCategory" name="meetingCategory" class="meetingCategory">
+											<option value="">-- 선택 --</option>
+											<option value="외부미팅">외부미팅</option>
+											<option value="내부회의">내부회의</option>
+											<option value="채용면접">채용면접</option>
+											<option value="근로자상담">근로자상담</option>
+										</select> -->
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<label for="meetingTopic">주제</label>
+									</th>
+									<td colspan="3">
+										<input type="text" id="meetingTopic" name="meetingTopic">
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">작성자</th>
+									<td colspan="3">
+										<div class="meeting_writer">한국장애인고용공단 경기서부지사 김컨설 차장</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">참석자</th>
+									<td colspan="3">
+										<ul class="attendee_list form_add_list">
+											<li class="attendee_item">
+												<div class="form_unit">
+													<label for="org1" class="sr-only">소속</label>
+													<input type="text" id="org1" name="org[]" placeholder="소속"
+														class="text">
+												</div>
+												<div class="form_unit">
+													<label for="dept1" class="sr-only">부서</label>
+													<input type="text" id="dept1" name="dept[]" placeholder="부서"
+														class="text">
+												</div>
+												<div class="form_unit">
+													<label for="rank1" class="sr-only">직급</label>
+													<input type="text" id="rank1" name="rank[]" placeholder="직급"
+														class="text">
+												</div>
+												<div class="form_unit">
+													<label for="name1" class="sr-only">성명</label>
+													<input type="text" id="name1" name="name[]" placeholder="성명"
+														class="text">
+												</div>
+												<div class="form_btn">
+													<button type="button" class="td_btn del li_delet"
+														aria-label="입력된성명 삭제">취소</button>
+												</div>
+											</li>
+										</ul>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="meetingContent">회의내용</label></th>
+									<td colspan="3"><textarea id="meetingContent" name="meetingContent" class="meetingContent"></textarea></td>
+								</tr>
+								<tr>
+									<th scope="row">행정사항</th>
+									<td colspan="3">
+										<ul class="action_list form_add_list">
+											<li class="action_item">
+												<div class="form_unit w180">
+													<label for="actionType1" class="sr-only">유형</label>
+													<select id="actionType1" name="actionType[]">
+														<option value="">-- 선택 --</option>
+														<option value="">외부 미팅</option>
+														<option value="">내부 회의</option>
+														<option value="">채용 면접</option>
+														<option value="">근로자 상담</option>
+													</select>
+												</div>
+												<div class="form_unit wide">
+													<label for="actionText1" class="sr-only">내용</label>
+													<input type="text" id="actionText1" name="actionText[]"
+														placeholder="내용 입력" aria-label="내용">
+												</div>
+												<div class="form_date">
+													<label for="" class="sr-only">기한</label>
+													<div class="datepicker_inp">
+														<input type="text" id="" name=""
+															placeholder="2025-01-01" class="wd100" class="todayInput">
+														<button type="button" id="startBtn" class="btn_calendar"
+															aria-label="달력 열기">달력</button>
+													</div>
+												</div>
+												<div class="form_btn">
+													<button type="button" class="btn_del_action td_btn del"
+														aria-label="행정사항 삭제">취소</button>
+												</div>
+											</li>
+										</ul>
+
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="relatedAgency">유관기관</label></th>
+									<td colspan="3"><textarea id="relatedAgency" name="relatedAgency" class="relatedAgency"></textarea></td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="meetingFiles">첨부자료</label></th>
+									<td colspan="3">
+										<div class="inp_list">
+											<input type="text" name="meetingFiles" id="meetingFiles1"
+												value="회의록 전문_20250701" class="file_input" aria-label="회의록 전문_20250701">
+											<button type="button" class="line_btn preview" aria-label="회의록 전문 미리보기"
+												title="새창열림">미리보기</button>
+											<button type="button" class="line_btn download"
+												aria-label="회의록 전문 다운로드">다운로드</button>
+										</div>
+										<div class="inp_list mt10">
+											<input type="text" name="meetingFiles" id="meetingFiles2"
+												value="회의 녹음파일_20250701" class="file_input"
+												aria-label="회의 녹음파일_20250701">
+											<button type="button" class="line_btn preview" aria-label="회의 녹음파일 미리보기"
+												title="새창열림">미리보기</button>
+											<button type="button" class="line_btn download"
+												aria-label="회의 녹음파일 다운로드">다운로드</button>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">회의공유</th>
+									<td colspan="3">
+										<fieldset class="radio_group">
+											<legend>회의공유</legend>
+											<label for="isSharedN" class="custom_radio">
+												<input type="radio" id="isSharedN" name="isShared" value="N" class="sr-only" checked>
+												<span class="radio_label"></span>
+												<span>공유하지 않음</span>
+											</label>
+											<label for="isSharedY" class="ml40 custom_radio">			
+												<input type="radio" id="isSharedY" name="isShared" value="Y" class="sr-only" >
+												<span class="radio_label"></span>
+												<span>담당 컨설턴트와 공유</span>
+											</label>
+										</fieldset>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="relatedAgency">기타의견</label></th>
+									<td colspan="3"><textarea id="relatedAgency" name="relatedAgency" class="relatedAgency"></textarea></td>
+								</tr>
+							</tbody>
+						</table>
+
+
+					</div>
+					<div class="bt_btn">
+						<button type="submit" class="btn_cr_def">회의록 저장</button>
+						<button type="submit" class="btn_cr_del">취소</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><!-- // container -->
+
+	<!-- footer -->
+	<footer class="footer">
+		<div class="inner">
+			<div class="f_left">
+				<ul>
+					<li><a href="/terms.do" target="_self" title="페이지이동">이용약관</a></li>
+					<li class="privacy"><a href="/privacy.do" target="_self" title="페이지이동">개인정보처리방침</a></li>
+					<li><a href="/cright.do" target="_self" title="페이지이동">저작권보호정책</a></li>
+					<li><a href="/emailDeni.do" target="_self" title="페이지이동">이메일주소무단수집거부</a></li>
+					<li><a href="/siteMap.do" target="_self" title="페이지이동">사이트맵</a></li>
+				</ul>
+				<!-- 
+					<a href="#" target="_blank" title="한국웹접근성평가센터 인증현황 바로가기">
+						<img src="/images/img_watch.png" alt="국가공인 정보통신접근성 품질인증마크" class="watch">
+					</a>
+					-->
+				<div class="f_info">
+					<p class="f_logo">한국장애인고용공단</p>
+					<div>
+						<p>주소 (13619)경기도 성남시 분당구 구미로 173번길 59(구미동)</p>
+						<p>전화번호 031-728-7001~3</p>
+						<p class="f_copy">COPYRIGHT © 2025 KEAD RIGHT RESERVED.</p>
+					</div>
+				</div>
+			</div>
+			<div class="f_right">
+				<div class="rel_wrap">
+					<a href="#" aria-expanded="false" title="관련사이트 목록 축소됨">관련사이트</a>
+					<ul>
+						<li><a href="https://www.kead.or.kr/" target="_blank" title="새창열림">한국장애인고용공단</a></li>
+						<li><a href="https://www.esingo.or.kr/" target="_blank" title="새창열림">공단e신고(전자신고)</a></li>
+						<li><a href="https://edu.kead.or.kr/aisd/main.do" target="_blank" title="새창열림">직장 내 장애인 인식개선
+								교육포털</a></li>
+						<li><a href="https://edi.kead.or.kr/Index.do" target="_blank" title="새창열림">EDI 고용개발원</a></li>
+						<li><a href="https://cyedu.kead.or.kr/" target="_blank" title="새창열림">EDI 사이버연수원</a></li>
+						<li><a href="https://www.kead.or.kr/campus/" target="_blank" title="새창열림">직업능력개발원</a></li>
+						<li><a href="https://digital.kead.or.kr/jsp/EduMain.jsp" target="_blank"
+								title="새창열림">디지털능력개발원</a></li>
+						<li><a href="https://hub.kead.or.kr/ve/main.do" target="_blank" title="새창열림">장애인직업능력평가포털</a>
+						</li>
+						<li><a href="https://www.worktogether.or.kr/main.do" target="_blank"
+								title="새창열림">워크투게더(장애인고용포털)</a></li>
+						<li><a href="https://www.withplus.or.kr/user/home.do" target="_blank" title="새창열림">표준사업장 생산품
+								홍보사이트</a></li>
+					</ul>
+				</div>
+				<div>
+					<p class="f_number">전국대표번호<b>1588-1519</b></p>
+					<p class="f_time"><span>운영시간</span>평일 09:00 ~ 18:00</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!--// footer -->
+	<script>
+		$(document).ready(function () {
+			AOS.init();
+		})
+
+
+
+	</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,382 @@
+@charset "utf-8";
+
+@media (max-width: 768px) { 
+
+  /* 공통 */
+  .row {flex-direction: column;}
+  input[type="checkbox"], input[type="radio"]{width: 18px; height: 18px;}
+  .number, .category, .solution {max-width: 100%; text-align: left;}
+  .intro {margin-bottom: 3rem;}
+  .user_type .label{font-size: 22px;}
+  .form_group li{width: 100%;}
+  .title_box{font-size: 20px;}
+
+  /* content */      
+  .cont_tit_wrap {flex-direction: column;}
+  .cont_tit_wrap .cont_lct{margin-top: 14px; margin-right: 3px; font-size: 16px;}
+  .cont_tit{font-size: 36px;}
+  .cont_tit2{font-size: 30px;}
+  .tb_tit {font-size: 18px;}
+
+  .search-container {flex-wrap: wrap; padding: 20px;}
+  .search-container > select {width: 100% !important;}
+    
+  /* 테이블 */
+  table:not(.no-res) colgroup {display: none;}
+  table:not(.no-res), table:not(.no-res) thead,table:not(.no-res) tbody, table:not(.no-res) th, table:not(.no-res) td, table:not(.no-res) tr {display: block; }
+  .tb_base:not(.no-res) thead tr {display: none;}  
+  .tb_base:not(.no-res) td  {background-color: unset; word-break:break-all !important; white-space:wrap !important;}
+  /* .tb_base td { border: none; border-bottom: 1px solid #eee; position: relative; background-color: unset;}
+  .tb_base td:before { position: absolute; top: 6px; left: 6px; width: 45%; padding-right: 10px; white-space: nowrap; } */
+  
+  .tb_list tbody {display:flex; flex-direction: column;}
+  .tb_list tbody tr {display: flex; flex-direction: column; border-bottom: 1px solid #d5dbef;}
+  .tb_list tbody tr:nth-child(even) {background-color: #f0f4f8; }
+  .tb_list tbody td {display: flex; align-items: center; text-align: left; padding: 6px; }
+  .tb_list tbody td::before { position: relative; content: attr(data-label); font-weight: 500; text-align: left; flex: 0 0 100px;}
+  .tb_notice .badge::after {content: attr(aria-label); margin-left: 32px;}
+
+  
+  /*로그인*/ 
+  .login_container {padding: 26px; padding-top: 130px;}
+  .login_btn{width: 100%;}
+  
+
+  .list_terms > li > p:before{flex: 0 0 22px; height: 22px; font-size: 12px; line-height: 23px;}
+  
+  /* tab_style02 */
+  .tab_style02 .tab_list > li > a{font-size: 18px;}
+  .tab_style02 .tab_list > li.on > a{font-size: 20px;}
+  
+  /* tab_style03 */
+  .tab_style03 .tab_list > li {flex: 1 0 calc(50% - 10px);}
+
+  /* tab_style04 */
+  .tab_style04 .tab_list {flex-wrap: wrap ; }
+  .tab_style04 .tab_list > li {flex: 1 0 calc(50% - 1px);}
+
+  
+
+  /* tab_style_gd */
+  .tab_style_gd .tab_list > li {flex: 0 0 100%;}
+  .tab_style_gd .tab_list > li > a {border: 1px solid #ddd; border-radius: 0; border-bottom: 0;}
+  .tab_style_gd .tab_list > li:hover > a, .tab_style_gd .tab_list > li:focus > a, .tab_style_gd .tab_list > li:active > a, .tab_style_gd .tab_list > li.on > a {border: none;}
+
+  .process_box{flex: 0 0 calc(100% / 2 - 50px); height: 210px;}
+  .process_box::before{top: 126px; left: calc(50% - 28px);}
+  .process_box .tit{font-size: 18px;}
+
+  .service-case {padding-left: unset; padding: 30px 40px; border-radius: 40px;}
+  .service-case::before,.service-case::after {display: none;}
+
+  .bg_tag{font-size: 15px;}
+  .ul_dot li{font-size: 16px;}
+  .status_list li{font-size: 15px;}
+  .status_icon{width: 100px; font-size: 14px;}
+
+  .surv_an li{flex: inherit; width: calc(100% / 2 - 20px);}
+  .survey_qu{font-size: 20px;}
+  .surv_btn button.save_draft{position: inherit; top: 0;}
+  .surv_btn li:has(button){display: flex; flex-wrap: wrap; gap: 10px;}
+
+    
+  /* 진단결과 */
+  .cont_result{margin: 50px 0;}
+
+  .cont_form .form_box > li {flex-direction: column;}
+  .cont_form input[type='text'] {width:100%;}
+
+  /* 진단결과 - 탭1 */
+  .sheet1 .box_bottom .chart2,
+  .sheet1 .box_bottom .chart2{flex: 1 0 100%;}
+  .sheet1 .result_solution .line_box{padding: 30px;}
+
+  /* 진단결과 - 탭2 */
+  .trend_charts li {flex: 1 0 100%;}
+  .benefit_summary {flex-wrap: wrap; justify-content: center; gap: 10px;}
+  
+  /* 진단결과 - 탭3 */
+  .recommend_service {gap: 20px;}
+
+  /* 진단결과 - 탭3 - 팝업 */
+  .process_flow .step_box {flex: 0 0 100%;}     
+
+  /* 진단결과 팝업 */
+  .popup_header::before,
+  .assessment_result .pop_head::before {display: none;}
+  .assessment_data .tb_list tbody td::before {flex: 0 0 130px;}
+
+  /* 레이어 팝업 */
+  .popup_badge{font-size: 16px;}
+  .popup_header h2{font-size: 32px;}
+  .pop_tit1{font-size: 28px;}
+  .pop_body .bg_box{padding: 20px}
+  .popup_content{padding: 30px;}
+  .popup_body{padding-right: 10px;}
+  .popup_body .bg_box {padding: 20px;}
+  .popup_body .list li{margin: 6px 12px; font-size: 18px;}
+
+  .layer_cont {padding: 50px 30px 30px;}
+  .layer_cont .pop_head{font-size: 20px; margin-bottom: 10px; padding-bottom: 20px;}
+  .layer_cont .pop_body{max-height: calc(100vh - 380px); font-size: 18px;}
+  .layer_wrap .btn_close.btn_X{top:20px; right: 26px; width: 20px; height: 20px;}
+
+  /* layer pop - 고용역량진단 */
+  .alert_unlogin_info .layer_cont{padding: 40px 26px;}
+  /* layer pop - 고용역량진단 기존 데이터 테이블 팝업 */
+  
+
+  /* 개인정보동의 */
+  .agree_conts{margin: 16px 26px; font-size: 15px;}
+  .agree_conts > p{font-size: 22px;}
+  .agree_article strong{font-size: 18px;}
+
+  /* 장애인고용컨설팅 > 고용컨설팅이란? */
+  .cont_list.style01 {align-items: center; flex-wrap: wrap;}
+  .cont_list.style01 .cont_thum{width: 210px; height: 210px;}
+  .cont_list.style01 .cont_info{padding-top: 0;}
+  .cont_list.style01 .cont_info span{font-size: 62px;}
+  .cont_list.style01 .cont_info b{font-size: 23px; margin-bottom: 20px;}
+  .cont_list.style01 .cont_info p{font-size: 18px;} 
+
+  .consult_user > li{width: 100%;}
+  .consult_sample{font-size: 18px;}
+  .consult_sample > li{width: 100%; height: 260px;}
+  .consult_sample .cst_hover{transform: translate(-265%, -50%);}
+  .consult_sample a { padding: 40px 40px 50px;}
+  .consult_sample a:hover .cst_hover, 
+  .consult_sample a:focus .cst_hover, 
+  .consult_sample a:active .cst_hover{transform:translate(-50%, -50%);}
+
+  /* 장애인 고용컨설팅 > 신청방법 */
+  .consulting_type{flex-direction: column; gap: 30px;}
+  .consulting_type li{min-width: 100%; flex-direction:column; height:unset;}
+  .consulting_type li:hover{width: 100%;}
+  .consulting_type li:hover .txt{padding: 125px 25px 20px;}  
+  .consulting_type .img{max-width: 100%;}
+    
+  /* 고용역량진단 > 고용역량진단이란? */ 
+  .cont_list.list4 li,
+  .cont_list.step4 li{flex: 0 0 calc(50% - 30px);}
+  .cont_list.style02 .cont_thum {width: unset; margin-top: 20px;}
+  .cont_list.style02 .cont_info {padding: 0;} 
+
+
+  /* 사례맞춤검색 - 팝업 */  
+  .recruit_info {margin-right: 0; padding: 20px 26px; font-size: 20px;}
+  .solution-board {flex-wrap: wrap;}
+  .solution_head > div {font-size: 18px; margin-bottom: 10px;}
+  .solution_body .row {gap: 10px;}
+  .solution_body .number {flex:0 0 20px; font-size: 24px;}
+  .solution_body .category {width: 100%;}
+  .solution_body .solution.level {width: 100%;text-align: center;}
+
+  /* 장애인 채용사례 > 고용 성공 스토리 */
+  /* .story_filter > li{flex-direction: column; width: 100%; height: auto; padding:30px; border: 1px solid #c3d8ff; border-radius: 18px;} 
+  .story_filter > li::before{display: none;}
+  .book_left{width: 100%; padding: 0;}
+  .book_right{width: 100%; margin-bottom: 0;}
+  .book_link{right: 10px; bottom: 8px;} */
+  .story_filter .story_item {flex: 0 1 calc(50% - 30px);}
+  .story_point .tit, 
+  .story-tab-list > li .tit, 
+  .story-tab-list .job-list li .job-name {font-size: 24px;}
+  .story_point .qu_list {margin-left: 0;} 
+  
+  
+  
+  
+  
+
+  /* 채용사례 NEW */
+  .point-dscp {margin-left: 0;}
+  .quick_list > li {font-size: 18px;}
+  .sticky_cont > div {padding-bottom: 60px;}
+  .sticky_cont h5 {margin-bottom: 40px;}
+  .case_new .tab1-list > li:not(:last-child) {margin-bottom: 30px;}
+  .case_new .tab1-list .tit {font-size: 24px;}
+  .job-list {gap: 10px; margin-left: 45px;}
+  .job-list .job-name {font-size: 20px;}
+  .job-list .job-summary {font-size: 16px; margin-top: 0;}
+  .case_new .tab1-list .desc {margin-left: 45px;}
+  .tab2-solution {flex-direction: column;}
+  .issue_box.fix::after {left: calc(50% - 13px); top: -50px; transform: rotate(90deg);}
+  .dot-list.list2 {flex-direction: column;} 
+  .dot-list.list2 > li {flex: 1;}
+
+
+  .head-illbox {flex-direction: column;}
+
+  /* ESG 경영의 길 */
+  .esg_keyword li{flex: 1 0 100%; margin-left: 10px;}
+  .esg_detail {display: flex; flex-direction: column;}
+  .esg_detail dt {min-width: unset; padding: 4px 8px;}
+
+    /* 직무개발 갤러리 - 상세 */
+  .job-intro .cont_sub{flex-wrap: wrap;}
+  .job-intro .img{width: 100%;; position: relative;}
+  .job-intro .job-content{padding: 10px 35px 35px; margin-left: 0;}
+  .job-recruit-info .company-info {flex-direction: column; gap: 20px; align-items: baseline; padding: 0 30px 30px; margin-right: 0;}
+  .job-recruit-info .job-info {padding: 30px 30px 0;}
+
+  /* 고용현황 리포트 */
+  .report_chart.list3 > li{flex: 1 0 100%;}  
+
+  /* 고용 성공 스토리 - 고용스토리(웹진) */
+  .webzine-intro .tit {font-size: 26px;}
+  .webzine-intro .tit strong {font-size: 34px;}
+  .webzine .webzine_cont {margin-top: 40px;}  
+  .webzine_tit.sub {font-size: 22px;}
+
+
+  /* 고용가이드 - 레이아웃 */  
+  .guide_conts_wrap .sec_cont{margin-top: 50px;}
+  .guide_conts_wrap .sec_cont:not(ul.guide_text){margin-left: 0px;}
+  .guide_conts_wrap .sec_cont2:not(ul.guide_text){margin-left: 0px;}
+  .guide_conts_wrap .btn_group {flex-direction: column; align-items: stretch; justify-content: center; margin: 0;}
+
+  
+
+  /* 고용가이드 - flow */
+  .guide_flow li {flex: 1;}
+  .guide_flow li a {width: 100%; min-width: 340px; min-height: auto; padding-top: 20px; border-radius: 40px; }
+  .guide_flow li a::before {border-radius: 40px;}
+  .guide_flow li::after {left: 5px;}
+  .guide_flow li h6 {font-size: 24px; margin-bottom: 15px;}
+
+  /* 고용가이드 - 상단 */
+  .title_box.guide h5{margin-bottom:0; font-size: 31px;}
+
+  /* 고용가이드 - 스텝 */
+  .guide_step > li {flex: 1 0 calc(100% / 3 - 14px);}
+  .guide_step > li:nth-child(3) .step_list:after{display: none;}
+  .guide_step02 li{flex: 0 0 calc(100% / 2 - 20px);}
+  .guide_step02 li:nth-child(even) .step_list::after{display: none;}
+  .guide_step02 li:nth-child(3) .step_list::after{display: block;}
+
+  /* 단계별 고용 GUIDE */
+  .recruitment-process_checklist li{flex-wrap: wrap; justify-content: center;}
+  .recruitment-process_checklist .txt{text-align: center;}
+
+
+  .table-list li {flex-direction: column; gap: 10px;}
+  .table-list .tit,
+  .table-list.w200 .tit,
+  .table-list.w250 .tit,
+  .table-list.w350 .tit,
+  .employment-solving .table-list .tit {flex: 1;}
+  .table-list .txt {margin-left: 10px;}
+  .table-list > li:not(:last-child) {margin-bottom: 20px;} 
+  .tab_cont.box_type.row2 .tab-panel ul.box li {flex: 0 0 100%;}
+
+  /* 가이드 스탭 - 원형버튼 */
+  .tab_style00 .tab_list {flex-wrap: nowrap; overflow-x: auto; white-space: nowrap; padding-bottom: 10px; -webkit-overflow-scrolling: touch; scrollbar-width: none;}
+  .tab_list::-webkit-scrollbar {display: none;}
+
+  /* 채용계획 수립 - 1채용수요조사 */
+  .gdic_plan{flex-wrap: wrap; margin: 0;}
+  .gdic_plan > ul,
+  .gdic_plan > div{width: 100%;}
+  .gdic_plan > ul::before{right: 46%; top: 123px; transform: rotate(90deg);}
+  .gdic_plan.type02 ul::before{left: 46%; top: -62%;}
+  .gdic_plan.type01,
+  .gdic_plan.type02{gap: 64px;}
+  .gdic_plan.type01 .plan-item,
+  .gdic_plan.type02 div.plan-item{width: 100%;}
+
+  /* 다른기업은 */
+  .guide-comp-case dl{flex-wrap: wrap; flex-direction: column;}
+  .guide-comp-case dt{width: 100%;}
+  .guide-comp-case .refer_mk{margin-left: 0;}
+  .guide-comp-case h6::after{width: 106px; height: 78px; background-size: contain;}
+  .guide-comp-case{margin-left: 0;}
+
+  /* 리스트타입 - 단계 */
+  .process-list > li {flex: 0 1 calc(50% - 17px);}
+
+  /* 채용계획 수립 - 4채용방법확정 */
+  .recruit-method .box_list .gd-bg-box{flex: 0 0 240px;}
+  .recruit-method .box_list .gd-bg-box {flex: 1; width: 100%;}
+  .recruit-method .box_list > li{flex-wrap: wrap; flex-direction: column;}
+  .box_list.type2 .head{flex-direction: column; padding: 20px;}
+  .recruit-method .box_list .txt{padding-bottom: 0;}
+  .box_list.type2 .body{flex-direction: column; width: 100%; padding: 0 10px;}
+  .box_list.type2 .body li:first-child::after{right: 0; border-right: 0; border-bottom: 1px dashed #c7c7e5;}
+
+  /* 모집 및 채용 - 1채용공고작성 */
+  .recruitment-posting .sec1 .guide_text{padding-right: 0;}
+  .recruitment-posting .sec1 .guide_text::after{position: relative; top:0; margin: 0 auto;}
+  .recruitment-posting .sec_cont:not(ul.guide_text){display: flex; flex-wrap: wrap; gap: 20px;}
+  .recruitment-posting .gd-line-box{flex-direction: column; padding: 20px; gap: 20px;}
+  .recruitment-posting .gd-line-box .link_btn {position: relative; right: 0; bottom: 0; text-align: center;}
+
+  /* 모집 및 채용 - 2구인신청*/
+  .application-list {gap: 42px;}
+  .application-item{flex: 0 0 100%;}
+  .application-item:not(:last-child)::after{top:104%; right: 47%; transform: rotate(90deg);}
+  .application-item:nth-child(2)::after{display: block;}
+
+  /* 모집 및 채용 - 3서류전형 */
+  .agency-item {flex: 0 0 calc(100% / 2 - 27px);}
+
+  /* 장애인고용포털 */
+  .worktogether-box .link_btn{position: relative; right: 0; bottom: 0; margin: 0 auto;}  
+  .worktogether-box{flex-direction: column; gap: 10px; }
+  .worktogether-box .box-header{flex: auto; margin-right: 0;}
+  .worktogether-box .box-description {font-size: 16px; line-height: 1.6; }
+
+  /* 장애인 차별법 위반사례 */
+  .violation-case{flex-wrap: wrap; gap: 10px;}
+  .violation-header{flex: 0 0 100%; padding-left: 110px; padding-bottom: 20px; padding-right: 20px;}
+  .violation-case::before{top: -100px; width: 120px; height: 201px; background-size: contain;}
+  .violation-content{width: 100%; padding-top: 0px;}
+
+  /* 리스트타입 - 카드형 */
+  .box_list > li{flex-direction: column;}
+  .box_list .box-header{flex: auto; margin-right: 0;}
+
+  /* 고용관리 - 근무환경 */
+  .gd_support_program{flex-direction: column;}
+
+  /* 성공스토리 - New */
+  .qu_list{padding: 24px;}
+  .qu_list > li .an{margin-left: 0; font-size: 17px; line-height: 1.4;}
+
+  /* 고용서비스 가이드 - 금융지원원 */
+  .financial .emp-process  {justify-content: flex-start;}
+  .financial .emp-process .dscp {min-height: 60px; }
+  
+  
+  
+  /* 넌 어디냐???? */
+  .assessment_view .tb_list tbody td::before {flex: 0 0 140px;}
+
+
+  }
+  
+
+  /* .table-container > section:not(:first-child){padding-top: 80px;}
+  .tb_base:not(.no-res),
+  .tb_list,
+  .tb_notice {display: block; width: 100%;}
+  .tb_base.tb_line th,
+  .tb_base.tb_line td{border-right: 0;}
+  .tb_base:not(.no-res) thead { display: none; }
+  .tb_base:not(.no-res) tbody,
+  .tb_base.tb_list tbody{display:flex; flex-direction: column;}
+  .tb_base.tb_list tbody tr { display: flex; flex-direction: column; padding: 12px 10px; gap: 5px; border-bottom: 1px solid #d5dbef;}
+  .tb_base.tb_list tbody td { position: relative; display: flex; align-items: center; text-align: left; padding: 0; border-bottom: none; white-space: pre-wrap;}
+  .tb_base.tb_list tbody td::before { content: attr(data-label); min-width: 140px; margin-left: 10px; font-weight: 500;}
+  .tb_base.tb_list tbody tr:nth-child(even) { background-color: #f0f4f8; }
+  .tb_base.tb_list .ta_l {padding: 0;}
+  .tb_notice .badge::after {content: attr(aria-label); margin-left: 32px;} 
+  .tb_base.tb_view th { display: none; }
+  .tb_base.tb_view th.fc-red + td::before{color: #da0202;}
+  .tb_base.tb_view td { display: block; padding: 10px 4px !important;}
+  .tb_base td::before {content: attr(data-label); display: block; font-weight: 500;}
+  .td_btn{min-width: 70px; height: 30px;}
+  .tb_base.tb_guide thead, .tb_base.tb_guide th { display: none; } 
+  .tb_base.tb_guide td { display: block; padding: 10px 20px; border-bottom: 0;}
+  .tb_base.tb_guide tr:last-child td {border-bottom: 1px solid #ccd4df;}
+  .tb_base.tb_guide td::before {content: attr(data-label); display: block; font-weight: 500;}
+  .td_btn{min-width: 70px; height: 30px;} */

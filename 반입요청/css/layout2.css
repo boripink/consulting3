@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+
+
+@media (max-width: 768px) {
+  .attendee_row { flex-direction: column; }
+  .form_unit, .btn_wrap { width: 100%; }
+  .btn_wrap { justify-content: flex-start; margin-top: 4px; }
+}
+
+
+
+@media (max-width:1500px) {
+    .total_search_container {padding-top: 60px;}
+    .total_search_container .inner {width: 90%;}
+}
+
+@media (max-width: 768px) {
+    .total_search_container, 
+    .total_search_container .cont_wrap {padding-top: 40px;}
+    .total_search_form {max-width: unset;}
+    .total_search_form .search_bar .search_input {height: 60px; font-size: 20px; padding: 16px}
+    .total_search_form .search_bar .search_input::placeholder {font-size: 20px;}
+    .total_search_form .search_btn img {width:36px; height: 36px;}
+    .total_search_form .search_btn {right: 16px;}
+    .total_search_form .search_del {right: 60px;}
+    .total_search_form .search_del img {width: 32px; height: 32px;}
+    .total_result_area { flex-direction: column; gap: 40px; }
+    .total_filter {width: 100%;}
+    .search_filter, .search_results { width: 100%; }
+    .total_result_heading {font-size:24px; font-weight: 500;}
+}
+
+@media (max-width: 500px) {
+    
+}
+
+
+/* 수정 */
+.chk_label {display: inline-block; width: 22px; height: 22px; background: url(../images/sub/radio_sq.png); margin-right: 6px;}
+.custom_chk:checked + .chk_label {background: url(../images/sub/radio_sq_chk.png);}
+.custom_chk:focus + .chk_label {outline:2px dashed #6d7882; border:none !important}
+
+/* 팝업추가 */
+.layer_cont2 {position:absolute; top:50%; left:50%; width:100%; max-width:1200px; height:auto; max-height:90%; padding:40px; border-radius:30px; background:#fff; transform:translate(-50%, -50%); box-sizing:border-box; line-height: 1.4; display: flex; flex-direction: column;}
+.layer_cont2 .pop_head {position: relative; margin-bottom:20px; font-size: 22px; font-weight: 500;}
+.layer_cont2 .pop_body {overflow-y:auto; position: relative; font-size: 20px; flex: 1; display: flex; flex-direction: column;}
+.layer_cont2 .pop_footer {position: fixed; bottom: 40px; left: 0; right: 0;}

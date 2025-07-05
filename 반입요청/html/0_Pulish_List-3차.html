@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ko" >
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">		
+		<meta http-equiv="X-UA-Compatiable" content="IF=edge">
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="0">
+		<meta http-equiv="Cache-control" content="no-cache">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- <link rel="stylesheet" href="css/borad.css"> -->
+		<title>컨설팅3차 파일목록</title>
+        <style>
+            /*기본테이블 (세로타이틀 테이블)*/
+            .section {width: 100%; margin: 20px auto; max-width: 1600px; }
+            .subTitle_h2 {color:#111; font-size:1.5rem; font-family: 'calbri'}
+            .info { margin: 0 0 3em; width: 100%; border-top: 1px dashed #d5dbef; }
+            .info th { padding: 0.5em 1em; border-bottom: 1px dashed #d5dbef; text-align: left; border-right: 0; background-color: #f7f9ff; }
+            .info td { padding: 0.5em 1em; border-bottom: 1px dashed #d5dbef; text-align: left; border-left: 0; }
+            .status {display: flex; justify-content: space-between; align-items: center;}
+            .status span { display: inline-block; margin-left: 10px; }
+            .status-dot { display: inline-flex; align-items: center; font-weight: bold; }
+            .status-dot.u::before { content: '○'; color: #da0202; margin-right: 5px; } /* 컨텐츠 미확정 - 작업 중 */        
+            .status-dot.w::before { content: '◐'; color: #007bff; margin-right: 5px; } /* 주황색 - 작업 중 */
+            .status-dot.c::before { content: '◐'; color: #da0202; margin-right: 5px; } /* 주황색 - 컨펌 중 */
+            .status-dot.e::before { content: '●'; color: #4caf50; margin-right: 5px; } /* 초록색 - 완료 */
+            /*  status-dot.working / status-dot.confirming / status-dot.completed */
+            .table_list {  width: 100%; }
+            .table_list table { border-collapse: collapse; width: 100%; border-top:1px solid #D5DBEF; font-size:16px; table-layout: fixed; }
+            .table_list thead { border-bottom: 1px solid #D5DBEF;}
+            .table_list thead tr { height: 40px;}
+            .table_list th { vertical-align: middle; background:#F7F9FF; font-weight:500;color:#666B82;  padding:4px 10px; text-align:center; }
+            .table_list th a {cursor:pointer; }
+            .table_list tbody a { color:#0d4190; }
+            .table_list tbody { color:#666; }
+            .table_list tbody tr {  height: 40px; border-bottom: 1px solid #E3E7F0; } 
+            .table_list tbody tr:hover { background-color:#F7FCFF;} 
+            .table_list tbody td { vertical-align: middle; padding: 4px 8px; line-height:24px; }
+            .table_list th:not(:last-child), .table_list td:not(:last-child)
+            {border-right: 1px solid #D5DBEF;}
+            .table_list tbody, .td_number, .td_center, .design, .coding, .respans { text-align: center; }
+            .etc, .m3, .file { text-align: left; padding-left: 10px !important;}
+            
+            .table_list tbody .td_headline { padding-left:68px;}
+            .table_list tbody .td_headline a { width: 100%; display: block;  overflow: hidden; white-space: nowrap; text-overflow: ellipsis; word-break: break-all;}
+
+            tbody {counter-reset: row-number; /* 번호 초기화 */}
+            .td_number::before {
+            counter-increment: row-number; /* 번호 증가 */
+            content: counter(row-number); /* 번호 표시 */
+            }
+            td.gray {color: #bbbbbb;}
+            .red, .today {color: #da0202;}
+            tr.line td {border-top: 1px solid #222;}
+            a {text-decoration: none;}
+        </style>    
+    </head>
+    
+   
+    <body>
+        <div class="section">	
+            <!-- <h2 style="font-family: 'calbri'">Project info.</h2>
+            <table class="info">
+                <colgroup>
+                    <col style="width:15%" aria-label="제목 열">
+                    <col />
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th scope="row">1. 프로젝트명</th>
+                        <td>고용컨설팅3차 디자인 및 퍼블리싱 구축</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2. 인코딩 방식</th>
+                        <td>utf-8</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3. dtd 사용</th>
+                        <td>Html5</td>
+                    </tr>
+                </tbody>
+            </table> -->
+            <div class="status">
+                <h2 class="subTitle_h2">Publish List - 포털/컨설팅</h2>
+                <div>
+                    <span class="status-dot u"> 컨텐츠 미확정</span> 
+                    <span class="status-dot w"> 작업중</span>
+                    <span class="status-dot c"> 컨펌중</span>
+                    <span class="status-dot e"> 완료</span>
+                </div>                
+            </div>
+        </div>
+        <!-- 결과 테이블 -->
+        <div class="section table_list">
+            <table>                    
+                <colgroup>
+                    <col style="width: 60px"  aria-label="번호 열">
+                    <col style="width: 200px" aria-label="대분류 열">
+                    <col style="width: 200px" aria-label="중분류 열">
+                    <col style="width: 200px" aria-label="소분류 열">
+                    <col style="width: auto" aria-label="파일명 열">
+                    <col style="width: 100px" aria-label="디자인 열">
+                    <col style="width: 100px" aria-label="코딩 열">
+                    <col style="width: 100px" aria-label="반응형 열">
+                    <col style="width: 200px"  aria-label="비고 열">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>대분류</th>
+                        <th>중분류</th>
+                        <th>소분류</th>
+                        <th>파일명</th>
+                        <th>디자인</th>
+                        <th>코딩</th>
+                        <th>반응형</th>
+                        <th>비고</th>
+                    </tr>
+                </thead>
+                <tbody> 
+                    <!-- 공통 -->
+                    <tr>
+                        <td class="td_number"></td>
+                        <td class="m1">메인</td>
+                        <td class="m2"></td>
+                        <td class="m3"></td>
+                        <td class="file"><a href="index.html" target="_blank">메인</a></td> 
+                        <td class="design"><span class="status-dot e"></span></td>
+                        <td class="coding"><span class="status-dot e"></span></td>
+                        <td class="respans"><span class="status-dot e"></span></td>
+                        <td class="etc">변경없음</td>   
+                    </tr>
+                    <!-- 수정 -->
+                    <tr class="line">
+                        <td class="td_number"></td>
+                        <td class="m1"></td>
+                        <td class="m2"></td>
+                        <td class="m3"></td>
+                        <td class="file"><a href="m07-마이페이지.html" target="_blank">마이페이지</a></td> 
+                        <td class="design"><span class="status-dot"></span></td>
+                        <td class="coding"><span class="status-dot"></span></td>
+                        <td class="respans"><span class="status-dot"></span></td>
+                        <td class="etc"></td>  
+                    </tr>
+                    <tr>
+                        <td class="td_number"></td>
+                        <td class="m1"></td>
+                        <td class="m2"></td>
+                        <td class="m3"></td>
+                        <td class="file"><a href="" target="_blank"></a></td> 
+                        <td class="design"><span class="status-dot"></span></td>
+                        <td class="coding"><span class="status-dot"></span></td>
+                        <td class="respans"><span class="status-dot"></span></td>
+                        <td class="etc"></td>  
+                    </tr>
+                    <!-- New -->
+                    <tr class="line">
+                        <td class="td_number"></td>
+                        <td class="m1">공통</td>
+                        <td class="m2"></td>
+                        <td class="m3"></td>
+                        <td class="file"><a href="m08-통합검색.html" target="_blank">통합검색</a></td> 
+                        <td class="design"><span class="status-dot e"></span></td>
+                        <td class="coding"><span class="status-dot w"></span></td>
+                        <td class="respans"><span class="status-dot w"></span></td>
+                        <td class="etc">0626 완료<div class="red">탭버튼으로 수정중</div></td>   
+                    </tr>
+                    <tr>
+                        <td class="td_number"></td>
+                        <td class="m1">마이페이지(포털)</td>
+                        <td class="m2">회의록관리</td>
+                        <td class="m3">목록<br>minutes_list</td>
+                        <td class="file"><a href="m07-회의록관리-목록.html" target="_blank">m07-회의록관리-목록.html</a></td> 
+                        <td class="design"><span class="status-dot c"></span></td>
+                        <td class="coding"><span class="status-dot w"></span></td>
+                        <td class="respans"><span class="status-dot"></span></td>
+                        <td class="etc">0627완료</td>  
+                    </tr>
+                    <tr>
+                        <td class="td_number"></td>
+                        <td class="m1"></td>
+                        <td class="m2"></td>
+                        <td class="m3"></td>
+                        <td class="file"><a href="m07-회의록관리-시작.html" target="_blank">m07-회의록관리-시작(팝업).html</a></td> 
+                        <td class="design"><span class="status-dot c"></span></td>
+                        <td class="coding"><span class="status-dot w"></span></td>
+                        <td class="respans"><span class="status-dot"></span></td>
+                        <td class="etc"></td>  
+                    </tr>
+                    <tr>
+                        <td class="td_number"></td>
+                        <td class="m1"></td>
+                        <td class="m2"></td>
+                        <td class="m3">생성<br>minutes_create</td>
+                        <td class="file"><a href="m07-회의록관리-생성.html" target="_blank">m07-회의록관리-생성.html</a></td> 
+                        <td class="design"><span class="status-dot c"></span></td>
+                        <td class="coding"><span class="status-dot w"></span></td>
+                        <td class="respans"><span class="status-dot"></span></td>
+                        <td class="etc"></td>  
+                    </tr>
+                    <tr>
+                        <td class="td_number"></td>
+                        <td class="m1"></td>
+                        <td class="m2"></td>
+                        <td class="m3">조회<br>minutes_view</td>
+                        <td class="file"><a href="m07-회의록관리-조회.html" target="_blank">m07-회의록관리-조회.html</a></td> 
+                        <td class="design"><span class="status-dot c"></span></td>
+                        <td class="coding"><span class="status-dot w"></span></td>
+                        <td class="respans"><span class="status-dot"></span></td>
+                        <td class="etc"></td>  
+                    </tr>
+                    <tr>
+                        <td class="td_number"></td>
+                        <td class="m1"></td>
+                        <td class="m2"></td>
+                        <td class="m3">이력<br>minutes_history</td>
+                        <td class="file"><a href="m07-회의록관리-이력.html" target="_blank">m07-회의록관리-이력.html</a></td> 
+                        <td class="design"><span class="status-dot c"></span></td>
+                        <td class="coding"><span class="status-dot w"></span></td>
+                        <td class="respans"><span class="status-dot"></span></td>
+                        <td class="etc">0704 반입요청</td>  
+                    </tr>
+                    <tr>
+                        <td class="td_number"></td>
+                        <td class="m1"></td>
+                        <td class="m2"></td>
+                        <td class="m3"></td>
+                        <td class="file"><a href="" target="_blank"></a></td> 
+                        <td class="design"><span class="status-dot"></span></td>
+                        <td class="coding"><span class="status-dot"></span></td>
+                        <td class="respans"><span class="status-dot"></span></td>
+                        <td class="etc"></td>  
+                    </tr>
+                    <tr>
+                        <td class="td_number"></td>
+                        <td class="m1"></td>
+                        <td class="m2"></td>
+                        <td class="m3"></td>
+                        <td class="file"><a href="" target="_blank"></a></td> 
+                        <td class="design"><span class="status-dot"></span></td>
+                        <td class="coding"><span class="status-dot"></span></td>
+                        <td class="respans"><span class="status-dot"></span></td>
+                        <td class="etc"></td>  
+                    </tr>
+                    <tr>
+                        <td class="td_number"></td>
+                        <td class="m1"></td>
+                        <td class="m2"></td>
+                        <td class="m3"></td>
+                        <td class="file"><a href="" target="_blank"></a></td> 
+                        <td class="design"><span class="status-dot"></span></td>
+                        <td class="coding"><span class="status-dot"></span></td>
+                        <td class="respans"><span class="status-dot"></span></td>
+                        <td class="etc"></td>  
+                    </tr>
+                    <tr>
+                        <td class="td_number"></td>
+                        <td class="m1"></td>
+                        <td class="m2"></td>
+                        <td class="m3"></td>
+                        <td class="file"><a href="" target="_blank"></a></td> 
+                        <td class="design"><span class="status-dot"></span></td>
+                        <td class="coding"><span class="status-dot"></span></td>
+                        <td class="respans"><span class="status-dot"></span></td>
+                        <td class="etc"></td>  
+                    </tr>
+                    <tr>
+                        <td class="td_number"></td>
+                        <td class="m1"></td>
+                        <td class="m2"></td>
+                        <td class="m3"></td>
+                        <td class="file"><a href="" target="_blank"></a></td> 
+                        <td class="design"><span class="status-dot"></span></td>
+                        <td class="coding"><span class="status-dot"></span></td>
+                        <td class="respans"><span class="status-dot"></span></td>
+                        <td class="etc"></td>  
+                    </tr>
+                    <tr>
+                        <td class="td_number"></td>
+                        <td class="m1"></td>
+                        <td class="m2"></td>
+                        <td class="m3"></td>
+                        <td class="file"><a href="" target="_blank"></a></td> 
+                        <td class="design"><span class="status-dot"></span></td>
+                        <td class="coding"><span class="status-dot"></span></td>
+                        <td class="respans"><span class="status-dot"></span></td>
+                        <td class="etc"></td>  
+                    </tr>
+                    <tr>
+                        <td class="td_number"></td>
+                        <td class="m1"></td>
+                        <td class="m2"></td>
+                        <td class="m3"></td>
+                        <td class="file"><a href="" target="_blank"></a></td> 
+                        <td class="design"><span class="status-dot"></span></td>
+                        <td class="coding"><span class="status-dot"></span></td>
+                        <td class="respans"><span class="status-dot"></span></td>
+                        <td class="etc"></td>  
+                    </tr>
+                    <tr>
+                        <td class="td_number"></td>
+                        <td class="m1"></td>
+                        <td class="m2"></td>
+                        <td class="m3"></td>
+                        <td class="file"><a href="" target="_blank"></a></td> 
+                        <td class="design"><span class="status-dot"></span></td>
+                        <td class="coding"><span class="status-dot"></span></td>
+                        <td class="respans"><span class="status-dot"></span></td>
+                        <td class="etc"></td>  
+                    </tr>
+                    <tr>
+                        <td class="td_number"></td>
+                        <td class="m1"></td>
+                        <td class="m2"></td>
+                        <td class="m3"></td>
+                        <td class="file"><a href="" target="_blank"></a></td> 
+                        <td class="design"><span class="status-dot"></span></td>
+                        <td class="coding"><span class="status-dot"></span></td>
+                        <td class="respans"><span class="status-dot"></span></td>
+                        <td class="etc"></td>  
+                    </tr>
+                    <tr>
+                        <td class="td_number"></td>
+                        <td class="m1"></td>
+                        <td class="m2"></td>
+                        <td class="m3"></td>
+                        <td class="file"><a href="" target="_blank"></a></td> 
+                        <td class="design"><span class="status-dot"></span></td>
+                        <td class="coding"><span class="status-dot"></span></td>
+                        <td class="respans"><span class="status-dot"></span></td>
+                        <td class="etc"></td>  
+                    </tr>
+                    <tr>
+                        <td class="td_number"></td>
+                        <td class="m1"></td>
+                        <td class="m2"></td>
+                        <td class="m3"></td>
+                        <td class="file"><a href="" target="_blank"></a></td> 
+                        <td class="design"><span class="status-dot"></span></td>
+                        <td class="coding"><span class="status-dot"></span></td>
+                        <td class="respans"><span class="status-dot"></span></td>
+                        <td class="etc"></td>  
+                    </tr>
+                    <tr>
+                        <td class="td_number"></td>
+                        <td class="m1"></td>
+                        <td class="m2"></td>
+                        <td class="m3"></td>
+                        <td class="file"><a href="" target="_blank"></a></td> 
+                        <td class="design"><span class="status-dot"></span></td>
+                        <td class="coding"><span class="status-dot"></span></td>
+                        <td class="respans"><span class="status-dot"></span></td>
+                        <td class="etc"></td>  
+                    </tr>
+                    <tr>
+                        <td class="td_number"></td>
+                        <td class="m1"></td>
+                        <td class="m2"></td>
+                        <td class="m3"></td>
+                        <td class="file"><a href="" target="_blank"></a></td> 
+                        <td class="design"><span class="status-dot"></span></td>
+                        <td class="coding"><span class="status-dot"></span></td>
+                        <td class="respans"><span class="status-dot"></span></td>
+                        <td class="etc"></td>  
+                    </tr>
+                    <tr>
+                        <td class="td_number"></td>
+                        <td class="m1"></td>
+                        <td class="m2"></td>
+                        <td class="m3"></td>
+                        <td class="file"><a href="" target="_blank"></a></td> 
+                        <td class="design"><span class="status-dot"></span></td>
+                        <td class="coding"><span class="status-dot"></span></td>
+                        <td class="respans"><span class="status-dot"></span></td>
+                        <td class="etc"></td>  
+                    </tr>
+                    <tr>
+                        <td class="td_number"></td>
+                        <td class="m1"></td>
+                        <td class="m2"></td>
+                        <td class="m3"></td>
+                        <td class="file"><a href="" target="_blank"></a></td> 
+                        <td class="design"><span class="status-dot"></span></td>
+                        <td class="coding"><span class="status-dot"></span></td>
+                        <td class="respans"><span class="status-dot"></span></td>
+                        <td class="etc"></td>  
+                    </tr>
+                    <tr>
+                        <td class="td_number"></td>
+                        <td class="m1"></td>
+                        <td class="m2"></td>
+                        <td class="m3"></td>
+                        <td class="file"><a href="" target="_blank"></a></td> 
+                        <td class="design"><span class="status-dot"></span></td>
+                        <td class="coding"><span class="status-dot"></span></td>
+                        <td class="respans"><span class="status-dot"></span></td>
+                        <td class="etc"></td>  
+                    </tr>
+                    <tr>
+                        <td class="td_number"></td>
+                        <td class="m1"></td>
+                        <td class="m2"></td>
+                        <td class="m3"></td>
+                        <td class="file"><a href="" target="_blank"></a></td> 
+                        <td class="design"><span class="status-dot"></span></td>
+                        <td class="coding"><span class="status-dot"></span></td>
+                        <td class="respans"><span class="status-dot"></span></td>
+                        <td class="etc"></td>  
+                    </tr>
+                    <tr>
+                        <td class="td_number"></td>
+                        <td class="m1"></td>
+                        <td class="m2"></td>
+                        <td class="m3"></td>
+                        <td class="file"><a href="" target="_blank"></a></td> 
+                        <td class="design"><span class="status-dot"></span></td>
+                        <td class="coding"><span class="status-dot"></span></td>
+                        <td class="respans"><span class="status-dot"></span></td>
+                        <td class="etc"></td>  
+                    </tr>
+                    <tr>
+                        <td class="td_number"></td>
+                        <td class="m1"></td>
+                        <td class="m2"></td>
+                        <td class="m3"></td>
+                        <td class="file"><a href="" target="_blank"></a></td> 
+                        <td class="design"><span class="status-dot"></span></td>
+                        <td class="coding"><span class="status-dot"></span></td>
+                        <td class="respans"><span class="status-dot"></span></td>
+                        <td class="etc"></td>  
+                    </tr>
+                    <tr>
+                        <td class="td_number"></td>
+                        <td class="m1"></td>
+                        <td class="m2"></td>
+                        <td class="m3"></td>
+                        <td class="file"><a href="" target="_blank"></a></td> 
+                        <td class="design"><span class="status-dot"></span></td>
+                        <td class="coding"><span class="status-dot"></span></td>
+                        <td class="respans"><span class="status-dot"></span></td>
+                        <td class="etc"></td>  
+                    </tr>
+                    <tr>
+                        <td class="td_number"></td>
+                        <td class="m1"></td>
+                        <td class="m2"></td>
+                        <td class="m3"></td>
+                        <td class="file"><a href="" target="_blank"></a></td> 
+                        <td class="design"><span class="status-dot"></span></td>
+                        <td class="coding"><span class="status-dot"></span></td>
+                        <td class="respans"><span class="status-dot"></span></td>
+                        <td class="etc"></td>  
+                    </tr>
+                    <tr>
+                        <td class="td_number"></td>
+                        <td class="m1"></td>
+                        <td class="m2"></td>
+                        <td class="m3"></td>
+                        <td class="file"><a href="" target="_blank"></a></td> 
+                        <td class="design"><span class="status-dot"></span></td>
+                        <td class="coding"><span class="status-dot"></span></td>
+                        <td class="respans"><span class="status-dot"></span></td>
+                        <td class="etc"></td>  
+                    </tr>
+                    <tr>
+                        <td class="td_number"></td>
+                        <td class="m1"></td>
+                        <td class="m2"></td>
+                        <td class="m3"></td>
+                        <td class="file"><a href="" target="_blank"></a></td> 
+                        <td class="design"><span class="status-dot"></span></td>
+                        <td class="coding"><span class="status-dot"></span></td>
+                        <td class="respans"><span class="status-dot"></span></td>
+                        <td class="etc"></td>  
+                    </tr>
+                    <tr>
+                        <td class="td_number"></td>
+                        <td class="m1"></td>
+                        <td class="m2"></td>
+                        <td class="m3"></td>
+                        <td class="file"><a href="" target="_blank"></a></td> 
+                        <td class="design"><span class="status-dot"></span></td>
+                        <td class="coding"><span class="status-dot"></span></td>
+                        <td class="respans"><span class="status-dot"></span></td>
+                        <td class="etc"></td>  
+                    </tr>
+                    <tr>
+                        <td class="td_number"></td>
+                        <td class="m1"></td>
+                        <td class="m2"></td>
+                        <td class="m3"></td>
+                        <td class="file"><a href="" target="_blank"></a></td> 
+                        <td class="design"><span class="status-dot"></span></td>
+                        <td class="coding"><span class="status-dot"></span></td>
+                        <td class="respans"><span class="status-dot"></span></td>
+                        <td class="etc"></td>  
+                    </tr>
+                    <tr>
+                        <td class="td_number"></td>
+                        <td class="m1"></td>
+                        <td class="m2"></td>
+                        <td class="m3"></td>
+                        <td class="file"><a href="" target="_blank"></a></td> 
+                        <td class="design"><span class="status-dot"></span></td>
+                        <td class="coding"><span class="status-dot"></span></td>
+                        <td class="respans"><span class="status-dot"></span></td>
+                        <td class="etc"></td>  
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- //결과 테이블 -->
+   
+    </body></html>
+
+
+    
