@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="0">
+		<meta http-equiv="Cache-control" content="no-cache">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="/asset/aos/aos.css">
+		<link rel="stylesheet" href="/asset/slick/slick.css">
+		<link rel="stylesheet" href="/css/layout.css">
+		<link rel="stylesheet" href="/css/sub.css">
+		<script src="/asset/jquery/jquery-3.7.1.min.js"></script>
+		<script src="/asset/aos/aos.js"></script>
+		<script src="/asset/slick/slick.js"></script>
+		<script src="/js/common.js"></script>
+		
+		
+		<title>마이페이지 | 한국장애인고용공단 장애인고용컨설팅</title>
+				
+	</head>
+	
+	<body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+
+		<!-- 상단 skip 접근성요소 -->
+		<div id="topSkip">
+			<ul>
+				<li><a href="#lnb">본문 바로가기</a></li>
+				<li><a href="#gnb">주요메뉴 바로가기</a></li>
+			</ul>
+		</div>
+
+		<!-- Header -->
+		<header id="header" class="header act">
+			<form name="selectOne">
+				<input name="vStartP" type="hidden">
+				<input name="chkURL" type="hidden">
+			</form>
+			<div class="inner">
+				<h1 class="logo"><a href="/">한국장애인고용공단 장애인고용컨설팅</a></h1>
+				<h2 class="hidden">대메뉴</h2>
+				<ul class="gnb" id="gnb">
+					<li><a href="/cnsl/pwdbsEmpmCnslGuid/pwdbsEmpmCnslQstn.do">장애인 고용컨설팅</a>
+						<ul class="gnb_2dpt">
+							<li><a href="/cnsl/pwdbsEmpmCnslGuid/pwdbsEmpmCnslQstn.do">고용컨설팅이란?</a></li>
+							<li><a href="/cnsl/pwdbsEmpmCnslGuid/empmCnslAplyMthd.do">신청방법</a></li>
+						</ul>
+					</li>
+					<li><a href="/diag/empm/diagQstn.do">고용 역량 진단</a>
+						<ul class="gnb_2dpt">					
+							<li><a href="/diag/empm/diagQstn.do">고용역량 진단이란?</a></li>
+							<li><a href="/diag/empm/diagExe.do">고용역량진단</a></li>
+							
+								<li><a href="/diag/empm/convenienceLevyCal.do">간편 부담금 계산 </a></li>
+							
+						</ul>
+						
+					</li>
+					<li><a href="/empm/empmCaseAndStats/empmCaseInfo.do">장애인 채용사례</a>
+						<ul class="gnb_2dpt">
+							<li><a href="/empm/empmCaseAndStats/empmCaseInfo.do">장애인 채용사례란?</a></li>
+							<li><a href="/empm/empmCaseAndStats/empmCase.do">사례 맞춤 검색</a></li>
+							<li><a href="/empm/empmCaseAndStats/empmSuccessStory.do">고용성공 스토리</a></li>
+							<li><a href="/empm/empmCaseAndStats/esgMngmtCase.do">ESG 경영의 길</a></li>
+							<li><a href="/empm/empmCaseAndStats/dtyDevCase.do">직무개발 갤러리</a></li>
+							<li><a href="/empm/empmCaseAndStats/midaEmpmCase.do">미디어 채용사례</a></li>
+						</ul>
+					</li>
+					<li><a href="/empm/empmCaseAndStats/empmStatsByLocation.do">고용현황 리포트</a>
+						<ul class="gnb_2dpt">
+							<li><a href="/empm/empmCaseAndStats/empmStatsByLocation.do">장애인 인구구조</a></li>
+							<li><a href="/empm/empmCaseAndStats/empmStatsByInstitutionType.do">기관유형별 고용현황</a></li>
+						</ul>
+					</li>
+					<li><a href="/empm/empmGuid/empmGuidSumryInfo.do">장애인 고용가이드</a>
+						<ul class="gnb_2dpt">
+							<li><a href="/empm/empmGuid/empmGuidSumryInfo.do">장애인 고용 가이드란?</a></li>
+							<li><a href="/empm/empmGuid/empmGuidSumry.do">단계별고용 GUIDE</a></li>
+							<li><a href="/empm/empmGuid/empmGuidSumry.do?clsfCd=4&amp;clsfLevel=1&amp;upClsfCd=">함께 일하기 GUIDE</a></li>
+							<li><a href="/empm/empmGuid/empmGuidSumry.do?clsfCd=6&amp;clsfLevel=1&amp;upClsfCd=">장애인 고용서비스 GUIDE</a></li>
+						</ul>
+					</li>
+					<li><a href="/rcsrm/bbsTmpltForm.do"> 알림마당</a>
+						<ul class="gnb_2dpt">
+							<li><a href="/rcsrm/bbsTmpltForm.do">공지사항/오늘의뉴스</a></li>
+							<li><a href="/rcsrm/bulkQstnAns.do">FAQ</a></li>
+							<li><a href="/rcsrm/bbsOpnionForm.do">문의사항</a></li>
+						</ul>
+					</li>
+				</ul>
+				
+				<div class="user_wrap">
+					<div class="user_info">
+						<!-- [D] 로그인 전에 안보이게 처리 -->
+						<div class="user">
+																	
+							<a href="/mbr/myPage.do" class="link_mypage">마이페이지</a>					
+							<button type="button" onclick="actionLogout();" class="btn_login">로그아웃</button>
+						
+						
+						</div>
+					</div>
+				</div>
+				
+				<button type="button" class="btn_menu">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+			</div>
+			<div class="mob_wrap">
+				<div>
+					<div class="user_mob">
+						<h1 class="logo"><a href="/">한국장애인고용공단 장애인고용컨설팅</a></h1>
+						<div class="user">
+						
+													
+								<a href="/mbr/myPage.do" class="link_mypage">마이페이지</a>
+							
+							<button type="button" onclick="actionLogout();" class="btn_login">로그아웃</button>
+						
+						
+						</div>
+					</div>
+					<div class="gnb_mob">
+						<div class="mob_menu">
+							<div class="mob_menu_list">
+								<h2>장애인 고용컨설팅</h2>
+								<ul class="mob_2dpt">
+									<li><a href="/cnsl/pwdbsEmpmCnslGuid/pwdbsEmpmCnslQstn.do">고용컨설팅이란?</a></li>
+									<li><a href="/cnsl/pwdbsEmpmCnslGuid/empmCnslAplyMthd.do">신청방법</a></li>
+								</ul>
+							</div>
+							<div class="mob_menu_list">
+								<h2>고용 역량 진단</h2>
+								<ul class="mob_2dpt">
+									<li><a href="/diag/empm/diagQstn.do">고용역량 진단이란?</a></li>
+									<li><a href="/diag/empm/diagExe.do">고용역량진단</a></li>
+
+								</ul>
+							</div>
+							<div class="mob_menu_list">
+								<h2>장애인 채용사례</h2>
+								<ul class="mob_2dpt">
+									<li><a href="/empm/empmCaseAndStats/empmCaseInfo.do">장애인 채용사례란?</a></li>
+									<li><a href="/empm/empmCaseAndStats/empmCase.do">사례 맞춤 검색</a></li>
+									<li><a href="/empm/empmCaseAndStats/empmSuccessStory.do">고용성공 스토리</a></li>
+									<li><a href="/empm/empmCaseAndStats/esgMngmtCase.do">ESG 경영의 길</a></li>
+									<li><a href="/empm/empmCaseAndStats/dtyDevCase.do">직무개발 갤러리</a></li>
+									<li><a href="/empm/empmCaseAndStats/midaEmpmCase.do">미디어 채용사례</a></li>
+								</ul>
+							</div>
+							<div class="mob_menu_list">
+								<h2>고용현황 리포트</h2>
+								<ul class="mob_2dpt">
+									<li><a href="/empm/empmCaseAndStats/empmStatsByLocation.do">장애인 인구구조</a></li>
+									<li><a href="/empm/empmCaseAndStats/empmStatsByInstitutionType.do">기관유형별 고용현황</a></li>
+								</ul>
+							</div>
+							<div class="mob_menu_list">
+								<h2>장애인 고용가이드</h2>
+								<ul class="mob_2dpt">
+									<li><a href="/empm/empmGuid/empmGuidSumryInfo.do">장애인 고용 가이드란?</a></li>
+									<li>
+										<a href="javascript:void();" class="has-sub">단계별 고용 GUIDE</a>
+										<ul class="snb_depth3">
+											<li><a href="/empm/empmGuid/empmGuidSumry.do?clsfCd=1&amp;clsfLevel=1&amp;upClsfCd=">고용과정 체크리스트</a></li>
+											<li><a href="/empm/empmGuid/empmGuidSumry.do?clsfCd=1&amp;clsfLevel=2&amp;upClsfCd=1">채용계획 수립</a></li>
+											<li><a href="/empm/empmGuid/empmGuidSumry.do?clsfCd=2&amp;clsfLevel=1&amp;upClsfCd=">모집 및 채용</a></li>
+											<li>
+												<a href="javascript:void();" class="has-sub">고용관리</a>
+												<ul class="snb_depth4">
+													<li><a href="/empm/empmGuid/empmGuidSumry.do?clsfCd=3&amp;clsfLevel=1&amp;upClsfCd=">근무환경 조성</a></li>
+													<li><a href="/empm/empmGuid/empmGuidSumry.do?clsfCd=3&amp;clsfLevel=1&amp;upClsfCd=">직무배치</a></li>
+													<li><a href="/empm/empmGuid/empmGuidSumry.do?clsfCd=3&amp;clsfLevel=1&amp;upClsfCd=">임금책정 및 성과평가</a></li>
+													<li><a href="/empm/empmGuid/empmGuidSumry.do?clsfCd=3&amp;clsfLevel=1&amp;upClsfCd=">휴가 및 휴직관리</a></li>
+													<li><a href="/empm/empmGuid/empmGuidSumry.do?clsfCd=3&amp;clsfLevel=1&amp;upClsfCd=">교육훈련</a></li>
+													<li><a href="/empm/empmGuid/empmGuidSumry.do?clsfCd=3&amp;clsfLevel=1&amp;upClsfCd=">근로자 갈등관리</a></li>
+													<li><a href="/empm/empmGuid/empmGuidSumry.do?clsfCd=3&amp;clsfLevel=1&amp;upClsfCd=">재난안전관리</a></li>
+													<li><a href="/empm/empmGuid/empmGuidSumry.do?clsfCd=3&amp;clsfLevel=1&amp;upClsfCd=">해고와 퇴직</a></li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a href="javascript:void();" class="has-sub">함께	일하기 GUIDE</a>
+										<ul class="snb_depth3">
+											<li><a href="/empm/empmGuid/empmGuidSumry.do?clsfCd=4&amp;clsfLevel=1&amp;upClsfCd=">장애유형 알아보기</a></li>
+											<li><a href="/empm/empmGuid/empmGuidSumry.do?clsfCd=2&amp;clsfLevel=2&amp;upClsfCd=4">장애인식 개선하기</a></li>
+											<li><a href="/empm/empmGuid/empmGuidSumry.do?clsfCd=3&amp;clsfLevel=2&amp;upClsfCd=4">장애직원 배려하기</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="javascript:void();" class="has-sub">장애인 고용서비스 GUIDE</a>
+										<ul class="snb_depth3">
+											<li><a href="/empm/empmGuid/empmGuidSumry.do?clsfCd=6&amp;clsfLevel=1&amp;upClsfCd=">장애인 고용의무제도</a></li>
+											<li><a href="/empm/empmGuid/empmGuidSumry.do?clsfCd=1&amp;clsfLevel=2&amp;upClsfCd=5">장애인 고용지원</a></li>
+											<li><a href="/empm/empmGuid/empmGuidSumry.do?clsfCd=2&amp;clsfLevel=2&amp;upClsfCd=5">금융 및 환경개선지원</a></li>
+											<li><a href="/empm/empmGuid/empmGuidSumry.do?clsfCd=2&amp;clsfLevel=2&amp;upClsfCd=6">자회사형 장애인 표준사업장 설립가이드</a></li>
+											<li><a href="/empm/empmGuid/empmGuidSumry.do?clsfCd=3&amp;clsfLevel=2&amp;upClsfCd=6">연계고용 추진가이드</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+							<div class="mob_menu_list">
+								<h2>알림마당</h2>
+								<ul class="mob_2dpt">
+									<li><a href="/rcsrm/bbsTmpltForm.do">공지사항/오늘의뉴스</a></li>
+									<li><a href="/rcsrm/bulkQstnAns.do">FAQ</a></li>
+									<li><a href="/rcsrm/bbsOpnionForm.do">문의사항</a></li>
+								</ul>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</div>
+			<script>
+			//로그인 팝업 탭이동(접근성)
+			$(".login_pop ul li:last-child").keydown(function(e){
+			if(e.keyCode === 9){
+				e.preventDefault();
+				$(".login_pop .close_btn").focus();
+			}
+
+			});
+			</script>
+
+		</header>
+		<!--// Header -->
+	    
+	     <!-- container -->
+		<div class="container sub_container">
+			<div class="inner">
+				<div class="snb_wrap">
+					<h3>마이페이지</h3>
+						<ul class="snb_list">
+							<li><a href="/mbr/myPage/diagRptpInq.do">고용역량 진단조회</a></li>
+							<li><a href="/mbr/myPage/cnslPrgrsStuIdnty.do">고용컨설팅 진행상황</a></li>
+							<li><a href="/mbr/myPage/empmPlanAndPrfmncInpt.do">고용계획 및 실적 입력</a></li>
+							<li><a href="/mbr/myPage/myOpnion.do">나의 문의</a></li>
+							<li><a href="/mbr/myPage/bookmark.do">즐겨찾기</a></li>
+						</ul>
+					</div>
+				<div class="contents" id="lnb">
+					<!-- 타이틀 -->
+					<div class="cont_tit_wrap">
+						<h4 class="cont_tit">마이페이지</h4>
+						<ul class="cont_lct">
+							<li class="home">홈</li>
+							<li>마이페이지</li>
+							<li class="pnt_cr02"><b>대시보드</b></li>
+						</ul>
+						<p class="txt-info">*장애인 고용 이행 및 고용현황 정보는 최근 고용역량진단 시 입력한 고용정보에 기초합니다.</p>
+					</div>
+					<!-- 콘텐츠 -->
+					<div class="cont_wrap dashboard_wrap">
+						<!-- 상단 -->
+						<div class="dashboard dashbd-top">
+							<div class="bg_box welcome">
+								<h5 class="name">(주)에니아소프트</h5>
+								<p class="txt">담당자님, 환영합니다.</p>
+							</div>
+							<div class="bg_box employment">
+								<h6>장애인 고용현황</h6>
+								<p class="rate">장애인 고용률 <span id="nowEmrt">0%</span></p>
+								<p class="status">의무이행현황 <span id="isDuty">이행</span></p>
+							</div>
+							<div class="bg_box assessment">
+								<h6>고용역량 진단수준 <span class="date">2025.05.30</span></h6>
+								<p class="score">64점 <span>
+									
+										
+										
+											보통
+										
+										
+									
+								</span></p>
+								<p class="status">개선필요영역 <span id="worstCategory">고용유지</span></p>
+								<a class="dash_btn" href="/mbr/myPage/diagRptpInq.do" aria-label="페이지 이동">진단 목록 보기</a>
+							</div>
+							<div class="bg_box consulting">
+								<h6>컨설팅 진행상황<span class="date">2025.05.30</span></h6>
+								
+									
+										<p class="sr-only">고용컨설팅 진행상황은 대기,접수,진행,종료 중에서 대기상태입니다.</p>
+									
+									
+									
+									
+								
+								<div class="progress_bar" aria-hidden="true">							
+									<div class="progress_step  active ">
+										<span class="progress_icon" aria-label="hidden"></span>
+										<span class="progress_label">대기</span>
+									</div>
+									<div class="progress_step ">
+										<span class="progress_icon" aria-label="hidden"></span>
+										<span class="progress_label">접수</span>
+									</div>
+									<div class="progress_step">
+										<span class="progress_icon " aria-label="hidden"></span>
+										<span class="progress_label">진행</span>
+									</div>
+									<div class="progress_step ">
+										<span class="progress_icon" aria-label="hidden"></span>
+										<span class="progress_label">종료</span>
+									</div>
+								</div>
+								<a class="dash_btn" href="/mbr/myPage/cnslPrgrsStuIdnty.do" aria-label="페이지 이동">신청 목록 보기</a>
+							</div>
+						</div>
+						<!-- 미들 -->
+						
+							<div class="dashboard dashbd-mid">
+								<div class="line_box chart-box progress">
+									<div class="box-head">
+										<h6>장애인 고용 이행</h6>
+										<p id="empmPercentTxt">목표를 달성 했습니다.</p>
+									</div>							
+									<div class="circle-chart" data-percentage="" style="background: conic-gradient(rgb(0, 123, 255) 0%, rgb(0, 123, 255) 100%, rgb(217, 224, 239) 100%, rgb(217, 224, 239) 100%);">
+										<div class="circle-content">
+											<span class="percentage">100%</span>
+											<span class="label">목표달성</span>
+										</div>
+									</div>
+									<div class="chart-info progress">
+										<div class="info-item">
+											<span class="info-title">고용 의무인원</span>
+											<span class="info-value" id="lawDutyCnt">0명</span>
+										</div>
+										<div class="info-item">
+											<span class="info-title">장애인 근로자</span>
+											<span class="info-value fc-blue" id="nowEmpmNope">0명</span>
+										</div>
+										<div class="info-item">
+											<span class="info-title">고용 필요인원</span>
+											<span class="info-value fc-red" id="addEmpmNope">0명</span>
+										</div>
+									</div>
+									
+								</div>
+								<script>
+									function chartUpdate(myPercentage){
+										if(myPercentage > 100){
+											$('.circle-chart').each(function () {
+												// data-percentage 속성 값 가져오기
+												const percentage = $(this).data('percentage');							
+												// 차트 배경 업데이트
+												$(this).css('background', 'conic-gradient(#007bff 0% ' + myPercentage + '%, #d9e0ef ' + myPercentage + '% 100%)');							
+												// 텍스트 업데이트
+												$(this).find('.percentage').text(myPercentage+'%');
+											});	
+										} else {
+											$('.circle-chart').each(function () {
+												// data-percentage 속성 값 가져오기
+												const percentage = $(this).data('percentage');							
+												// 차트 배경 업데이트
+												$(this).css('background', 'conic-gradient(#007bff 0% ' + myPercentage + '%, #d9e0ef ' + 100 + '% 100%)');							
+												// 텍스트 업데이트
+												$(this).find('.percentage').text(myPercentage+'%');
+											});
+										}
+										
+									}
+								</script>
+								<!-- 막대그래프 -->
+								<div class="line_box chart-box comparison">
+									<div class="box-head">
+										<h6>장애인 고용 수준</h6>
+										<p id="empmLvlForThdDisabled">동종업계 평균보다 <strong class="fc-blue">
+										
+										2
+										점</strong>
+										
+										낮아요 
+										.</p>
+									</div>
+									<!-- 막대 높이 3단계 low,medium,hight  -->
+									<div class="bar-chart">
+										
+											
+											
+												<div class="bar-item medium">
+													<span class="label">보통</span>
+													<div class="bar" aria-hidden="true"></div>
+												</div>
+											
+											
+										
+										
+											
+											
+												<div class="bar-item medium">
+													<span class="label">보통</span>
+													<div class="bar" aria-hidden="true"></div>
+												</div>
+											
+											
+										
+									</div>							
+									<div class="chart-info">
+										<div class="info-item">
+											<span class="info-title">우리기업</span>
+											<span class="info-value">64점</span>
+										</div>
+										<div class="info-item">
+											<span class="info-title">동종업계(평균)</span>
+											<span class="info-value fc-blue">66점</span>
+										</div>
+									</div>
+								</div>
+								<!-- 그래프 -->
+								<div class="line_box burden-reduction">
+									<div class="box-head">
+										<h6>추가 채용 시 고용 편익</h6>
+										<p>장애인 고용을 하면 부담금이 얼마나 감면될까요?</p>
+									</div>
+									<div style="width:100%;height:300px;">
+										<div id="chartHolderCostDecrease"><div class="rMateH5__Root" id="chartCostDecrease" style="visibility: hidden; position: relative; height: 250px; width: 400px;"><div class="rMateH5__rMateChart" tabindex="-1" style="background-color: rgb(255, 255, 255); border-style: none; position: absolute; overflow: visible; outline: none; left: 0px; top: 0px; height: 250px; width: 400px;"><div class="rMateH5__ContentPane" style="overflow: visible; position: absolute; left: 0px; top: 0px; width: 400px; height: 250px;"><div class="rMateH5__Caption" style="width: 100%; position: absolute; height: 17px; left: 0px; top: 0px;"></div><div class="rMateH5__Main" tabindex="-1" style="width: 100%; height: 233px; position: absolute; overflow: visible; outline: none; left: 0px; top: 17px;"><div class="rMateH5__ContentPane" style="overflow: visible; position: absolute; left: 0px; top: 0px; width: 400px; height: 233px;"><div class="rMateH5__Line2DChart" style="position: absolute; height: 199px; width: 400px; left: 0px; top: 0px;"><div class="rMateH5__BackgroundElementHolder" style="left: 31px; top: 10px; height: 164px; width: 370px;"><div class="rMateH5__GridLines" style="height: 164px; width: 370px;"></div></div><div class="rMateH5__Axis2DRenderer hFont horizontal" style="height: 199px; width: 400px; left: 0px; top: 0px;"></div><div class="rMateH5__Axis2DRenderer vertical" style="height: 199px; width: 400px; left: 0px; top: 0px;"></div><div class="rMateH5__SeriesHolder" style="left: 31px; top: 10px; height: 164px; width: 370px;"><div class="rMateH5__Line2DSeries" style="height: 164px; width: 370px;"></div></div><div class="rMateH5__CanvasElementHolder"><canvas class="rMateH5__Chart" style="position: absolute; width: 400px; height: 199px;" width="400" height="199"></canvas></div><div class="rMateH5__AnnotationElementHolder" style="left: 31px; top: 10px; height: 164px; width: 370px;"></div></div><div class="rMateH5__Legend" tabindex="-1" style="font-size: 15px; font-weight: 500; color: rgb(51, 51, 51); position: absolute; overflow: hidden; outline: none; height: 34px; width: 105px; left: 147.5px; top: 199px;"><div class="rMateH5__ContentPane" style="overflow: hidden; position: absolute; left: 0px; top: 0px; width: 103px; height: 32px;"><div class="rMateH5__LegendItem cp" style="position: absolute; height: 22px; width: 93px; left: 5px; top: 5px;"><canvas class="rMateH5__LegendMarker" style="position: absolute; width: 20px; height: 9px; left: 0px; top: 6px;" width="20" height="9"></canvas><span class="rMateH5__UITextField" style="position: absolute; left: 28px; top: 0px;">감소액(원)</span></div></div></div></div></div></div></div></div></div>
+									</div>
+									<div class="chart-info">
+										<div class="info-item">
+											<span class="info-title">추가고용인원</span>
+											<span class="info-value" id="addEmpmNope2">0명</span>
+										</div>
+										<div class="info-item">
+											<span class="info-title">부담금 감면액</span>
+											<span class="info-value fc-blue" id="rdexAmt">0원</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						
+						<!-- 하단 -->
+						<div class="dashboard dashbd-foot">
+							<div class="line_box example">
+								<div class="box-head">
+									<h6>추천 사례</h6>
+									<p>동종(유사) 업종의 다른기업은 이렇게 고용하고 있어요.</p>
+								</div>
+								<div class="company-logo">
+								
+									<a class="logo-box" href="javascript:fn_move_dtlPage('I202503140008')" title="새창열림" target="_blank">
+										<div class="logo">
+											<img src="/html/resources/images/best_company//new/45-logo.png" aria-hidden="true">
+										</div>
+										<div class="name">아이지에스</div>
+									</a>
+								
+									<a class="logo-box" href="javascript:fn_move_dtlPage('I202401230029')" title="새창열림" target="_blank">
+										<div class="logo">
+											<img src="/html/resources/images/best_company//56/ec_logo.png" aria-hidden="true">
+										</div>
+										<div class="name">구글 GOOGLE</div>
+									</a>
+								
+								</div>
+								<a class="dash_btn" href="/empm/empmCaseAndStats/empmSuccessStory.do" title="고용성공 스토리 페이지 이동">사례 더보기</a>
+							</div>
+							<div class="line_box guide">
+								<div class="box-head">
+									<h6>추천 가이드</h6>
+									<p>장애인 고용을 위한 길잡이가 되어드립니다.</p>
+								</div>
+								<ul class="guide-list">
+									<li>
+										<a href="/empm/empmGuid/empmGuidSumry.do?clsfCd=3&amp;clsfLevel=2&amp;upClsfCd=1" title="채용계획수립 페이지 이동">고용단계별 유의사항이 궁금하다면? 
+										<span class="arr"></span>
+										</a>
+									</li>
+									<li>
+										<a href="/empm/empmGuid/empmGuidSumry.do?clsfCd=4&amp;clsfLevel=1&amp;upClsfCd=" title="장애유형 알아보기 페이지 이동">장애인 기준과 유형별 특성이 궁금하다면? <span class="arr"></span>
+										</a>
+									</li>
+									<li>
+										<a href="/empm/empmGuid/empmGuidSumry.do?clsfCd=5&amp;clsfLevel=1&amp;upClsfCd=" title="장애인 고용지원 페이지 이동">공단 지원서비스가 궁금하다면? <span class="arr"></span>
+										</a>
+									</li>
+								</ul>							
+								<a class="dash_btn" href="/empm/empmGuid/empmGuidSumry.do" title="가이드 체크리스트 페이지 이동">가이드 체크리스트 바로가기</a>
+							</div>
+							<div class="small_box">
+								<div class="bg_box">
+									<div class="box-head">
+										<h6>나의 문의사항</h6>
+									</div>
+									<div class="inquiry">
+										<div class="wh-box">
+											<div class="label"><span class="qu"></span>문의</div>
+											<div class="value">16건</div>
+										</div>
+										<div class="wh-box">
+											<span class="label an"><span class="qu"></span>답변</span>
+											
+											
+												
+											
+												
+											
+												
+											
+												
+											
+												
+											
+												
+											
+												
+											
+												
+											
+												
+											
+												
+											
+												
+											
+												
+											
+												
+											
+												
+											
+												
+											
+												
+											
+											<span class="value">1건</span>
+										</div>
+										<div class="wh-box btn">
+											<a href="/rcsrm/bbsOpnionForm.do" title="문의사항 작성 페이지 이동">문의사항 바로가기</a>
+										</div>
+									</div>
+									<a class="btn_icon_plus" href="/mbr/myPage/myOpnion.do"><span class="sr-only">나의 문의 목록 페이지 이동</span></a>
+								</div>
+								<div class="bg_box">
+									<div class="box-head">
+										<h6>기업 MBTI</h6>
+										<p>우리기업 유형은?</p>
+									</div>
+									<div class="mbti-box">
+										<div class="wh-box" style="display:none;">
+											<div class="mbti-type">MBTI 형</div>
+											<span class="mbti-value">(000000형)</span>
+										</div>
+										<a class="dash_btn btn_layer" id="mbtiButton" style="width:100%;" data-id="popSample2" href="javascript:openMbtiPop();">MBTI 테스트 하기</a>
+										
+										<a class="dash_btn btn_layer" id="retryButton" style="display:none;" data-id="popSample2" href="javascript:openMbtiPop();" title="MBTI 테스트 다시하기">다시<br>하기</a>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+						
+						
+					</div>  
+				</div>
+			</div>
+		</div><!-- // container -->
+
+		<!-- footer -->
+		<footer class="footer">
+			<div class="inner">
+				<div class="f_left">
+					<ul>
+						<li><a href="/terms.do" target="_self" title="페이지이동">이용약관</a></li>
+						<li class="privacy"><a href="/privacy.do" target="_self" title="페이지이동">개인정보처리방침</a></li>	
+						<li><a href="/cright.do" target="_self" title="페이지이동">저작권보호정책</a></li>
+						<li><a href="/emailDeni.do" target="_self" title="페이지이동">이메일주소무단수집거부</a></li>
+						<li><a href="/siteMap.do" target="_self" title="페이지이동">사이트맵</a></li>
+					</ul>
+					<!-- 
+					<a href="#" target="_blank" title="한국웹접근성평가센터 인증현황 바로가기">
+						<img src="/images/img_watch.png" alt="국가공인 정보통신접근성 품질인증마크" class="watch">
+					</a>
+					-->
+					<div class="f_info">
+						<p class="f_logo">한국장애인고용공단</p>
+						<div>
+							<p>주소 (13619)경기도 성남시 분당구 구미로 173번길 59(구미동)</p>
+							<p>전화번호 031-728-7001~3</p>
+							<p class="f_copy">COPYRIGHT © 2025 KEAD RIGHT RESERVED.</p>
+						</div>
+					</div>
+				</div>
+				<div class="f_right">
+					<div class="rel_wrap">
+						<a href="#" aria-expanded="false" title="관련사이트 목록 축소됨">관련사이트</a>
+						<ul>
+							<li><a href="https://www.kead.or.kr/" target="_blank" title="새창열림">한국장애인고용공단</a></li>
+							<li><a href="https://www.esingo.or.kr/" target="_blank" title="새창열림">공단e신고(전자신고)</a></li>
+							<li><a href="https://edu.kead.or.kr/aisd/main.do" target="_blank" title="새창열림">직장 내 장애인 인식개선 교육포털</a></li>
+							<li><a href="https://edi.kead.or.kr/Index.do" target="_blank" title="새창열림">EDI 고용개발원</a></li>
+							<li><a href="https://cyedu.kead.or.kr/" target="_blank" title="새창열림">EDI 사이버연수원</a></li>
+							<li><a href="https://www.kead.or.kr/campus/" target="_blank" title="새창열림">직업능력개발원</a></li>
+							<li><a href="https://digital.kead.or.kr/jsp/EduMain.jsp" target="_blank" title="새창열림">디지털능력개발원</a></li>
+							<li><a href="https://hub.kead.or.kr/ve/main.do" target="_blank" title="새창열림">장애인직업능력평가포털</a></li>
+							<li><a href="https://www.worktogether.or.kr/main.do" target="_blank" title="새창열림">워크투게더(장애인고용포털)</a></li>
+							<li><a href="https://www.withplus.or.kr/user/home.do" target="_blank" title="새창열림">표준사업장 생산품 홍보사이트</a></li>
+						</ul>
+					</div>
+					<div>
+						<p class="f_number">전국대표번호<b>1588-1519</b></p>
+						<p class="f_time"><span>운영시간</span>평일 09:00 ~ 18:00</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!--// footer -->
+		<script>
+			$(document).ready(function(){
+				AOS.init();
+				
+				
+			})
+		</script>
+	</body>
+</html>

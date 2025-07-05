@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="0">
+	<meta http-equiv="Cache-control" content="no-cache">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/jquery-ui.min.css">
+
+	<link rel="stylesheet" href="/asset/aos/aos.css">
+	<link rel="stylesheet" href="/asset/slick/slick.css">
+	<link rel="stylesheet" href="/css/layout.css">
+	<link rel="stylesheet" href="/css/sub.css">
+	<script src="/asset/jquery/jquery-3.7.1.min.js"></script>		
+	<script src="/asset/aos/aos.js"></script>
+	<script src="/asset/slick/slick.js"></script>
+	<script src="/js/common.js"></script>
+	<!-- 추가 -->
+	<script src="/js/common2.js"></script>
+	<link rel="stylesheet" href="/css/jquery-ui.min.css">
+	<script src="/js/jquery-ui.js"></script>	
+	
+	<title>회의 시작 | 회의록 관리 | 마이페이지 | 한국장애인고용공단 장애인고용컨설팅</title>
+	
+	<style>
+		#scrollTopBtn {display: none !important;}
+	</style>
+</head>
+<body>
+	<!-- container -->
+	<div class="container sub_container">
+			<div class="inner">
+			<div class="snb_wrap">
+				<h3>알림마당</h3>
+				<ul class="snb_list">
+					<li class="on"><a href="sub06-1.html">공지사항/오늘의 뉴스</a></li>
+					<li><a href="sub06-2.html">FAQ</a></li>
+					<li><a href="sub06-3.html">문의사항</a></li>
+				</ul>
+			</div>
+			<div class="contents">
+				<!-- 타이틀 -->
+				<div class="cont_tit_wrap">
+					<h4 class="cont_tit">공지사항/오늘의 뉴스</h4>
+					<ul class="cont_lct">
+						<li class="home">홈</li>
+						<li>알림마당</li>
+						<li class="pnt_cr02"><b>공지사항/오늘의 뉴스</b></li>
+					</ul>
+				</div>
+
+				<div class="cont_wrap notice_list">
+					<div class="search-container">
+						<label for="filter" class="sr-only">게시글 구분</label>
+						<select class="filter" id="filter">
+							<option>구분 전체</option>
+							<option>공지사항</option>
+							<option>오늘의 뉴스</option>
+						</select>
+					
+						<label for="category" class="sr-only">검색 범주</label>
+						<select class="category" id="category">
+							<option>검색 전체</option>
+							<option>제목</option>
+							<option>담당부서</option>
+						</select>
+					
+						<label for="searchKeyword" class="sr-only">검색어 입력</label>
+						<div class="search-input">
+							<input type="text" id="searchKeyword" placeholder="검색어를 입력해주세요">
+						</div>
+					
+						<button type="submit" class="search-btn">검색</button>
+					</div>
+					
+					<div class="table-container">
+						<table class="tb_base tb_list tb_notice">
+							<caption>문서 정보</caption>
+							<colgroup>
+								<col style="width:5%">
+								<col style="width:8%">
+								<col style="width:auto">
+								<col style="width:15%">
+								<col style="width:15%">
+								<col style="width:8%">
+								<col style="width:8%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">No</th>
+									<th scope="col">구분</th>
+									<th scope="col">제목</th>
+									<th scope="col">담당부서</th>
+									<th scope="col">등록일</th>
+									<th scope="col">첨부파일</th>
+									<th scope="col">조회 수</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="auto-number"></td>
+									<td><span class="badge news" aria-label="오늘의 뉴스"></span></td>
+									<td class="ta_l hover" onclick="window.location.href='sub06-1-상세.html';">장애인 고용컨설팅 포털 매뉴얼</td>
+									<td>본부</td>
+									<td>2024-09-30</td>
+									<td><span class="icon-attachment"></span></td>
+									<td>100</td>
+								</tr>
+								<tr>
+									<td class="auto-number"></td>
+									<td><span class="badge news" aria-label="오늘의 뉴스"></span></td>
+									<td class="ta_l hover">장애인 고용컨설팅 포털 매뉴얼장애인 고용컨설팅 포털 매뉴얼장애인 고용컨설팅 포털 고용컨설팅 포털 매뉴얼</td>
+									<td>본부</td>
+									<td>2024-09-30</td>
+									<td><span class="icon-attachment"></span></td>
+									<td>200</td>
+								</tr>
+								<tr>
+									<td class="auto-number"></td>
+									<td><span class="badge notice" aria-label="공지사항"></span></td>
+									<td class="ta_l hover">장애인 고용컨설팅 포털 매뉴얼</td>
+									<td>본부</td>
+									<td>2024-09-30</td>
+									<td><span class="icon-attachment"></span></td>
+									<td>100</td>
+								</tr><tr>
+									<td class="auto-number"></td>
+									<td><span class="badge notice" aria-label="공지사항"></span></td>
+									<td class="ta_l hover">장애인 고용컨설팅 포털 매뉴얼</td>
+									<td>본부</td>
+									<td>2024-09-30</td>
+									<td><span class="icon-attachment"></span></td>
+									<td>100</td>
+								</tr><tr>
+									<td class="auto-number"></td>
+									<td><span class="badge notice" aria-label="공지사항"></span></td>
+									<td class="ta_l hover">장애인 고용컨설팅 포털 매뉴얼</td>
+									<td>본부</td>
+									<td>2024-09-30</td>
+									<td><span class="icon-attachment"></span></td>
+									<td>100</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="paging">
+						<a class="page_btn first" aria-label="처음 페이지 이동하기" href="?pageIndex=1" onclick="fn_egov_select_linkPage(1);return false; "></a>
+						<a class="page_btn prev" aria-label="이전 페이지 이동하기" href="?pageIndex=1" onclick="fn_egov_select_linkPage(1);return false; "></a>
+						<ul class="page_list">
+							<li><a href="#" class="page_btn active" aria-label="현재 페이지">1</a></li>
+							<li><a href="#" class="page_btn">2</a></li>
+							<li><a href="#" class="page_btn">3</a></li>
+							<li><a href="#" class="page_btn">4</a></li>
+							<li><a href="#" class="page_btn">5</a></li>
+						</ul>
+						<a class="page_btn next" aria-label="다음 페이지 이동하기" href="?pageIndex=1" onclick="fn_egov_select_linkPage(1);return false; "></a>
+						<a class="page_btn last" aria-label="마지막 페이지 이동" href="?pageIndex=1" onclick="fn_egov_select_linkPage(1);return false; "></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><!-- // container -->
+		
+	<!-- footer -->
+	<footer class="footer">
+		<div class="inner">
+			<div class="f_left">
+				<ul>
+					<li><a href="/terms.do" target="_self" title="페이지이동">이용약관</a></li>
+					<li class="privacy"><a href="/privacy.do" target="_self" title="페이지이동">개인정보처리방침</a></li>	
+					<li><a href="/cright.do" target="_self" title="페이지이동">저작권보호정책</a></li>
+					<li><a href="/emailDeni.do" target="_self" title="페이지이동">이메일주소무단수집거부</a></li>
+					<li><a href="/siteMap.do" target="_self" title="페이지이동">사이트맵</a></li>
+				</ul>
+				<!-- 
+				<a href="#" target="_blank" title="한국웹접근성평가센터 인증현황 바로가기">
+					<img src="/images/img_watch.png" alt="국가공인 정보통신접근성 품질인증마크" class="watch">
+				</a>
+				-->
+				<div class="f_info">
+					<p class="f_logo">한국장애인고용공단</p>
+					<div>
+						<p>주소 (13619)경기도 성남시 분당구 구미로 173번길 59(구미동)</p>
+						<p>전화번호 031-728-7001~3</p>
+						<p class="f_copy">COPYRIGHT © 2025 KEAD RIGHT RESERVED.</p>
+					</div>
+				</div>
+			</div>
+			<div class="f_right">
+				<div class="rel_wrap">
+					<a href="#" aria-expanded="false" title="관련사이트 목록 축소됨">관련사이트</a>
+					<ul>
+						<li><a href="https://www.kead.or.kr/" target="_blank" title="새창열림">한국장애인고용공단</a></li>
+						<li><a href="https://www.esingo.or.kr/" target="_blank" title="새창열림">공단e신고(전자신고)</a></li>
+						<li><a href="https://edu.kead.or.kr/aisd/main.do" target="_blank" title="새창열림">직장 내 장애인 인식개선 교육포털</a></li>
+						<li><a href="https://edi.kead.or.kr/Index.do" target="_blank" title="새창열림">EDI 고용개발원</a></li>
+						<li><a href="https://cyedu.kead.or.kr/" target="_blank" title="새창열림">EDI 사이버연수원</a></li>
+						<li><a href="https://www.kead.or.kr/campus/" target="_blank" title="새창열림">직업능력개발원</a></li>
+						<li><a href="https://digital.kead.or.kr/jsp/EduMain.jsp" target="_blank" title="새창열림">디지털능력개발원</a></li>
+						<li><a href="https://hub.kead.or.kr/ve/main.do" target="_blank" title="새창열림">장애인직업능력평가포털</a></li>
+						<li><a href="https://www.worktogether.or.kr/main.do" target="_blank" title="새창열림">워크투게더(장애인고용포털)</a></li>
+						<li><a href="https://www.withplus.or.kr/user/home.do" target="_blank" title="새창열림">표준사업장 생산품 홍보사이트</a></li>
+					</ul>
+				</div>
+				<div>
+					<p class="f_number">전국대표번호<b>1588-1519</b></p>
+					<p class="f_time"><span>운영시간</span>평일 09:00 ~ 18:00</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!--// footer -->
+	<script>
+		$(document).ready(function(){
+			AOS.init();						
+		})
+	</script>
+</body>
+</html>

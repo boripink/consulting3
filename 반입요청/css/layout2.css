@@ -1,23 +1,35 @@
 @charset "utf-8";
 
-
-
 @media (max-width: 768px) {
-  .attendee_row { flex-direction: column; }
-  .form_unit, .btn_wrap { width: 100%; }
-  .btn_wrap { justify-content: flex-start; margin-top: 4px; }
+  
+  
 }
-
-
 
 @media (max-width:1500px) {
-    .total_search_container {padding-top: 60px;}
-    .total_search_container .inner {width: 90%;}
+  .total_search_container {padding-top: 80px;}
+  .sub_container {padding-top: 140px;}
 }
 
-@media (max-width: 768px) {
-    .total_search_container, 
+@media (max-width:1070px) {
+  .total_search_container {padding-top: 80px; }
+  
+}
+
+@media (max-width:1024px) {
+  .total_search_area {padding: 40px 0;}
+  .total_search_result {gap: 40px;}
+  .total_search_form {margin-top: 30px;}
+  .total_search_form .search_bar .search_input {padding: 18px; height: 60px;}
+  .total_search_form .search_btn {right: 18px;}
+  .total_search_form .search_btn img {width:36px; height: 36px;}
+  .total_search_container .cont_wrap {padding-top: 60px;}
+  .search-form-line .form_line.bottom {flex-direction: column;}
+  .search-form-line .label {min-width: 62px;}
+}
+
+@media (max-width: 768px) {    
     .total_search_container .cont_wrap {padding-top: 40px;}
+    .total_search_result {flex-direction: column; gap: 20px;}
     .total_search_form {max-width: unset;}
     .total_search_form .search_bar .search_input {height: 60px; font-size: 20px; padding: 16px}
     .total_search_form .search_bar .search_input::placeholder {font-size: 20px;}
@@ -25,14 +37,31 @@
     .total_search_form .search_btn {right: 16px;}
     .total_search_form .search_del {right: 60px;}
     .total_search_form .search_del img {width: 32px; height: 32px;}
+
+    .minutes-search-container,
+    .search-form-line .form_line {flex-direction: column;}
+
     .total_result_area { flex-direction: column; gap: 40px; }
     .total_filter {width: 100%;}
-    .search_filter, .search_results { width: 100%; }
+    .total_results { width: 100%; }
     .total_result_heading {font-size:24px; font-weight: 500;}
+    
+    .attendee_row { flex-direction: column; }
+  .form_unit, .btn_wrap { width: 100%; }
+  .btn_wrap { justify-content: flex-start; margin-top: 4px; }
+
+    
 }
 
-@media (max-width: 500px) {
-    
+@media (max-width: 570px) {
+    .search-form-line .fieldset_group {height: auto;}
+    .datepicker_group {flex-direction: column;}
+}
+
+@media (max-width: 370px) {
+    .minutes-search-container {padding: 16px;}
+    .search-form-line .fieldset_group {flex-direction: column; align-items: baseline;}
+    .datepicker_group, .datepicker_inp {width: 100%;}
 }
 
 
@@ -46,3 +75,17 @@
 .layer_cont2 .pop_head {position: relative; margin-bottom:20px; font-size: 22px; font-weight: 500;}
 .layer_cont2 .pop_body {overflow-y:auto; position: relative; font-size: 20px; flex: 1; display: flex; flex-direction: column;}
 .layer_cont2 .pop_footer {position: fixed; bottom: 40px; left: 0; right: 0;}
+
+/* 탭 - 통합검색 */
+.tab_style05 .tab_list {display: flex; gap: 0; flex-wrap: wrap;}
+.tab_style05 .tab_list > li {flex: 1 ; position: relative; min-width: 140px;}
+.tab_style05 .tab_list > li:not(:first-child) {margin-left: -1px;}
+.tab_style05 .tab_list > li > a {font-size:18px; font-weight: 500; padding: 20px 0; display: block; text-align: center; position: relative; overflow: hidden; background-color: #f7f8f9; border: 1px solid #d9e0ef;}
+.tab_style05 .tab_list > li:hover > a, 
+.tab_style05 .tab_list > li:focus > a, 
+.tab_style05 .tab_list > li:active > a,
+.tab_style05 .tab_list > li.on > a {color: #fff;; background-color:#0f298f; border-color: #0f298f; z-index: 1;}
+
+
+
+

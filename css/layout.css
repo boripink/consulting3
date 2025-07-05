@@ -43,7 +43,7 @@
 /* header 검색영역 */
 .header .search_bar {margin: 0; position: absolute; right:118px;}
 .header .search_bar .search_input {padding:0 20px; width: 180px; height: 37px; background: #f0f0f0; border:none; transition: width 0.2s ease; color: #222; font-size: 16px; font-weight: 500;}
-.header .search_bar .search_input:focus {width: 300px;}
+.header .search_bar .search_input:focus {width: 240px;}
 .header .search_bar .search_input::placeholder {color: #222; font-size: 16px;}
 .header .search_bar .search_input:focus::placeholder {color: #6d7882;}
 

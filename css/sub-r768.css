@@ -82,8 +82,7 @@
     
   /* 진단결과 */
   .cont_result{margin: 50px 0;}
-
-  .cont_form .form_box > li {flex-direction: column;}
+  .cont_form .form_box > li {flex-direction: column; align-items:baseline;}
   .cont_form input[type='text'] {width:100%;}
 
   /* 진단결과 - 탭1 */
@@ -350,9 +349,22 @@
   
   /* 넌 어디냐???? */
   .assessment_view .tb_list tbody td::before {flex: 0 0 140px;}
+  
+  
+  /* 편익분석계산 */
+  .cont_form .form_box.style03 {flex-direction:column; align-items:baseline;}
+  .cont_form .form_box.style03 li {align-items:baseline; width:100%;}
+  .cont_form .form_box.style03 .inp_list {width:100%;}
+  .cont_form .form_box.style03 input[type="text"] {flex:1;}
+  .cont_form .form_box.style03 button.full {width:100%}
+  
+  .analysis_box.new li {flex: 1 0 calc(100% - 10px);}
+  .cont_form .chk_card li {flex: 1 1 calc(100% - 20px);}
+  
+  
+}
 
-
-  }
+ 
   
 
   /* .table-container > section:not(:first-child){padding-top: 80px;}

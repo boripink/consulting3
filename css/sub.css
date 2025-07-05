@@ -249,6 +249,39 @@
   .completion p {font-size: 20px;}
 
   
+/* !! 부담금 단계별 장애 고용 필요인원 BAR 수정 -손영덕 start*/
+  .goal2 {display: flex; align-items: center; width: 100%; justify-content: space-between; margin: 7px 0;}
+  .goal2 li {display: flex; justify-content: flex-end; min-height: 45px;}
+  .addMore_wrap2 {text-align: right; margin-right:-7px;}
+  .add_bg2 {background:#fff; color:#333; font-weight:500; border-radius:20px; padding:0 4px; min-width:80px; display:flex; font-size:12px; line-height:22px; border:solid 1px #e2e8f3; margin-bottom:3px;}
+  .add_bg2::before {content:''; display:inline-block; width:18px; height:20px; background:url(../../images/consult/ico_run.png) no-repeat 0 2px; }
+  .bar_step2 {height:30px; width: 100%}
+  .bar_step2 ul {display:flex; align-items:center; width:100%;}
+  .bar_step2 ul li {flex-basis:20%; height:30px; font-weight:600; background-color:#ffdd6e; position:relative;}
+  .bar_step2 ul li:first-child{border-radius:8px 0 0 8px;}
+  .bar_step2 ul li:last-child{border-radius:0 8px 8px 0;}
+  .bar_step2 ul li::before {content:attr(empm-level); position:absolute; display:inline-block; text-align:center; padding:4px; height:30px; width:100%;}
+  .bar_step2 ul li.pass {color:#fff;}
+  .bar_step2 ul li.next {border-radius:0px; border-right:solid 4px #029F54!important;}
+  .result_bar_bas_center {background-color: #ffdd6e!important;border-radius:0px; height:30px;}
+  .result_bar_bas_more {background-color: #ffdd6e!important;border-radius:0px; height:30px;border-right:solid 4px #029F54!important; display: inline-block; line-height:30px;}
+  .result_bar_bas_first {background-color: #ffdd6e!important;border-radius:8px 0 0 8px; height:30px;}
+  .result_bar_bas_Last {background-color: #ffdd6e!important;border-radius:0 8px 8px 0; height:30px;}
+  .result_bar_cur_pas_first {color:#fff; text-align:center; padding: 4px; background-color: #236CDB!important;border-radius:8px 0 0 8px; height:30px; border-right:dotted 1px #fff;}
+  .result_bar_cur_first {color:#333; text-align:center; padding: 4px; background-color: #236CDB!important; border-right:solid 4px #0F298F!important; height:30px; width:100%; border-radius:8px 0 0 8px;}
+  .result_bar_cur_pas_center {color:#fff; text-align:center; padding: 4px; background-color: #236CDB!important; border-right:dotted 1px #fff; height:30px; width:100%;}
+  .result_bar_cur_not_center {color:#333; text-align:center; padding: 4px; background-color: #ffdd6e!important; border-right:dotted 1px #fff; height:30px; width:100%;}
+  .result_bar_cur_center {color:#333; text-align:center; padding: 4px; background-color: #236CDB!important; border-right:solid 4px #0F298F!important; height:30px; width:100%;}
+  .result_bar_cur_not_last {color:#333; text-align:center; padding: 4px; background-color: #ffdd6e!important; height:30px; width:100%; border-radius:0 8px 8px 0;}
+  .result_bar_cur_pas_last {color:#fff; text-align:center; padding: 4px; background-color: #236CDB!important; border-right:solid 4px #0F298F!important; height:30px; width:100%; border-radius:0 8px 8px 0;}
+  .result_bar_cur_last {color:#fff; text-align:center; padding: 4px; background-color: #236CDB!important; height:30px; width:100%; border-radius:0 8px 8px 0;}
+  .result_bar_cur_txt {font-weight:800; color:#0F298F; margin-top:-59px; position:relative; margin-left:-11px; background:url(../../images/consult/ico_spot_01.png) no-repeat 0 2px; padding-left:22px; height:25px;} /*url 맞게 수정 필요*/
+  .StepData2 {color: #333; font-weight: 600; font-size:18px;}
+
+
+.layer_cont.benefit_assessment .inp_list {width: calc(100% - 20px);}
+
+
 }
 
 /* @media (max-width: 350px) { 

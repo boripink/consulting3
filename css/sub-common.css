@@ -45,7 +45,6 @@
 /* 트렌지션 transition: all 0.3s; */
 /* flex-grow(여백설정) flex-shrink(0은 줄지않겠다) flex-basis(고정크기) */
 
-
 /* 번호 */
 .increment {counter-reset: row-number; /* 번호 초기화 */}
 .increment .incre-num::before {counter-increment: row-number; content: counter(row-number); display: inline-block;}
@@ -104,6 +103,7 @@
 .intro {margin-bottom: 4rem;}
 .intro .cont_tit2 { margin-bottom:30px;}
 .intro .cont_txt {font-size:24px; line-height: 1.6;}
+.benefit_assessment .intro {margin-bottom:10px}
 
 /* 타이틀 */
 .cont_tit_wrap {display:flex; justify-content:space-between; align-items:baseline; position: relative;}
@@ -366,8 +366,21 @@ li.btn_layer:hover::before {background-color: #e8effb;}*/
 .tooltip-div {display: flex; align-items: center; position: relative;}
 .tooltip-div .tooltip-box {top: 0; left: 25px;}
 
-.tooltip_tit {font-size: 20px; font-weight: 500; margin-bottom: 3px; }
-.tooltip_tit2 {font-size: 18px; font-weight: 400; margin-bottom: 3px; color: #ec661d;}
+.tooltip_tit {font-size: 20px; font-weight: 500; margin-bottom: 4px; }
+.tooltip_tit2 {font-size: 18px; font-weight: 400; margin-bottom: 4px; color: #ec661d;}
+.tooltip_text {font-size: 18px; margin-top: 6px;}
+
+.benefit_assessment .tooltip-box {max-width:500px; top:45px;}
+
+/* 공공누리 출처표시 */
+.cright_box {padding:20px 30px 18px; background:#e5f6f3; margin-top:30px;}
+.cright_box {display:flex; align-items:center; font-size:16px; justify-content:center;}
+.cright_box > img {width: auto; height:26px; margin-right:10px;}
+.cright_box .txt span {color:#1c7364; margin:0 10px; font-weight:500}
+
+
+.comment-span {display:inline-block; max-width: 100%; white-space: normal;}
+
 
 
 

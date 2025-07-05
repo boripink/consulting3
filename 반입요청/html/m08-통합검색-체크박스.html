@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
-
+<html lang="ko" >
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +7,7 @@
 	<meta http-equiv="Expires" content="0">
 	<meta http-equiv="Cache-control" content="no-cache">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+	
 	<link rel="stylesheet" href="../asset/aos/aos.css">
 	<link rel="stylesheet" href="../asset/slick/slick.css">
 	<link rel="stylesheet" href="../css/layout.css">
@@ -18,39 +17,17 @@
 	<script src="../asset/slick/slick.js"></script>
 	<script src="../js/common.js"></script>
 
-	<!-- 추가 -->	
+	<!-- 추가 -->	 
 	<link rel="stylesheet" href="../css/sub3.css">
-	<link rel="stylesheet" href="../css/layout2.css">
 	<link rel="stylesheet" href="../css/jquery-ui.min.css">
-	<script src="../js/jquery-ui.js"></script>
+	<script src="../js/jquery-ui.js"></script>	
 	<script src="../js/common2.js"></script>
 	
-	<title>회의록 관리 | 마이페이지 | 한국장애인고용공단 장애인고용컨설팅</title>
-
-	<script>
-		$(function() {
-			$('.open_modal').on('click', function(e) {
-				e.preventDefault();
-
-				var url = $(this).attr('href') || $(this).data('url') || 'about:blank';
-				var winName = 'popupWindow';
-				var popupWidth = 800;
-				var popupHeight = 800;
-
-				// 화면 높이 계산 (작은 창의 높이를 뺀 값으로 top 계산)
-				var left = 0;
-				var top = window.screen.availHeight - popupHeight;
-
-				var features = `width=${popupWidth},height=${popupHeight},left=${left},top=${top},scrollbars=yes,resizable=yes`;
-
-				window.open('m07-회의록관리-시작.html', winName, features);
-			});
-		});
-
-	</script>
-
+		
+	<title>통합검색 | 한국장애인고용공단 장애인고용컨설팅</title>
+				
 </head>
-
+	
 <body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
 	<!-- 상단 skip 접근성요소 -->
 	<div id="topSkip">
@@ -108,7 +85,7 @@
 						<li><a href="#">문의사항</a></li>
 					</ul>
 				</li>
-				<!-- mypage 로그인 전에 안보이게 처리 -->
+				<!-- mypage 로그인 전에 안보이게 처리 
 				<li class="mypage">
 					<a href="#">
 						<span class="link_mypage">마이페이지</span>
@@ -122,7 +99,7 @@
 						<li><a href="#">회의록 관리</a></li>
 						<li><a href="#">모니터링</a></li>
 					</ul>
-				</li>
+				</li>-->
 			</ul>				
 			<div class="user_wrap autocomplete_form">
 				<div class="search_bar">
@@ -137,7 +114,7 @@
 				</div>					
 				<div class="user_info">						
 					<div class="user">
-						<button type="button" onclick="actionLogout();" class="btn_login out">로그아웃</button>		
+						<button type="button" onclick="actionLogout();" class="btn_login out">로그인</button>		
 					</div>
 				</div>
 				<!-- 연관검색어 리스트 -->
@@ -154,8 +131,8 @@
 				<div class="user_mob">
 					<h1 class="logo"><a href="/">한국장애인고용공단 장애인고용컨설팅</a></h1>
 					<div class="user">									
-						<a href="/mbr/myPage.do" class="link_mypage">마이페이지</a>							
-						<button type="button" onclick="actionLogout();" class="btn_login">로그아웃</button>
+						<!-- <a href="/mbr/myPage.do" class="link_mypage">마이페이지</a>							 -->
+						<button type="button" onclick="actionLogout();" class="btn_login">로그인</button>
 					</div>
 				</div>
 				<div class="mob_search autocomplete_form">
@@ -268,228 +245,238 @@
 	<!--// Header -->
 
 	<!-- container -->
-	<div class="container sub_container">
-		<form action="#" method="">
+	<div class="total_search_container" role="region" aria-labelledby="search_heading" id="lnb">
+		<div class="total_search">
 			<div class="inner">
-				<div class="snb_wrap">
-					<h3>마이페이지</h3>
-					<ul class="snb_list">
-						<li><a href="">고용역량 진단조회</a></li>
-						<li><a href="">고용컨설팅 진행상황</a></li>
-						<li><a href="">고용계획 및 실적 입력</a></li>
-						<li><a href="">나의 문의</a></li>
-						<li><a href="">즐겨찾기</a></li>
-						<li class="on"><a href="m07-회의록 관리.html">회의록 관리</a></li>
-					</ul>
-				</div>
-				<div class="contents minutes_list" id="lnb">
-					<!-- 타이틀 영역-->
-					<div class="cont_tit_wrap">
-						<h4 class="cont_tit">회의록 관리</h4>
-						<ul class="cont_lct">
-							<li class="home">홈</li>
-							<li>마이페이지</li>
-							<li class="pnt_cr02"><b>회의록 관리</b></li>
-						</ul>
+				<h3 class="cont_tit" id="search_heading">통합검색</h3>
+				<!-- 검색 입력 -->
+				<form role="search" aria-label="사이트 통합 검색">
+					<div class="total_search_form autocomplete_form">
+						<div class="search_bar">
+							<label for="search_input" class="sr-only">검색어 입력</label>
+							<input type="search" id="search_input" name="q" placeholder="검색어를 입력하세요" class="search_input" autocomplete="off">
+							<button type="submit" class="search_btn" aria-label="검색">
+								<img src="/images/sub/svg-btn-search.svg" alt="" aria-hidden="true">
+							</button>									
+							<button type="button" class="search_del" aria-label="검색어 삭제">
+								<img src="/images/sub/svg-btn-del.svg" alt=""aria-hidden="true">
+							</button>
+						</div>							
+						<!-- 연관검색어 리스트 -->
+						<ul class="autocomplete_list" role="listbox" aria-label="연관검색어"></ul>
 					</div>
-					<!-- 내용 영역 -->
-					<div class="cont_wrap">
-						
-						<!-- 회의록 검색영역 -->
-						<div class="minutes-search-container">
-							<div class="top_btn">
-								<button type="button" class="open_modal">
-									<span>새 회의 시작</span>
-								</button>
-							</div>
-							<div class="search-form-line">
-								<div class="form_line top">
-									<!-- 회의 주체 -->
-									<fieldset>
-										<legend>회의 주체 선택</legend>
-										<div class="minutes_host fieldset_group">
-											<label for="minutes_host" class="label">회의주체</label>
-											<select id="minutes_host" name="minutes_host">
-												<option value="">전체</option>
-												<option value="">공단</option>
-												<option value="">기업</option>
-											</select>
-										</div>
-									</fieldset>
-									<!-- 카테고리 -->
-									<fieldset>
-										<legend>카테고리 선택</legend>
-										<div class="minutes_category fieldset_group">
-											<label for="meetingCategory" class="label">카테고리</label>
-											<select id="meetingCategory" name="meetingCategory">
-												<option value="">-- 선택 --</option>
-												<option value="외부미팅">외부미팅</option>
-												<option value="내부회의">내부회의</option>
-												<option value="채용면접">채용면접</option>
-												<option value="근로자상담">근로자상담</option>
-											</select>
-										</div>
-									</fieldset>
-									<!-- 진행 상태 -->
-									<fieldset>
-										<legend>진행 상태 선택</legend>
-										<div class="minutes_status fieldset_group">
-											<label for="status" class="label">진행상태</label>
-											<select id="status" name="status">
-												<option value="">전체</option>
-												<option value="임시저장">임시저장</option>
-												<option value="작성중">작성중</option>
-												<option value="완료">완료</option>
-											</select>
-										</div>
-									</fieldset>
-								</div>
-								<div class="form_line bottom">
-									<!-- 회의 날짜 -->
-									<fieldset aria-describedby="dateDesc" >
-										<legend>회의 날짜 기간 검색</legend>
-										<div class="minutes_date fieldset_group">
-											<span class="label" aria-hidden="true">회의날짜</span>
-											<span id="dateDesc" class="sr-only">날짜 형식은 연도-월-일입니다. 예: 2025-06-17</span>
-											<div class="datepicker_group">											
-												<label for="startInput" class="sr-only">검색 시작일자</label>
-												<div class="datepicker_inp">
-													<input type="text" id="startInput" name="startDt">
-													<button type="button" id="startBtn" class="btn_calendar">달력</button>
-												</div>
-												<span class="tilde" aria-hidden="true">~</span>
-												<label for="todayInput" class="sr-only">검색 종료일자</label>
-												<div class="datepicker_inp">
-													<input type="text" id="todayInput" name="endDt" class="todayInput" >
-													<button type="button" id="todayBtn" class="btn_calendar">달력</button>
-												</div>
-											</div>
-										</div>
-										<!-- <div class="datepicker_wrap">
-												<input type="text" name="userId" id="userId" class="datepicker" maxlength="10" title="아이디" placeholder="2023-09-11"> ~
-												<input type="text" name="userId" id="userId" class="datepicker" maxlength="10" title="아이디" placeholder="2024-09-11">
-												</div> -->
-									</fieldset>
-									<!-- 검색어 -->
-									<fieldset class="keyword">
-										<legend>검색어 입력</legend>
-										<div class="search_keyword fieldset_group">
-											<label for="searchKeyword" class="label">검색어</label>
-											<input type="text" id="searchKeyword" name="keyword"
-												placeholder="검색어를 입력해 주세요.">
-										</div>
-									</fieldset>
-								</div>
-							</div>
-							<!-- 검색 버튼 -->
-							<div class="search_btn_wrap">
-								<button type="submit" class="search-btn" aria-label="검색 조건으로 회의록 검색">검색</button>
-							</div>
-						</div>
-
-						<!-- 검색 결과영역 -->
-						<div class="table-container">
-							<p class="table_info_count">
-								검색결과 <strong class="count">총 50건</strong>
-							</p>
-							<input type="hidden" id="focusIndex" value="10">
-							<table class="tb_base tb_list">
-								<caption>회의록 관리 목록 - 번호,회의주체,카테고리,주제,회의날짜,작성자,진행상태 정보 제공</caption>
-								<colgroup>
-									<col style="width:7%">
-									<col style="width:10%">
-									<col style="width:15%">
-									<col style="width:auto">
-									<col style="width:12%">
-									<col style="width:10%">
-									<col style="width:10%">
-								</colgroup>
-								<thead>
-									<tr>
-										<th scope="col">번호</th>
-										<th scope="col">회의주체</th>
-										<th scope="col">카테고리</th>
-										<th scope="col">주제</th>
-										<th scope="col">회의날짜</th>
-										<th scope="col">작성자</th>
-										<th scope="col">진행상태</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>1</td>
-										<td>공단</td>
-										<td>카테고리1</td>
-										<td>고용컨설팅 회의_2025년 3차</td>
-										<td>2025-06-10</td>
-										<td>홍길동</td>
-										<td>작성중</td>
-									</tr>
-									<tr>
-										<td>2</td>
-										<td>공단</td>
-										<td>카테고리2</td>
-										<td>고용컨설팅 회의_2025년 2차</td>
-										<td>2025-06-10</td>
-										<td>홍길동</td>
-										<td>작성중</td>
-									</tr>
-									<tr>
-										<td>3</td>
-										<td>공단</td>
-										<td>카테고리3</td>
-										<td>고용컨설팅 회의_2025년 1차</td>
-										<td>2025-06-10</td>
-										<td>홍길동</td>
-										<td>작성중</td>
-									</tr>
-									<tr>
-										<td>4</td>
-										<td>기업</td>
-										<td>카테고리2</td>
-										<td>내부 인사관련 미팅</td>
-										<td>2025-06-10</td>
-										<td>홍길동</td>
-										<td>작성중</td>
-									</tr>
-									<tr>
-										<td>5</td>
-										<td>공단</td>
-										<td>카테고리1</td>
-										<td>내부 인사관련 미팅</td>
-										<td>2025-06-10</td>
-										<td>홍길동</td>
-										<td>작성중</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-						<div class="bt_btn">
-							<button type="button" class="btn_crud" onclick="window.open();"
-								aria-label="회의록 목록 10개 더보기">더보기</button>
-						</div>
-					</div>
-				</div>
+					<div class="reSearch">
+						<label for="reSearch" class="check_label">
+							<input type="checkbox" id="reSearch" name="category" value="" class="custom_chk sr-only">
+							<span class="chk_label"></span>
+							<span>결과 내 재검색</span>
+							</span>
+						</label>
+					</div>				
+				</form> 
 			</div>
-		</form>
-	</div><!-- // container -->
+		</div>
 
+		<div class="cont_wrap inner">
+			<div class="total_result_area">
+				<!-- 검색필터 -->
+				<aside class="total_filter" role="complementary" aria-labelledby="filter_heading">
+					<div class="total_result_heading">
+						<h4 id="filter_heading">검색 필터</h4>
+						<!-- <button type="button" class="mobile_filter">
+							<span>필터</span>
+							<i class="ico-filter"></i>
+						</button> -->
+					</div>
+					<div class="filter_group">
+						<!-- 검색 메뉴 -->
+						<section aria-labelledby="menu_filter_heading">
+							<h5 id="menu_filter_heading" class="filter_group_heading">검색 메뉴</h5>
+							<ul>
+								<li>									
+									<label for="filter1" class="check_label">
+										<input type="checkbox" id="filter1" name="category" value="" checked class="custom_chk sr-only" aria-describedby="desc1">
+										<span class="chk_label"></span>
+										<span class="chk_name">
+											장애인 고용컨설팅
+											<span id="desc1" class="count">
+												(1<span class="sr-only">개 검색</span>)
+											</span>
+										</span>
+									</label>
+								</li>
+								<li>
+									<label for="filter2" class="check_label">
+										<input type="checkbox" id="filter2" name="category" value="" checked class="custom_chk sr-only" aria-describedby="desc2">
+										<span class="chk_label"></span>
+										<span>고용 역량 진단
+											<span id="desc2" class="count">
+												(1<span class="sr-only">개 검색</span>)
+											</span>
+										</span>
+									</label>
+								</li>
+								<li>
+									<label for="filter3" class="check_label">
+										<input type="checkbox" id="filter3" name="category" value="" checked class="custom_chk sr-only" aria-describedby="desc3">
+										<span class="chk_label"></span>
+										<span>장애인 채용사례
+											<span id="desc3" class="count">
+												(1<span class="sr-only">개 검색</span>)
+											</span>
+										</span>
+									</label>
+								</li>
+								<li>
+									<label for="filter4" class="check_label">
+										<input type="checkbox" id="filter4" name="category" value="" class="custom_chk sr-only" aria-describedby="desc4">
+										<span class="chk_label"></span>
+										<span>고용현황 리포트
+											<span id="desc4" class="count">
+												(0<span class="sr-only">개 검색</span>)
+											</span>
+										</span>
+									</label>
+								</li>
+								<li>
+									<label for="filter5" class="check_label">
+										<input type="checkbox" id="filter5" name="category" value="" class="custom_chk sr-only" aria-describedby="desc5">
+										<span class="chk_label"></span>
+										<span>장애인 고용 가이드
+											<span id="desc5" class="count">
+												(0<span class="sr-only">개 검색</span>)
+											</span>
+										</span>
+									</label>
+								</li>
+								<li>
+									<label for="filter6" class="check_label">
+										<input type="checkbox" id="filter6" name="category" value="" checked class="custom_chk sr-only" aria-describedby="desc6">
+										<span class="chk_label"></span>
+										<span>알림마당
+											<span id="desc6" class="count">
+												(10<span class="sr-only">개 검색</span>)
+											</span>
+										</span>
+									</label>
+								</li>
+							</ul>
+						</section>
+						<!-- 인기 검색어 -->
+						<section aria-labelledby="popular_search_heading">
+							<h5 id="popular_search_heading" class="filter_group_heading">인기 검색어</h5>
+							<ol class="filter_popular">
+								<li><a href="#">고용컨설팅</a></li>
+								<li><a href="#">고용 역량 진단</a></li>
+								<li><a href="#">장애인 채용사례</a></li>
+								<li><a href="#">고용현황 리포트</a></li>
+								<li><a href="#">장애인 고용 가이드</a></li>
+								<li><a href="#">알림마당</a></li>
+								<li><a href="#">고용컨설팅</a></li>
+								<li><a href="#">고용 역량 진단</a></li>
+								<li><a href="#">장애인 채용사례</a></li>
+								<li><a href="#">고용현황 리포트</a></li>
+							</ol>
+						</section>
+					</div>						
+				</aside>
+
+				<!-- 검색결과 -->
+				<main class="total_results" role="main" aria-labelledby="result_heading">
+					<div class="total_result_heading">
+						<h4 id="result_heading">
+							<strong class="keyword">‘<mark>컨설팅</mark>’</strong> 
+							검색 결과 <strong>13</strong>건
+						</h4>							
+					</div>					
+
+					<div class="">
+						<article class="results_text">
+							<!-- 검색필터 -->
+							<span class="badge">장애인 고용컨설팅</span>
+							
+							<a href="#" class="search_link">
+								<!-- 경로 -->
+								<p class="search_path">
+									<span class="path_item">장애인 고용컨설팅</span>
+									<!-- <span class="arrow_img"></span> -->
+									<span class="path_item">장애인 고용컨설팅이란?</span>
+								</p>
+								<!-- 텍스트 -->
+								<p class="search_desc">
+								고용<mark>컨설팅</mark>이란? 기업의 장애인 고용 여건을 진단하여 고용 부진 요인을 도출하고
+								이에 적합한 맞춤 고용 방안을 제시하는 서비스입니다. 기업의 장애인 고용 여건을 진단하여 고용 부진 요인을 도출하고
+								이에 적합한 맞춤 고용 방안을 제시하는 서비스입니다.
+								</p>
+							</a>
+						</article>
+
+						<article class="results_text">
+							<!-- 검색필터 -->
+							<span class="badge">고용 역량 진단</span>
+							
+							<a href="#" class="search_link">
+								<!-- 경로 -->
+								<p class="search_path">
+									<span class="path_item">고용 역량 진단</span>
+									<span class="arrow_img"></span>
+									<span class="path_item">고용 역량 진단이란?</span>
+								</p>
+								<!-- 텍스트 -->
+								<p class="search_desc">
+								고용<mark>컨설팅</mark>이란? 기업의 장애인 고용 여건을 진단하여 고용 부진 요인을 도출하고
+								이에 적합한 맞춤 고용 방안을 제시하는 서비스입니다. 기업의 장애인 고용 여건을 진단하여 고용 부진 요인을 도출하고 이에 적합한 맞춤 고용 방안을 제시하는 서비스입니다.
+								</p>
+							</a>
+						</article>
+
+						<article class="results_text">
+							<!-- 검색필터 -->
+							<span class="badge">장애인 채용사례</span>
+							
+							<a href="#" class="search_link">
+								<!-- 경로 -->
+								<p class="search_path">
+									<span class="path_item">장애인 채용사례</span>
+									<span class="arrow_img"></span>
+									<span class="path_item">사례 맞춤 검색</span>
+								</p>
+								<!-- 텍스트 -->
+								<p class="search_desc">
+								고용<mark>컨설팅</mark>이란? 기업의 장애인 고용 여건을 진단하여 고용 부진 요인을 도출하고
+								이에 적합한 맞춤 고용 방안을 제시하는 서비스입니다. 기업의 장애인 고용 여건을 진단하여 고용 부진 요인을 도출하고 이에 적합한 맞춤 고용 방안을 제시하는 서비스입니다.
+								</p>
+							</a>
+						</article>
+					</div>
+					<div class="bt_btn">
+						<button type="button" class="btn_crud" aria-label="통합 검색 결과 10개 더보기">더보기</button>
+					</div>	
+				</main>
+			</div>
+		</div>
+		
+		
+
+
+	</div><!-- // container -->
+	
 	<!-- footer -->
 	<footer class="footer">
 		<div class="inner">
 			<div class="f_left">
 				<ul>
 					<li><a href="/terms.do" target="_self" title="페이지이동">이용약관</a></li>
-					<li class="privacy"><a href="/privacy.do" target="_self" title="페이지이동">개인정보처리방침</a></li>
+					<li class="privacy"><a href="/privacy.do" target="_self" title="페이지이동">개인정보처리방침</a></li>	
 					<li><a href="/cright.do" target="_self" title="페이지이동">저작권보호정책</a></li>
 					<li><a href="/emailDeni.do" target="_self" title="페이지이동">이메일주소무단수집거부</a></li>
 					<li><a href="/siteMap.do" target="_self" title="페이지이동">사이트맵</a></li>
 				</ul>
 				<!-- 
-					<a href="#" target="_blank" title="한국웹접근성평가센터 인증현황 바로가기">
-						<img src="/images/img_watch.png" alt="국가공인 정보통신접근성 품질인증마크" class="watch">
-					</a>
-					-->
+				<a href="#" target="_blank" title="한국웹접근성평가센터 인증현황 바로가기">
+					<img src="/images/img_watch.png" alt="국가공인 정보통신접근성 품질인증마크" class="watch">
+				</a>
+				-->
 				<div class="f_info">
 					<p class="f_logo">한국장애인고용공단</p>
 					<div>
@@ -505,19 +492,14 @@
 					<ul>
 						<li><a href="https://www.kead.or.kr/" target="_blank" title="새창열림">한국장애인고용공단</a></li>
 						<li><a href="https://www.esingo.or.kr/" target="_blank" title="새창열림">공단e신고(전자신고)</a></li>
-						<li><a href="https://edu.kead.or.kr/aisd/main.do" target="_blank" title="새창열림">직장 내 장애인 인식개선
-								교육포털</a></li>
+						<li><a href="https://edu.kead.or.kr/aisd/main.do" target="_blank" title="새창열림">직장 내 장애인 인식개선 교육포털</a></li>
 						<li><a href="https://edi.kead.or.kr/Index.do" target="_blank" title="새창열림">EDI 고용개발원</a></li>
 						<li><a href="https://cyedu.kead.or.kr/" target="_blank" title="새창열림">EDI 사이버연수원</a></li>
 						<li><a href="https://www.kead.or.kr/campus/" target="_blank" title="새창열림">직업능력개발원</a></li>
-						<li><a href="https://digital.kead.or.kr/jsp/EduMain.jsp" target="_blank"
-								title="새창열림">디지털능력개발원</a></li>
-						<li><a href="https://hub.kead.or.kr/ve/main.do" target="_blank" title="새창열림">장애인직업능력평가포털</a>
-						</li>
-						<li><a href="https://www.worktogether.or.kr/main.do" target="_blank"
-								title="새창열림">워크투게더(장애인고용포털)</a></li>
-						<li><a href="https://www.withplus.or.kr/user/home.do" target="_blank" title="새창열림">표준사업장 생산품
-								홍보사이트</a></li>
+						<li><a href="https://digital.kead.or.kr/jsp/EduMain.jsp" target="_blank" title="새창열림">디지털능력개발원</a></li>
+						<li><a href="https://hub.kead.or.kr/ve/main.do" target="_blank" title="새창열림">장애인직업능력평가포털</a></li>
+						<li><a href="https://www.worktogether.or.kr/main.do" target="_blank" title="새창열림">워크투게더(장애인고용포털)</a></li>
+						<li><a href="https://www.withplus.or.kr/user/home.do" target="_blank" title="새창열림">표준사업장 생산품 홍보사이트</a></li>
 					</ul>
 				</div>
 				<div>
@@ -529,13 +511,9 @@
 	</footer>
 	<!--// footer -->
 	<script>
-		$(document).ready(function () {
-			AOS.init();
+		$(document).ready(function(){
+			AOS.init();						
 		})
 	</script>
-
-	
-
 </body>
-
 </html>

@@ -18,9 +18,9 @@ input[type="text"].num {text-align: right;}
 /* 수정 2025 */
 input:focus,select:focus,textarea:focus,
 .list-chk-radio label:focus {outline:2px dashed #6d7882; border:none !important}
-button:focus {outline:2px dashed #6d7882;}
+button:focus {outline:2px dashed #6d7882; z-index: 1;}
 button[hidden] {display:none; }
-a:focus, label:focus {text-decoration: underline; outline:2px dashed #6d7882; }
+a:focus, label:focus {text-decoration: underline; outline:2px dashed #6d7882; z-index: 1;}
 input#company_regist::placeholder {font-weight:500; color: #236cdb; font-size: 17px;}
 
 label.check_label {display: flex; align-items: center; font-weight: 500;}

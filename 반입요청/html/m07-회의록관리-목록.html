@@ -13,16 +13,16 @@
 	<link rel="stylesheet" href="../asset/slick/slick.css">
 	<link rel="stylesheet" href="../css/layout.css">
 	<link rel="stylesheet" href="../css/sub.css">
-	<link rel="stylesheet" href="../css/sub3.css">
 	<script src="../asset/jquery/jquery-3.7.1.min.js"></script>
 	<script src="../asset/aos/aos.js"></script>
 	<script src="../asset/slick/slick.js"></script>
 	<script src="../js/common.js"></script>
 
 	<!-- 추가 -->
-	<script src="../js/common2.js"></script>
+	<link rel="stylesheet" href="../css/layout2.css">
 	<link rel="stylesheet" href="../css/jquery-ui.min.css">
 	<script src="../js/jquery-ui.js"></script>
+	<script src="../js/common2.js"></script>
 	
 	<title>회의록 관리 | 마이페이지 | 한국장애인고용공단 장애인고용컨설팅</title>
 
@@ -293,103 +293,92 @@
 					</div>
 					<!-- 내용 영역 -->
 					<div class="cont_wrap">
-						<div class="top_btn">
-							<button type="button" class="open_modal">
-								<span>새 회의 시작</span>
-							</button>
-						</div>
+						
 						<!-- 회의록 검색영역 -->
-						<div class="search-container table_type">
-							<div class="search_form">
-								<!-- 회의 날짜 -->
-								<fieldset aria-describedby="dateDesc" >
-									<legend>회의 날짜 기간 검색</legend>
-									<div class="minutes_date fieldset_group">
-										<span class="label" aria-hidden="true">회의날짜</span>
-										<span id="dateDesc" class="sr-only">날짜 형식은 연도-월-일입니다. 예: 2025-06-17</span>
-										<div class="datepicker_group">											
-											<label for="startInput" class="sr-only">검색 시작일자</label>
-											<div class="datepicker_inp">
-												<input type="text" id="startInput" name="startDt">
-												<button type="button" id="startBtn" class="btn_calendar">달력</button>
+						<div class="minutes-search-container">
+							<div class="top_btn">
+								<button type="button" class="open_modal">
+									<span>새 회의 시작</span>
+								</button>
+							</div>
+							<div class="search-form-line">
+								<div class="form_line top">
+									<!-- 회의 주체 -->
+									<fieldset>
+										<legend>회의 주체 선택</legend>
+										<div class="minutes_host fieldset_group">
+											<label for="minutes_host" class="label">회의주체</label>
+											<select id="minutes_host" name="minutes_host">
+												<option value="">전체</option>
+												<option value="">공단</option>
+												<option value="">기업</option>
+											</select>
+										</div>
+									</fieldset>
+									<!-- 카테고리 -->
+									<fieldset>
+										<legend>카테고리 선택</legend>
+										<div class="minutes_category fieldset_group">
+											<label for="meetingCategory" class="label">카테고리</label>
+											<select id="meetingCategory" name="meetingCategory">
+												<option value="">-- 선택 --</option>
+												<option value="외부미팅">외부미팅</option>
+												<option value="내부회의">내부회의</option>
+												<option value="채용면접">채용면접</option>
+												<option value="근로자상담">근로자상담</option>
+											</select>
+										</div>
+									</fieldset>
+									<!-- 진행 상태 -->
+									<fieldset>
+										<legend>진행 상태 선택</legend>
+										<div class="minutes_status fieldset_group">
+											<label for="status" class="label">진행상태</label>
+											<select id="status" name="status">
+												<option value="">전체</option>
+												<option value="임시저장">임시저장</option>
+												<option value="작성중">작성중</option>
+												<option value="완료">완료</option>
+											</select>
+										</div>
+									</fieldset>
+								</div>
+								<div class="form_line bottom">
+									<!-- 회의 날짜 -->
+									<fieldset aria-describedby="dateDesc" >
+										<legend>회의 날짜 기간 검색</legend>
+										<div class="minutes_date fieldset_group">
+											<span class="label" aria-hidden="true">회의날짜</span>
+											<span id="dateDesc" class="sr-only">날짜 형식은 연도-월-일입니다. 예: 2025-06-17</span>
+											<div class="datepicker_group">											
+												<label for="startInput" class="sr-only">검색 시작일자</label>
+												<div class="datepicker_inp">
+													<input type="text" id="startInput" name="startDt">
+													<button type="button" id="startBtn" class="btn_calendar">달력</button>
+												</div>
+												<span class="tilde" aria-hidden="true">~</span>
+												<label for="todayInput" class="sr-only">검색 종료일자</label>
+												<div class="datepicker_inp">
+													<input type="text" id="todayInput" name="endDt" class="todayInput" >
+													<button type="button" id="todayBtn" class="btn_calendar">달력</button>
+												</div>
 											</div>
-											<span class="tilde" aria-hidden="true">~</span>
-											<label for="todayInput" class="sr-only">검색 종료일자</label>
-											<div class="datepicker_inp">
-												<input type="text" id="todayInput" name="endDt" class="todayInput" >
-												<button type="button" id="todayBtn" class="btn_calendar">달력</button>
-											</div>
 										</div>
-									</div>
-									<!-- <div class="datepicker_wrap">
-                                            <input type="text" name="userId" id="userId" class="datepicker" maxlength="10" title="아이디" placeholder="2023-09-11"> ~
-                                            <input type="text" name="userId" id="userId" class="datepicker" maxlength="10" title="아이디" placeholder="2024-09-11">
-                                            </div> -->
-								</fieldset>
-								<!-- 회의 주체 -->
-								<fieldset>
-									<legend>회의 주체 선택</legend>
-									<!-- <div class="minutes_host">
-										<label for="host" class="label">회의주체</label>
-										<select id="host" name="host">
-											<option value="">전체</option>
-											<option value="정기회의">공단</option>
-											<option value="특별회의">기업</option>
-										</select>
-									</div> -->
-									<div role="radiogroup" aria-labelledby="hostLabel" class="radio_group  fieldset_group">
-										<span id="hostLabel" class="label">회의주체</span>
-										<div class="radio_item">
-											<input type="radio" id="host" name="host" value="전체" checked>
-											<label for="host1">전체</label>
+										<!-- <div class="datepicker_wrap">
+												<input type="text" name="userId" id="userId" class="datepicker" maxlength="10" title="아이디" placeholder="2023-09-11"> ~
+												<input type="text" name="userId" id="userId" class="datepicker" maxlength="10" title="아이디" placeholder="2024-09-11">
+												</div> -->
+									</fieldset>
+									<!-- 검색어 -->
+									<fieldset class="keyword">
+										<legend>검색어 입력</legend>
+										<div class="search_keyword fieldset_group">
+											<label for="searchKeyword" class="label">검색어</label>
+											<input type="text" id="searchKeyword" name="keyword"
+												placeholder="검색어를 입력해 주세요.">
 										</div>
-										<div class="radio_item">
-											<input type="radio" id="host1" name="host" value="공단">
-											<label for="host1">공단</label>
-										</div>
-										<div class="radio_item">
-											<input type="radio" id="host2" name="host" value="기업">
-											<label for="host2">기업</label>
-										</div>
-									</div>
-
-								</fieldset>
-								<!-- 카테고리 -->
-								<fieldset>
-									<legend>카테고리 선택</legend>
-									<div class="minutes_category fieldset_group">
-										<label for="meetingCategory" class="label">카테고리</label>
-										<select id="meetingCategory" name="meetingCategory">
-											<option value="">-- 선택 --</option>
-											<option value="외부미팅">외부미팅</option>
-											<option value="내부회의">내부회의</option>
-											<option value="채용면접">채용면접</option>
-											<option value="근로자상담">근로자상담</option>
-										</select>
-									</div>
-								</fieldset>
-								<!-- 진행 상태 -->
-								<fieldset>
-									<legend>진행 상태 선택</legend>
-									<div class="minutes_status fieldset_group">
-										<label for="status" class="label">진행상태</label>
-										<select id="status" name="status">
-											<option value="">전체</option>
-											<option value="임시저장">임시저장</option>
-											<option value="작성중">작성중</option>
-											<option value="완료">완료</option>
-										</select>
-									</div>
-								</fieldset>
-								<!-- 검색어 -->
-								<fieldset class="keyword">
-									<legend>검색어 입력</legend>
-									<div class="search_keyword fieldset_group">
-										<label for="searchKeyword" class="label">검색어</label>
-										<input type="text" id="searchKeyword" name="keyword"
-											placeholder="검색어를 입력해 주세요.">
-									</div>
-								</fieldset>
+									</fieldset>
+								</div>
 							</div>
 							<!-- 검색 버튼 -->
 							<div class="search_btn_wrap">

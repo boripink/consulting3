@@ -454,7 +454,12 @@
   .dashbd-foot .wh-box.btn,
   .dashbd-foot .mbti-box .dash_btn {padding: 20px;}
 
-
+  /* 편익분석계산 */
+  /* .cont_form .form_box.style03 {flex-direction:column; align-items:baseline;}
+  .cont_form .form_box.style03 li {align-items:baseline; width:100%;}
+  .cont_form .form_box.style03 .inp_list {width:100%;}
+  .cont_form .form_box.style03 input[type="text"] {flex:1;}
+  .cont_form .form_box.style03 button.full {width:100%} */
   
 }
 

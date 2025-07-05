@@ -1525,29 +1525,53 @@ position: absolute; top: 4px; right: -14px;}
 
 
 /* 편익분석 */
-.cont_form .form_box.style03 {flex-direction:row; justify-content:space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid #d9e0ef;}
-.cont_form .form_box.style03 li {display: flex; align-items: center; gap: 10px;}
-.cont_form .form_box.style03 input[type="text"] {width: 100px;}
+.cont_form .form_box.style03 {flex-direction:row; justify-content:space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid #d9e0ef; border-radius:unset;}
+.cont_form .form_box.style03 li {display: flex; align-items: center; gap: 0 10px;}
+.cont_form .form_box.style03 input[type="text"] {width: 150px;}
 .cont_form .form_box.style03 input[type="text"].cash {width: 200px;}
+.cont_form .form_box.style03 .form_label {min-width:unset}
 
 .cont_form .form_box.style03 .tooltip-box {width: 720px;}
 .cont_form .form_box.style03 button.line {height: 40px; padding: 0 10px;}
 .cont_form .form_box.style03 button.full {width: 120px; height: 40px; background-color: #1953c2;}
+.cont_form .form_box.style03.type_around {justify-content: space-around;}
 
 .layer_cont.benefit_assessment .pop_body > ul {display: flex; flex-wrap: wrap; gap: 10px 40px; justify-content: space-around;}
+.layer_cont.benefit_assessment .pop_body .bg_box {padding:20px 10px;}
 .layer_cont.benefit_assessment .inp_list {width: calc(50% - 40px); }
-
-.cont_form .form_box.style03.type_around {justify-content: space-around;}
 
 
 /* 편익분석 - 고용현황 분석 */
 .analysis_box {display: flex; flex-wrap: wrap; gap: 10px; padding: 10px; border-radius: 15px; background-color: #dfe8fe; }
+.analysis_box:not(:first-child) {margin-top:10px}
 .analysis_box li {display: flex; flex: 1 0 calc(50% - 10px); align-items: center; justify-content: space-between; background-color: #fff; border: 1px solid #dfe8fe; padding: 10px 25px; border-radius: 10px; position: relative;}
 .analysis_box .result {display: flex; align-items: center;}
 .analysis_box .result > strong {display: inline-block; padding: 4px 10px; border-radius: 5px; background-color: #e6f0ff; margin-right: 6px; font-weight: 600; color: #1953c2;}
 
+
 /* 편익분석 - 신규채용박스 */
 .analysis_box.new li {flex: 1 0 calc(33% - 10px); gap:20px; padding: 10px 20px;}
+.layer_cont.benefit_assessment .comment-box {background-color:#eef2f7; font-size:16px; border-radius:10px; padding:20px 24px; font-weight:400; margin-top:10px;}
+.layer_cont.benefit_assessment .comment-box > table {margin:10px 0; }
+.layer_cont.benefit_assessment .comment-box > table th, .layer_cont.benefit_assessment .comment-box > table td {font-size:16px; padding:6px}
+.layer_cont.benefit_assessment .comment-box .link_btn a {font-size:16px;}
+.layer_cont.benefit_assessment .comment-box .bg-box {background-color:#fff; padding:10px 14px; border-radius: 8px; font-weight:500; margin:10px 0}
+.layer_cont.benefit_assessment .comment-box .bg-box.fl_center > p:first-child {flex:1 1 130px}
+
+
+/* 편익분석 - 추가조건선택 
+.add_select select {width:calc(100% - 20px)}*/
+
+/* 차트 워터마크 */
+.ctArea > div {position:relative;}
+.ctArea > div:after {content:'';display:block;position: absolute;background:url('../images/sub/watermark.png') no-repeat center / contain;width: 50%;height: 50%;opacity: 0.1;top: 50%;left: 50%;transform: translate(-50%,-50%);}
+.chart_graph > div {position:relative;}
+.chart_graph > div:after {content:'';display:block;position: absolute;background:url('../images/sub/watermark.png') no-repeat center / contain;width: 50%;height: 50%;opacity: 0.1;top: 50%;left: 50%;transform: translate(-50%,-50%);}
+.map_box > div {position:relative;}
+.map_box > div:after {content:'';display:block;position: absolute;background:url('../images/sub/watermark.png') no-repeat center / contain;width: 50%;height: 50%;opacity: 0.1;top: 50%;left: 50%;transform: translate(-50%,-50%);}
+
+
+
 
 /* 부담금 단계별 장애 고용 필요인원 BAR */  
 .dashboardBox_bar {border: 1px solid #d9e0ef; background-color: #f9fbff; padding: 20px 30px; border-radius:15px; margin-top: 20px;}
@@ -1572,6 +1596,7 @@ position: absolute; top: 4px; right: -14px;}
 .bar_step2 ul li:last-child{border-radius:0 8px 8px 0;}
 .bar_step2 ul li::before {content:attr(empm-level); position:absolute; display:inline-block; text-align:center; padding:4px; height:30px; width:100%;}
 .bar_step2 ul li.pass {color:#fff;}
+.bar_step2 ul li.notpass {border-right:dotted 1px #fff;}
 .bar_step2 ul li.next {border-radius:0px; border-right:solid 4px #029F54!important;}
 .result_bar_bas_center {background-color: #ffdd6e!important;border-radius:0px; height:30px;}
 .result_bar_bas_more {background-color: #ffdd6e!important;border-radius:0px; height:30px;border-right:solid 4px #029F54!important; display: inline-block; line-height:30px;}
@@ -1596,8 +1621,8 @@ position: absolute; top: 4px; right: -14px;}
 .dashboardBox_count.analysis_box .analysis_count2 em {color: #0caa14;}
 .dashboardBox_count.analysis_box .analysis_count3 em {color: #fa6346;}
 
-.cont_form .chk_card {display: flex; gap: 20px;}
-.cont_form .chk_card li {flex: 1 0 calc(33% - 20px); display: flex; flex-direction: column; gap: 20px; border: 1px solid #d9e0ef; background-color: #f9fbff; padding: 20px; border-radius:15px;}
+.cont_form .chk_card {display: flex; gap: 20px; flex-wrap:wrap;}
+.cont_form .chk_card li {flex: 1 1 calc(33% - 20px); display: flex; flex-direction: column; gap: 20px; border: 1px solid #d9e0ef; background-color: #f9fbff; padding: 20px; border-radius:15px;}
 .cont_form .chk_card li .tit {font-weight: 500;}
 .cont_form .chk_card li input[type="checkbox"] {width: 25px; height: 25px;}
 .cont_form .chk_card li .inp_list2 > label {margin-bottom: 5px; margin-top: 10px;}
@@ -1619,10 +1644,5 @@ position: absolute; top: 4px; right: -14px;}
 .benefit_result .stats .item3 {gap: 20px;}
 .benefit_result .condition_info { line-height: 1.6;}
 .benefit_result .condition_info > strong { background-color: #fff; color:#236cdb; padding: 0 4px; font-weight: 700;}
-
-
-
-
-
 
 

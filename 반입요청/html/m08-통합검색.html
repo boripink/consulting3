@@ -18,9 +18,9 @@
 	<script src="../asset/slick/slick.js"></script>
 	<script src="../js/common.js"></script>
 
-	<!-- 추가 -->	
-	<link rel="stylesheet" href="../css/sub3.css">
+	<!-- 추가 -->
 	<link rel="stylesheet" href="../css/layout2.css">
+	<link rel="stylesheet" href="../css/sub3.css">
 	<link rel="stylesheet" href="../css/jquery-ui.min.css">
 	<script src="../js/jquery-ui.js"></script>
 	<script src="../js/common2.js"></script>
@@ -290,7 +290,7 @@
 
 	<!-- container -->
 	<div class="total_search_container" role="region" aria-labelledby="search_heading" id="lnb">
-		<div class="total_search_area">
+		<div class="total_search">
 			<div class="inner">
 				<h3 class="cont_tit" id="search_heading">통합검색</h3>
 				<!-- 검색 입력 -->
@@ -300,8 +300,12 @@
 							<label for="search_input" class="sr-only">검색어 입력</label>
 							<input type="search" id="search_input" name="q" placeholder="검색어를 입력하세요"
 								class="search_input" autocomplete="off">
-							<button type="submit" class="search_btn" aria-label="검색"></button>
-							<button type="button" class="search_del" aria-label="검색어 삭제"></button>
+							<button type="submit" class="search_btn" aria-label="검색">
+								<img src="/images/sub/svg-btn-search.svg" alt="" aria-hidden="true">
+							</button>
+							<button type="button" class="search_del" aria-label="검색어 삭제">
+								<img src="/images/sub/svg-btn-del.svg" alt="" aria-hidden="true">
+							</button>
 						</div>
 						<!-- 연관검색어 리스트 -->
 						<ul class="autocomplete_list" role="listbox" aria-label="연관검색어"></ul>
@@ -311,191 +315,181 @@
 							<input type="checkbox" id="reSearch" name="category" value="" class="custom_chk sr-only">
 							<span class="chk_label"></span>
 							<span>결과 내 재검색</span>
+							</span>
 						</label>
 					</div>
 				</form>
 			</div>
 		</div>
 		
-		<div class="total_result_area">
-			<div class="inner">
-				<!-- 검색필터 -->
-				<aside class="total_filter">
-					<section class="popular_keywords" aria-labelledby="popular-title">
-						<h4 id="popular-title" class="filter_group_heading">
-							인기 검색어
-							<button type="button" class="btn_toggle" aria-expanded="false" aria-controls="popularList" aria-label="인기 검색어 확장됨">
-								<span class="sr-only">인기 검색어 토글</span>
-								<span class="icon" aria-hidden="true"></span>
-							</button>
-						</h4>					
-						<ol id="popularList" class="filter_popular">
-							<li><a href="#">고용컨설팅</a></li>
-							<li><a href="#">고용 역량 진단</a></li>
-							<li><a href="#">장애인 채용사례</a></li>
-							<li><a href="#">고용현황 리포트</a></li>
-							<li><a href="#">장애인 고용 가이드</a></li>
-							<li><a href="#">알림마당</a></li>
-							<li><a href="#">고용컨설팅</a></li>
-							<li><a href="#">고용 역량 진단</a></li>
-							<li><a href="#">장애인 채용사례</a></li>
-							<li><a href="#">고용현황 리포트</a></li>
-						</ol>
-					</section>				
-				</aside>
+		<div class="cont_wrap total_search_result">
+			<!-- 검색필터 -->
+			<aside class="total_filter">
+				<section class="popular_keywords" aria-labelledby="popular-title">
+					<h4 id="popular-title" class="filter_group_heading">
+						인기 검색어
+						<button type="button" class="btn_toggle" aria-expanded="false" aria-controls="popularList" aria-label="인기 검색어 확장됨">
+							<span class="sr-only">인기 검색어 토글</span>
+							<span class="icon" aria-hidden="true"></span>
+						</button>
+					</h4>					
+					<ol id="popularList" class="filter_popular">
+						<li><a href="#">고용컨설팅</a></li>
+						<li><a href="#">고용 역량 진단</a></li>
+						<li><a href="#">장애인 채용사례</a></li>
+						<li><a href="#">고용현황 리포트</a></li>
+						<li><a href="#">장애인 고용 가이드</a></li>
+						<li><a href="#">알림마당</a></li>
+						<li><a href="#">고용컨설팅</a></li>
+						<li><a href="#">고용 역량 진단</a></li>
+						<li><a href="#">장애인 채용사례</a></li>
+						<li><a href="#">고용현황 리포트</a></li>
+					</ol>
+				</section>				
+			</aside>
 
-				<!-- 검색결과 -->
-				<main class="total_results" role="main" aria-labelledby="result_heading">
-					<div class="search_tab_contents tab_wrap tab_style05">
-						<h4 class="sr-only">검색 결과 탭</h4>
-						<!-- 탭 목록(검색필터) -->
-						<ul class="tab_list" role="tablist">
-							<li role="presentation" class="on">
-								<a href="#panel" id="tab" class="tab_btn" role="tab" aria-controls="panel" aria-selected="true">
-									전체 <span class="count">(116)</span>
-								</a>
-							</li>
-							<li role="presentation">
-								<a href="#panel1" id="tab1" class="tab_btn" role="tab" aria-controls="panel1" aria-selected="false">
-									고용컨설팅 <span class="count">(31)</span>
-								</a>
-							</li>
-							<li role="presentation">
-								<a href="#panel2" id="tab2" class="tab_btn" role="tab" aria-controls="panel2" aria-selected="false">
-									역량진단 <span class="count">(1)</span>
-								</a>
-							</li>
-							<li role="presentation">
-								<a href="#panel3" id="tab3" class="tab_btn" role="tab" aria-controls="panel3" aria-selected="false">
-									채용사례 <span class="count">(41)</span>
-								</a>
-							</li>
-							<li role="presentation">
-								<a href="#panel4" id="tab4" class="tab_btn" role="tab" aria-controls="panel4" aria-selected="false">
-									리포트 <span class="count">(0)</span>
-								</a>
-							</li>
-							<li role="presentation">
-								<a href="#panel5" id="tab5" class="tab_btn" role="tab" aria-controls="panel5" aria-selected="false">
-									고용가이드 <span class="count">(0)</span>
-								</a>
-							</li>
-							<li role="presentation">
-								<a href="#panel6" id="tab6" class="tab_btn" role="tab" aria-controls="panel6" aria-selected="false">
-									알림마당 <span class="count">(20)</span>
-								</a>
-							</li>
-						</ul>
-						<!-- 결과요약 -->
-						<div class="total_result_heading">
-							<strong class="keyword">‘<mark>컨설팅</mark>’</strong>
-							검색 결과<strong class="ml10 mr6">116</strong>개
-						</div>
-						<!-- 탭 패널 -->
-						<div class="tab_cont">
-							<div id="panel" class="tab_panel" role="tabpanel" aria-labelledby="tab">
-								<article class="results_text">
-									<!-- 검색필터 -->
-									<span class="badge">고용컨설팅</span>
-									<a href="#" class="search_link">
-										<!-- 경로 -->
-										<nav class="search_path" aria-label="페이지 경로">
-											<ol>
-												<li>장애인 고용컨설팅</li>
-												<li>장애인 고용컨설팅이란?</li>
-											</ol>
-										</nav>
-										<!-- 텍스트 -->
-										<p class="search_desc">
-											고용<mark>컨설팅</mark>이란? 기업의 장애인 고용 여건을 진단하여 고용 부진 요인을 도출하고 이에 적합한 맞춤 고용 방안을 제시하는 서비스입니다. 기업의 장애인 고용 여건을 진단하여 고용 부진 요인을 도출하고
-											이에 적합한 맞춤 고용 방안을 제시하는 서비스입니다. 기업의 장애인 고용 여건을 진단하여 고용 부진 요인을 도출하고 이에 적합한 맞춤 고용 방안을 제시하는 서비스입니다. 기업의 장애인 고용 여건을 진단하여 고용 부진 요인을 도출하고 이에 적합한 맞춤 고용 방안을 제시하는 서비스입니다.
-										</p>
-									</a>
-								</article>
-
-								<article class="results_text">
-									<!-- 검색필터 -->
-									<span class="badge">역량진단</span>
-									<a href="#" class="search_link">
-										<!-- 경로 -->									
-										<nav class="search_path" aria-label="페이지 경로">
-											<ol>
-												<li>고용 역량 진단</li>
-												<li>장애인 고용컨설팅이란?</li>
-											</ol>
-										</nav>
-										<!-- 텍스트 -->
-										<p class="search_desc">
-											고용<mark>컨설팅</mark>이란? 기업의 장애인 고용 여건을 진단하여 고용 부진 요인을 도출하고
-											이에 적합한 맞춤 고용 방안을 제시하는 서비스입니다. 기업의 장애인 고용 여건을 진단하여 고용 부진 요인을 도출하고 이에 적합한 맞춤 고용
-											방안을 제시하는 서비스입니다.
-										</p>
-									</a>
-								</article>
-
-								<article class="results_text">
-									<!-- 검색필터 -->
-									<span class="badge">채용사례</span>
-									<a href="#" class="search_link">
-										<!-- 경로 -->
-										<nav class="search_path" aria-label="페이지 경로">
-											<ol>
-												<li>장애인 채용사례</li>
-												<li>사례 맞춤 검색</li>
-											</ol>
-										</nav>
-										<!-- 텍스트 -->
-										<p class="search_desc">
-											고용<mark>컨설팅</mark>이란? 기업의 장애인 고용 여건을 진단하여 고용 부진 요인을 도출하고
-											이에 적합한 맞춤 고용 방안을 제시하는 서비스입니다. 기업의 장애인 고용 여건을 진단하여 고용 부진 요인을 도출하고 이에 적합한 맞춤 고용
-											방안을 제시하는 서비스입니다.
-										</p>
-									</a>
-								</article>
-							</div>
-							<div id="panel1" class="tab_panel" role="tabpanel" aria-labelledby="tab1" hidden>
-								<article class="results_text">
-									<!-- 검색필터 -->
-									<span class="badge">장애인 고용컨설팅</span>
-									<a href="#" class="search_link">
-										<!-- 경로 -->
-										<nav class="search_path" aria-label="페이지 경로">
-											<ol>
-												<li>장애인 고용컨설팅</li>
-												<li>장애인 고용컨설팅이란?</li>
-											</ol>
-										</nav>
-										<!-- 텍스트 -->
-										<p class="search_desc">
-											고용<mark>컨설팅</mark>이란? 기업의 장애인 고용 여건을 진단하여 고용 부진 요인을 도출하고
-											이에 적합한 맞춤 고용 방안을 제시하는 서비스입니다. 기업의 장애인 고용 여건을 진단하여 고용 부진 요인을 도출하고
-											이에 적합한 맞춤 고용 방안을 제시하는 서비스입니다.
-										</p>
-									</a>
-								</article>
-							</div>
-							<div id="panel2" class="tab_panel" role="tabpanel" aria-labelledby="tab2" hidden>
-								<article class="results_text">검색 결과가 없습니다.</article>
-							</div>
-							<div id="panel3" class="tab_panel" role="tabpanel" aria-labelledby="tab3" hidden>
-								<article class="results_text">장애인 채용사례 결과</article>
-							</div>
-							<div id="panel4" class="tab_panel" role="tabpanel" aria-labelledby="tab4" hidden>
-								<article class="results_text">고용현황 리포트 결과</article>
-							</div>
-							<div id="panel5" class="tab_panel" role="tabpanel" aria-labelledby="tab5" hidden>
-								<article class="results_text">장애인 고용 가이드 결과</article>
-							</div>
-							<div id="panel6" class="tab_panel" role="tabpanel" aria-labelledby="tab6" hidden>
-								<article class="results_text">알림마당 결과</article>
-							</div>
-						</div>
-						<div class="bt_btn">
-							<button type="button" class="btn_crud" aria-label="통합 검색 결과 10개 더보기">더보기</button>
-						</div>
+			<!-- 검색결과 -->
+			<main class="total_results" role="main" aria-labelledby="result_heading">
+				<div class="search_tab_contents tab_wrap tab_style05">
+					<h4 class="sr-only">검색 결과 탭</h4>
+					<!-- 탭 목록(검색필터) -->
+					<ul class="tab_list" role="tablist">
+						<li role="presentation" class="on">
+							<a href="#panel" id="tab" class="tab_btn" role="tab" aria-controls="panel" aria-selected="true">
+								전체 <span class="count">(116)</span>
+							</a>
+						</li>
+						<li role="presentation">
+							<a href="#panel1" id="tab1" class="tab_btn" role="tab" aria-controls="panel1" aria-selected="false">
+								고용컨설팅 <span class="count">(31)</span>
+							</a>
+						</li>
+						<li role="presentation">
+							<a href="#panel2" id="tab2" class="tab_btn" role="tab" aria-controls="panel2" aria-selected="false">
+								역량진단 <span class="count">(1)</span>
+							</a>
+						</li>
+						<li role="presentation">
+							<a href="#panel3" id="tab3" class="tab_btn" role="tab" aria-controls="panel3" aria-selected="false">
+								채용사례 <span class="count">(41)</span>
+							</a>
+						</li>
+						<li role="presentation">
+							<a href="#panel4" id="tab4" class="tab_btn" role="tab" aria-controls="panel4" aria-selected="false">
+								리포트 <span class="count">(0)</span>
+							</a>
+						</li>
+						<li role="presentation">
+							<a href="#panel5" id="tab5" class="tab_btn" role="tab" aria-controls="panel5" aria-selected="false">
+								고용가이드 <span class="count">(0)</span>
+							</a>
+						</li>
+						<li role="presentation">
+							<a href="#panel6" id="tab6" class="tab_btn" role="tab" aria-controls="panel6" aria-selected="false">
+								알림마당 <span class="count">(20)</span>
+							</a>
+						</li>
+					</ul>
+					<!-- 결과요약 -->
+					<div class="total_result_heading">
+						<strong class="keyword">‘<mark>컨설팅</mark>’</strong>
+						검색 결과<strong class="ml10 mr6">116</strong>개
 					</div>
-				</main>
-			</div>
+					<!-- 탭 패널 -->
+					<div class="tab_cont">
+						<div id="panel" class="tab_panel" role="tabpanel" aria-labelledby="tab">
+							<article class="results_text">
+								<!-- 검색필터 -->
+								<span class="badge">장애인 고용컨설팅</span>
+
+								<a href="#" class="search_link">
+									<!-- 경로 -->
+									<p class="search_path">
+										<span class="path_item">장애인 고용컨설팅</span>
+										<!-- <span class="arrow_img"></span> -->
+										<span class="path_item">장애인 고용컨설팅이란?</span>
+									</p>
+									<!-- 텍스트 -->
+									<p class="search_desc">
+										고용<mark>컨설팅</mark>이란? 기업의 장애인 고용 여건을 진단하여 고용 부진 요인을 도출하고
+										이에 적합한 맞춤 고용 방안을 제시하는 서비스입니다. 기업의 장애인 고용 여건을 진단하여 고용 부진 요인을 도출하고
+										이에 적합한 맞춤 고용 방안을 제시하는 서비스입니다.
+									</p>
+								</a>
+							</article>
+
+							<article class="results_text">
+								<!-- 검색필터 -->
+								<span class="badge">고용 역량 진단</span>
+
+								<a href="#" class="search_link">
+									<!-- 경로 -->
+									<p class="search_path">
+										<span class="path_item">고용 역량 진단</span>
+										<span class="arrow_img"></span>
+										<span class="path_item">고용 역량 진단이란?</span>
+									</p>
+									<!-- 텍스트 -->
+									<p class="search_desc">
+										고용<mark>컨설팅</mark>이란? 기업의 장애인 고용 여건을 진단하여 고용 부진 요인을 도출하고
+										이에 적합한 맞춤 고용 방안을 제시하는 서비스입니다. 기업의 장애인 고용 여건을 진단하여 고용 부진 요인을 도출하고 이에 적합한 맞춤 고용
+										방안을 제시하는 서비스입니다.
+									</p>
+								</a>
+							</article>
+
+							<article class="results_text">
+								<!-- 검색필터 -->
+								<span class="badge">장애인 채용사례</span>
+
+								<a href="#" class="search_link">
+									<!-- 경로 -->
+									<p class="search_path">
+										<span class="path_item">장애인 채용사례</span>
+										<span class="arrow_img"></span>
+										<span class="path_item">사례 맞춤 검색</span>
+									</p>
+									<!-- 텍스트 -->
+									<p class="search_desc">
+										고용<mark>컨설팅</mark>이란? 기업의 장애인 고용 여건을 진단하여 고용 부진 요인을 도출하고
+										이에 적합한 맞춤 고용 방안을 제시하는 서비스입니다. 기업의 장애인 고용 여건을 진단하여 고용 부진 요인을 도출하고 이에 적합한 맞춤 고용
+										방안을 제시하는 서비스입니다.
+									</p>
+								</a>
+							</article>
+						</div>
+						<div id="panel1" class="tab_panel" role="tabpanel" aria-labelledby="tab1" hidden>
+							<article class="results_text">
+								<!-- 검색필터 -->
+								<span class="badge">장애인 고용컨설팅</span>
+
+								<a href="#" class="search_link">
+									<!-- 경로 -->
+									<p class="search_path">
+										<span class="path_item">장애인 고용컨설팅</span>
+										<!-- <span class="arrow_img"></span> -->
+										<span class="path_item">장애인 고용컨설팅이란?</span>
+									</p>
+									<!-- 텍스트 -->
+									<p class="search_desc">
+										고용<mark>컨설팅</mark>이란? 기업의 장애인 고용 여건을 진단하여 고용 부진 요인을 도출하고
+										이에 적합한 맞춤 고용 방안을 제시하는 서비스입니다. 기업의 장애인 고용 여건을 진단하여 고용 부진 요인을 도출하고
+										이에 적합한 맞춤 고용 방안을 제시하는 서비스입니다.
+									</p>
+								</a>
+							</article>
+						</div>
+						<div id="panel2" class="tab_panel" role="tabpanel" aria-labelledby="tab2" hidden>고용 역량 진단 결과</div>
+						<div id="panel3" class="tab_panel" role="tabpanel" aria-labelledby="tab3" hidden>장애인 채용사례 결과</div>
+						<div id="panel4" class="tab_panel" role="tabpanel" aria-labelledby="tab4" hidden>고용현황 리포트 결과</div>
+						<div id="panel5" class="tab_panel" role="tabpanel" aria-labelledby="tab5" hidden>장애인 고용 가이드 결과</div>
+						<div id="panel6" class="tab_panel" role="tabpanel" aria-labelledby="tab6" hidden>알림마당 결과</div>
+					</div>
+					<div class="bt_btn">
+						<button type="button" class="btn_crud" aria-label="통합 검색 결과 10개 더보기">더보기</button>
+					</div>
+				</div>
+			</main>
 		</div>
 		
 
